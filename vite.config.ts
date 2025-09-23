@@ -12,6 +12,5 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // GitHub Pages deployment - set base to '/' for root domain or '/repo-name/' for GitHub Pages
   base: '/ruchira-portfolio/',
 });
