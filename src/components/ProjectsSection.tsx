@@ -31,11 +31,11 @@ export default function ProjectsSection() {
   const projects = [
     {
       id: "hawk",
-      title: "HAWK AI: Hedge Accounting Transformation",
+      title: "HAWK AI-Powered Hedge Accounting Transformation",
       company: "DBS Bank Singapore",
       role: "Technical Lead & AI Solutions Architect",
       timeline: "June 2024 - Present",
-      description: "Leading Singapore's largest bank through their first multi-agent financial AI system",
+      description: "Leading Singapore's largest bank through their first multi-agent financial AI system, achieving 99.5% accuracy and driving a 60% reduction in costs.",
       image: "🏦",
       gradient: "from-blue-500 to-indigo-600",
       metrics: [
@@ -359,10 +359,10 @@ export default function ProjectsSection() {
                           {project.fullDetails.results.map((result, index) => (
                             <tr key={index} className="border-b border-slate-200 hover:bg-slate-50">
                               <td className="p-4 font-semibold text-slate-900 text-sm">{result.metric}</td>
-                              <td className="p-4 text-slate-700 font-medium text-sm">{result.before}</td>
-                              <td className="p-4 text-slate-900 font-bold text-sm">{result.after}</td>
+                              <td className="p-4 text-red-600 font-medium text-sm">{result.before}</td>
+                              <td className="p-4 text-green-600 font-bold text-sm">{result.after}</td>
                               <td className="p-4">
-                                <Badge className="bg-emerald-100 text-emerald-800 border-emerald-300 font-semibold">
+                                <Badge className="bg-emerald-100 text-black border-emerald-300 font-semibold">
                                   {result.improvement}
                                 </Badge>
                               </td>
