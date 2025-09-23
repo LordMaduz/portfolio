@@ -219,7 +219,7 @@ export default function AboutSection() {
               </div>
               
               <blockquote className="text-xl md:text-2xl leading-relaxed text-slate-300 italic">
-                "AI transformation isn't just about technology—it's about people, processes, and strategic vision. 
+                "AI transformation isn't just about technology it's about people, processes, and strategic vision. 
                 Every project is an opportunity to push boundaries while maintaining reliability and compliance."
               </blockquote>
             </div>
