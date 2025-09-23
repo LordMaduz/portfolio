@@ -15,5 +15,5 @@ export default defineConfig({
     },
   },
   // GitHub Pages deployment configuration
-  base: process.env.NODE_ENV === 'production' ? '/ruchira-rajapaksha.github.io/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/' : '/',
 });
