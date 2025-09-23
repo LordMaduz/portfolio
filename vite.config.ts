@@ -15,5 +15,5 @@ export default defineConfig({
     },
   },
   // GitHub Pages deployment configuration
-  base: process.env.NODE_ENV === 'production' ? '/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/ruchira-portfolio/' : '/',
 });
