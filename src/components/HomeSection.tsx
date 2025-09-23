@@ -24,10 +24,6 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-32 text-center">
         {/* Status Badge */}
         <div className="mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-          <Badge className="px-6 py-3 text-sm font-medium bg-gradient-to-r from-emerald-500/20 to-teal-500/20 text-emerald-300 border-emerald-500/30">
-            <Sparkles className="w-4 h-4 mr-2" />
-            Available for AI Leadership Roles
-          </Badge>
         </div>
 
         {/* Main Identity */}

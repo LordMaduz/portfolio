@@ -35,9 +35,6 @@ export default function Footer() {
                 <MapPin className="w-3 h-3" />
                 <span>Singapore</span>
               </div>
-              <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30 text-xs px-2 py-1">
-                Available for Leadership Roles
-              </Badge>
             </div>
           </div>
 
@@ -55,14 +52,14 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex items-center gap-2">
               <a 
-                href="mailto:ruchira.rajapaksha@email.com" 
+                href="mailto:maduz.ruchira@gmail.com"
                 className="w-8 h-8 bg-white/10 hover:bg-indigo-500/20 rounded-lg flex items-center justify-center transition-all duration-300 group border border-white/10 hover:border-indigo-500/30"
               >
                 <Mail className="w-4 h-4 text-slate-300 group-hover:text-indigo-400" />
               </a>
               
               <a 
-                href="https://linkedin.com/in/ruchira-rajapaksha" 
+                href="https://www.linkedin.com/in/ruchirarajapaksha/"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-white/10 hover:bg-blue-500/20 rounded-lg flex items-center justify-center transition-all duration-300 group border border-white/10 hover:border-blue-500/30"
@@ -71,7 +68,7 @@ export default function Footer() {
               </a>
               
               <a 
-                href="https://github.com/ruchira-rajapaksha" 
+                href="https://github.com/LordMaduz"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-white/10 hover:bg-slate-400/20 rounded-lg flex items-center justify-center transition-all duration-300 group border border-white/10 hover:border-slate-400/30"
@@ -80,7 +77,7 @@ export default function Footer() {
               </a>
               
               <a 
-                href="https://twitter.com/ruchira_ai" 
+                href="https://x.com/maduz_ruchira"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-white/10 hover:bg-sky-500/20 rounded-lg flex items-center justify-center transition-all duration-300 group border border-white/10 hover:border-sky-500/30"
@@ -89,7 +86,7 @@ export default function Footer() {
               </a>
               
               <a 
-                href="https://medium.com/@ruchira-ai" 
+                href="https://medium.com/@maduz.ruchira"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-white/10 hover:bg-green-500/20 rounded-lg flex items-center justify-center transition-all duration-300 group border border-white/10 hover:border-green-500/30"
@@ -98,7 +95,7 @@ export default function Footer() {
               </a>
               
               <a 
-                href="https://baeldung.com/author/ruchira" 
+                href="https://www.baeldung.com/author/ruchiramadhushanrajapaksha"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-white/10 hover:bg-orange-500/20 rounded-lg flex items-center justify-center transition-all duration-300 group border border-white/10 hover:border-orange-500/30"

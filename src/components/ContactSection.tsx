@@ -28,7 +28,7 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const emailBody = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-    window.location.href = `mailto:ruchira.rajapaksha@email.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
+    window.location.href = `mailto:maduz.ruchira@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
   };
 
   return (
@@ -76,7 +76,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="font-semibold text-white">Email</p>
-                    <p className="text-slate-300">ruchira.rajapaksha@email.com</p>
+                    <p className="text-slate-300">maduz.ruchira@gmail.com</p>
                   </div>
                 </div>
                 
@@ -86,7 +86,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="font-semibold text-white">Phone</p>
-                    <p className="text-slate-300">+65 1234 5678</p>
+                    <p className="text-slate-300">+65 828 585 90</p>
                   </div>
                 </div>
                 
@@ -106,7 +106,7 @@ export default function ContactSection() {
                 <h4 className="text-xl font-bold text-white mb-4">Connect With Me</h4>
                 <div className="flex gap-3">
                   <a 
-                    href="https://github.com/ruchira-rajapaksha" 
+                    href="https://github.com/LordMaduz"
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-white/10 hover:bg-slate-400/20 rounded-xl flex items-center justify-center transition-all duration-300 group border border-white/10 hover:border-slate-400/30"
@@ -114,7 +114,7 @@ export default function ContactSection() {
                     <Github className="w-6 h-6 text-slate-300 group-hover:text-slate-100" />
                   </a>
                   <a 
-                    href="https://linkedin.com/in/ruchira-rajapaksha" 
+                    href="https://www.linkedin.com/in/ruchirarajapaksha/"
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-white/10 hover:bg-blue-500/20 rounded-xl flex items-center justify-center transition-all duration-300 group border border-white/10 hover:border-blue-500/30"
@@ -122,7 +122,7 @@ export default function ContactSection() {
                     <Linkedin className="w-6 h-6 text-slate-300 group-hover:text-blue-400" />
                   </a>
                   <a 
-                    href="https://twitter.com/ruchira_ai" 
+                    href="https://x.com/maduz_ruchira"
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-white/10 hover:bg-sky-500/20 rounded-xl flex items-center justify-center transition-all duration-300 group border border-white/10 hover:border-sky-500/30"
@@ -130,7 +130,7 @@ export default function ContactSection() {
                     <Twitter className="w-6 h-6 text-slate-300 group-hover:text-sky-400" />
                   </a>
                   <a 
-                    href="https://medium.com/@ruchira-ai" 
+                    href="https://medium.com/@maduz.ruchira"
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-white/10 hover:bg-green-500/20 rounded-xl flex items-center justify-center transition-all duration-300 group border border-white/10 hover:border-green-500/30"
@@ -138,7 +138,7 @@ export default function ContactSection() {
                     <FileText className="w-6 h-6 text-slate-300 group-hover:text-green-400" />
                   </a>
                   <a 
-                    href="https://baeldung.com/author/ruchira" 
+                    href="https://www.baeldung.com/author/ruchiramadhushanrajapaksha"
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-white/10 hover:bg-orange-500/20 rounded-xl flex items-center justify-center transition-all duration-300 group border border-white/10 hover:border-orange-500/30"
