@@ -13,5 +13,5 @@ export default defineConfig({
     },
   },
   
-  base: '/ruchira-portfolio/',
+  base: '/portfolio/',
 });
