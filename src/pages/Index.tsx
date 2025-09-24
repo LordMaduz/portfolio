@@ -4,6 +4,7 @@ import HomeSection from "@/components/HomeSection";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import ResumeSection from "@/components/ResumeSection";
 import CertificationsSection from "@/components/CertificationsSection";
 import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
@@ -22,6 +23,8 @@ export default function Index() {
         return <SkillsSection />;
       case 'projects':
         return <ProjectsSection />;
+      case 'resume':
+              return <ResumeSection />;
       case 'certifications':
         return <CertificationsSection />;
       case 'education':

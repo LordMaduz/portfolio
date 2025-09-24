@@ -31,17 +31,17 @@ export default function ProjectsSection() {
   const projects = [
     {
       id: "hawk",
-      title: "HAWK AI-Powered Hedge Accounting Transformation",
+      title: "HAWK: AI-Powered Hedge Accounting Platform Driving Exponential Accuracy",
       company: "DBS Bank Singapore",
       role: "Technical Lead & AI Solutions Architect",
-      timeline: "June 2024 - Present",
+      timeline: "April 2025 - Present",
       description: "Leading Singapore's largest bank through their first multi-agent financial AI system, achieving 99.5% accuracy and driving a 60% reduction in costs.",
       image: "🏦",
       gradient: "from-blue-500 to-indigo-600",
       metrics: [
         { label: "Accuracy", value: "99.5%", change: "From 60%" },
         { label: "Cost Reduction", value: "60%", change: "Operational" },
-        { label: "Daily Transactions", value: "1000+", change: "Concurrent" }
+        { label: "TPS Capacity", value: "10,000+", change: "Concurrent" }
       ],
       technologies: ["Dify", "Multi-Agent Systems", "LangChain", "Python", "AWS", "Docker", "Kubernetes", "MongoDB"],
       featured: true,
@@ -53,7 +53,7 @@ export default function ProjectsSection() {
           { metric: "Accuracy Rate", before: "60%", after: "99.5%", improvement: "+65% improvement" },
           { metric: "Operational Costs", before: "Baseline", after: "60% reduction", improvement: "Through automation" },
           { metric: "Processing Speed", before: "Manual", after: "50% faster", improvement: "Execution cycles" },
-          { metric: "Daily Transactions", before: "Limited", after: "1000+", improvement: "Concurrent processing" },
+          { metric: "Transactions per Second", before: "Limited", after: "10,000+", improvement: "Concurrent processing" },
           { metric: "System Uptime", before: "97.2%", after: "99.8%", improvement: "+2.6% improvement" },
           { metric: "User Satisfaction", before: "72%", after: "94%", improvement: "+22% increase" }
         ],
@@ -111,10 +111,10 @@ export default function ProjectsSection() {
     },
     {
       id: "globe",
-      title: "GloBE/DTT: Global Tax Compliance Platform",
-      company: "Enterprise Banking",
+      title: "GloBE: Regulatory-Compliant Tax Engine for High-Revenue MNEs",
+      company: "DBS Bank Singapore",
       role: "Lead Solutions Architect & Technical Lead",
-      timeline: "Q3 2023 - Q4 2024",
+      timeline: "June 2024 - April 2025",
       description: "Architected externalized tax calculation engine enabling 96% processing time reduction while ensuring 100% regulatory compliance across €750M+ revenue threshold MNEs",
       image: "🏛️",
       gradient: "from-emerald-500 to-teal-600",
@@ -186,6 +186,149 @@ export default function ProjectsSection() {
           { stakeholder: "Finance & Treasury", benefit: "70% faster quarterly provisioning cycles with 100% accuracy" },
           { stakeholder: "IT Operations", benefit: "Zero-downtime logic updates enabling continuous regulatory adaptation" },
           { stakeholder: "External Consultants (IRAS, KPMG)", benefit: "Historical calculation preservation ensuring audit-ready compliance" }
+        ]
+      }
+    },
+    {
+      id: "blockchain",
+      title:
+        "Global Blockchain Payment Platform: 2.3s Transactions Across Borders",
+      company: "Msc Research Project",
+      role: "Researcher & Architect",
+      timeline: "March 2024 - March 2025",
+      description:
+        "Developed blockchain payment system achieving 96% transaction time reduction (5 days → 2.3s) while reducing costs by 70% through Layer 2 scaling and Zero-Knowledge Proof compliance.",
+      image: "⛓️",
+      gradient: "from-yellow-500 to-orange-500",
+      metrics: [
+        { label: "Transaction Time", value: "2.3s avg", change: "96% faster" },
+        { label: "Transaction Fee", value: "1.9%", change: "70% lower" },
+        { label: "TPS Capacity", value: "5000+", change: "50x scalability" },
+      ],
+      technologies: [
+        "Ethereum",
+        "Solidity",
+        "ZoKrates",
+        "React.js",
+        "Node.js",
+        "MongoDB",
+        "IPFS",
+        "ZK-Rollups",
+        "State Channels",
+      ],
+      featured: true,
+      fullDetails: {
+        overview:
+          "Architected modular blockchain system solving cross-border inefficiencies by combining Layer 2 scaling, Zero-Knowledge Proof compliance, and smart contract automation to deliver 96% faster settlements and 70% lower costs.",
+        challenge:
+          "Traditional cross-border payments through SWIFT took 2–5 days, averaged 6.3% fees, lacked transparency, and faced technical constraints like scalability, high gas fees, and compliance challenges.",
+        solution:
+          "Built modular blockchain architecture with Layer 2 scaling (ZK-Rollups, State Channels), integrated ZoKrates for ZKP-based AML/KYC, Solidity smart contracts for automation, and React.js/Node.js user interfaces.",
+        results: [
+          {
+            metric: "Transaction Time",
+            before: "2–5 days",
+            after: "2.3s avg",
+            improvement: "96% faster",
+          },
+          {
+            metric: "Transaction Cost",
+            before: "6.3% fee",
+            after: "1.9% fee",
+            improvement: "70% lower",
+          },
+          {
+            metric: "TPS Capacity",
+            before: "100 TPS",
+            after: "5000+ TPS",
+            improvement: "50x scalability",
+          },
+          {
+            metric: "Compliance Check",
+            before: "24–48h manual",
+            after: "2.1s automated",
+            improvement: "99.97% faster",
+          },
+          {
+            metric: "System Uptime",
+            before: "95%",
+            after: "99.9%",
+            improvement: "+4.9%",
+          },
+        ],
+        architecture: {
+          systemFlow: [
+            "User Registration",
+            "KYC Verification (ZKP)",
+            "Transaction Initiation",
+            "Smart Contract Validation",
+            "Layer 2 Processing",
+            "Blockchain Recording",
+            "Compliance Verification",
+            "Settlement Confirmation",
+          ],
+          agentResponsibilities: [
+            {
+              agent: "Blockchain Layer",
+              role: "Ethereum + Layer 2 scaling",
+            },
+            { agent: "Smart Contracts", role: "Solidity automated execution" },
+            {
+              agent: "Compliance Engine",
+              role: "ZoKrates ZKP-based AML/KYC",
+            },
+            { agent: "Frontend", role: "React.js web interface" },
+            { agent: "Backend", role: "Node.js/Express API layer" },
+            { agent: "Storage", role: "MongoDB + IPFS audit trails" },
+          ],
+          keyInnovations: [
+            "First to combine ZK-Rollups with ZKP compliance verification",
+            "Cross-border settlement in sub-3 seconds",
+            "Privacy-preserving compliance without exposing data",
+            "Scalable architecture handling 10,000+ TPS",
+          ],
+        },
+        challenges: [
+          {
+            challenge: "Blockchain Trilemma",
+            solution: "Balanced scalability, decentralization, and security using Layer 2 solutions",
+            icon: <Database className="w-5 h-5" />,
+          },
+          {
+            challenge: "Regulatory Complexity",
+            solution:
+              "Jurisdiction-specific compliance via ZoKrates modular verification",
+            icon: <Shield className="w-5 h-5" />,
+          },
+          {
+            challenge: "Legacy Integration",
+            solution: "Custom API bridge for interoperability with banking systems",
+            icon: <Brain className="w-5 h-5" />,
+          },
+          {
+            challenge: "Network Congestion",
+            solution:
+              "Batch processing and rollups reduced fees by 70% and improved throughput",
+            icon: <Zap className="w-5 h-5" />,
+          }
+        ],
+        stakeholderBenefits: [
+           {
+             stakeholder: "Financial Institutions",
+             benefit: "Faster and cheaper cross-border transactions with 96% time reduction and 70% lower costs",
+           },
+           {
+             stakeholder: "Regulators",
+             benefit: "Privacy-preserving AML/KYC through Zero-Knowledge Proofs ensuring compliance across 15+ jurisdictions",
+           },
+           {
+             stakeholder: "Corporate & SMEs",
+             benefit: "Real-time B2B cross-border payments with 100x scalability (10,000+ TPS)",
+           },
+           {
+             stakeholder: "Individuals (Remittance Senders)",
+             benefit: "Affordable and near-instant international remittance transfers with 70% lower fees",
+           }
         ]
       }
     }
@@ -273,7 +416,7 @@ export default function ProjectsSection() {
                     </div>
                     <p className="text-slate-300 text-sm leading-relaxed font-medium">
                       {project.id === 'hawk'
-                        ? "99.5% accuracy achievement with 60% cost reduction, processing 1000+ daily transactions while providing complete transparency and audit trails."
+                        ? "99.5% accuracy achievement with 60% cost reduction, processing 10,000 transactions per second while providing complete transparency and audit trails."
                         : "96% processing time reduction with 100% regulatory compliance across €750M+ revenue threshold MNEs, achieving readiness 3 months ahead of FY2025 deadline with zero-downtime logic updates."
                       }
                     </p>

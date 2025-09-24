@@ -35,7 +35,7 @@ export default function AboutSection() {
             About <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Me</span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-6"></div>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             Bridging business vision and AI reality through strategic leadership 
             and technical expertise in enterprise environments
           </p>
