@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Sparkles, Award, MapPin } from "lucide-react";
+import image from '../assets/image.jpg';
 
 interface HomeSectionProps {
   setActiveSection: (section: string) => void;
@@ -22,21 +23,33 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
       <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full blur-xl animate-pulse delay-500" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-32 text-center">
-        {/* Status Badge */}
-        <div className="mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+        {/* Greeting */}
+        <div className="mb-8 animate-in fade-in slide-in-from-bottom-2 duration-1000">
+           <h3 className="text-2xl md:text-3xl font-medium text-slate-300">
+                  Hey, I'm Ruchira Rajapaksha 👋
+           </h3>
+         </div>
+
+        {/* Ghibli Photo Placeholder */}
+        <div className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
+          <div className="relative mx-auto w-64 h-[26rem] md:w-80 md:h-[28rem] lg:w-96 lg:h-[32rem]">
+            {/* Placeholder for Ghibli Photo - Replace this div with your generated image */}
+            <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl border-4 border-white/10 shadow-2xl flex items-center justify-center backdrop-blur-sm">
+              <img
+                src={image}
+                alt="Ruchira Rajapaksha"
+                className="w-full h-full object-cover rounded-3xl border-4 border-white/10 shadow-2xl"
+              />
+            </div>
+
+            {/* Optional: Decorative rings around photo */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse -z-10" />
+            <div className="absolute -inset-8 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-2xl animate-pulse delay-1000 -z-20" />
+          </div>
         </div>
 
         {/* Main Identity */}
         <div className="space-y-8 mb-12 animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-200">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-            <span className="text-white">
-              Ruchira Madhushan
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Rajapaksha
-            </span>
-          </h1>
           
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-semibold text-slate-300">
