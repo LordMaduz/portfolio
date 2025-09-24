@@ -31,17 +31,17 @@ export default function ProjectsSection() {
   const projects = [
     {
       id: "hawk",
-      title: "HAWK AI-Powered Hedge Accounting Transformation",
+      title: "HAWK: AI-Powered Hedge Accounting Platform Driving Exponential Accuracy",
       company: "DBS Bank Singapore",
       role: "Technical Lead & AI Solutions Architect",
-      timeline: "June 2024 - Present",
+      timeline: "April 2025 - Present",
       description: "Leading Singapore's largest bank through their first multi-agent financial AI system, achieving 99.5% accuracy and driving a 60% reduction in costs.",
       image: "🏦",
       gradient: "from-blue-500 to-indigo-600",
       metrics: [
         { label: "Accuracy", value: "99.5%", change: "From 60%" },
         { label: "Cost Reduction", value: "60%", change: "Operational" },
-        { label: "Daily Transactions", value: "1000+", change: "Concurrent" }
+        { label: "TPS Capacity", value: "10,000+", change: "Concurrent" }
       ],
       technologies: ["Dify", "Multi-Agent Systems", "LangChain", "Python", "AWS", "Docker", "Kubernetes", "MongoDB"],
       featured: true,
@@ -53,7 +53,7 @@ export default function ProjectsSection() {
           { metric: "Accuracy Rate", before: "60%", after: "99.5%", improvement: "+65% improvement" },
           { metric: "Operational Costs", before: "Baseline", after: "60% reduction", improvement: "Through automation" },
           { metric: "Processing Speed", before: "Manual", after: "50% faster", improvement: "Execution cycles" },
-          { metric: "Daily Transactions", before: "Limited", after: "1000+", improvement: "Concurrent processing" },
+          { metric: "Transactions per Second", before: "Limited", after: "10,000+", improvement: "Concurrent processing" },
           { metric: "System Uptime", before: "97.2%", after: "99.8%", improvement: "+2.6% improvement" },
           { metric: "User Satisfaction", before: "72%", after: "94%", improvement: "+22% increase" }
         ],
@@ -111,10 +111,10 @@ export default function ProjectsSection() {
     },
     {
       id: "globe",
-      title: "GloBE/DTT: Global Tax Compliance Platform",
-      company: "Enterprise Banking",
+      title: "GloBE: Regulatory-Compliant Tax Engine for High-Revenue MNEs",
+      company: "DBS Bank Singapore",
       role: "Lead Solutions Architect & Technical Lead",
-      timeline: "Q3 2023 - Q4 2024",
+      timeline: "June 2024 - April 2025",
       description: "Architected externalized tax calculation engine enabling 96% processing time reduction while ensuring 100% regulatory compliance across €750M+ revenue threshold MNEs",
       image: "🏛️",
       gradient: "from-emerald-500 to-teal-600",
@@ -188,19 +188,162 @@ export default function ProjectsSection() {
           { stakeholder: "External Consultants (IRAS, KPMG)", benefit: "Historical calculation preservation ensuring audit-ready compliance" }
         ]
       }
+    },
+    {
+      id: "blockchain",
+      title:
+        "Global Blockchain Payment Platform: 2.3s Transactions Across Borders",
+      company: "Msc Research Project",
+      role: "Researcher & Architect",
+      timeline: "March 2024 - March 2025",
+      description:
+        "Developed blockchain payment system achieving 96% transaction time reduction (5 days → 2.3s) while reducing costs by 70% through Layer 2 scaling and Zero-Knowledge Proof compliance.",
+      image: "⛓️",
+      gradient: "from-yellow-500 to-orange-500",
+      metrics: [
+        { label: "Transaction Time", value: "2.3s avg", change: "96% faster" },
+        { label: "Transaction Fee", value: "1.9%", change: "70% lower" },
+        { label: "TPS Capacity", value: "5000+", change: "50x scalability" },
+      ],
+      technologies: [
+        "Ethereum",
+        "Solidity",
+        "ZoKrates",
+        "React.js",
+        "Node.js",
+        "MongoDB",
+        "IPFS",
+        "ZK-Rollups",
+        "State Channels",
+      ],
+      featured: true,
+      fullDetails: {
+        overview:
+          "Architected modular blockchain system solving cross-border inefficiencies by combining Layer 2 scaling, Zero-Knowledge Proof compliance, and smart contract automation to deliver 96% faster settlements and 70% lower costs.",
+        challenge:
+          "Traditional cross-border payments through SWIFT took 2–5 days, averaged 6.3% fees, lacked transparency, and faced technical constraints like scalability, high gas fees, and compliance challenges.",
+        solution:
+          "Built modular blockchain architecture with Layer 2 scaling (ZK-Rollups, State Channels), integrated ZoKrates for ZKP-based AML/KYC, Solidity smart contracts for automation, and React.js/Node.js user interfaces.",
+        results: [
+          {
+            metric: "Transaction Time",
+            before: "2–5 days",
+            after: "2.3s avg",
+            improvement: "96% faster",
+          },
+          {
+            metric: "Transaction Cost",
+            before: "6.3% fee",
+            after: "1.9% fee",
+            improvement: "70% lower",
+          },
+          {
+            metric: "TPS Capacity",
+            before: "100 TPS",
+            after: "5000+ TPS",
+            improvement: "50x scalability",
+          },
+          {
+            metric: "Compliance Check",
+            before: "24–48h manual",
+            after: "2.1s automated",
+            improvement: "99.97% faster",
+          },
+          {
+            metric: "System Uptime",
+            before: "95%",
+            after: "99.9%",
+            improvement: "+4.9%",
+          },
+        ],
+        architecture: {
+          systemFlow: [
+            "User Registration",
+            "KYC Verification (ZKP)",
+            "Transaction Initiation",
+            "Smart Contract Validation",
+            "Layer 2 Processing",
+            "Blockchain Recording",
+            "Compliance Verification",
+            "Settlement Confirmation",
+          ],
+          agentResponsibilities: [
+            {
+              agent: "Blockchain Layer",
+              role: "Ethereum + Layer 2 scaling",
+            },
+            { agent: "Smart Contracts", role: "Solidity automated execution" },
+            {
+              agent: "Compliance Engine",
+              role: "ZoKrates ZKP-based AML/KYC",
+            },
+            { agent: "Frontend", role: "React.js web interface" },
+            { agent: "Backend", role: "Node.js/Express API layer" },
+            { agent: "Storage", role: "MongoDB + IPFS audit trails" },
+          ],
+          keyInnovations: [
+            "First to combine ZK-Rollups with ZKP compliance verification",
+            "Cross-border settlement in sub-3 seconds",
+            "Privacy-preserving compliance without exposing data",
+            "Scalable architecture handling 10,000+ TPS",
+          ],
+        },
+        challenges: [
+          {
+            challenge: "Blockchain Trilemma",
+            solution: "Balanced scalability, decentralization, and security using Layer 2 solutions",
+            icon: <Database className="w-5 h-5" />,
+          },
+          {
+            challenge: "Regulatory Complexity",
+            solution:
+              "Jurisdiction-specific compliance via ZoKrates modular verification",
+            icon: <Shield className="w-5 h-5" />,
+          },
+          {
+            challenge: "Legacy Integration",
+            solution: "Custom API bridge for interoperability with banking systems",
+            icon: <Brain className="w-5 h-5" />,
+          },
+          {
+            challenge: "Network Congestion",
+            solution:
+              "Batch processing and rollups reduced fees by 70% and improved throughput",
+            icon: <Zap className="w-5 h-5" />,
+          }
+        ],
+        stakeholderBenefits: [
+           {
+             stakeholder: "Financial Institutions",
+             benefit: "Faster and cheaper cross-border transactions with 96% time reduction and 70% lower costs",
+           },
+           {
+             stakeholder: "Regulators",
+             benefit: "Privacy-preserving AML/KYC through Zero-Knowledge Proofs ensuring compliance across 15+ jurisdictions",
+           },
+           {
+             stakeholder: "Corporate & SMEs",
+             benefit: "Real-time B2B cross-border payments with 100x scalability (10,000+ TPS)",
+           },
+           {
+             stakeholder: "Individuals (Remittance Senders)",
+             benefit: "Affordable and near-instant international remittance transfers with 70% lower fees",
+           }
+        ]
+      }
     }
   ];
 
   const ProjectModal = ({ project }: { project: typeof projects[0] }) => (
-    <DialogContent className="max-w-7xl max-h-[95vh] overflow-y-auto">
+    <DialogContent className="max-w-7xl max-h-[95vh] overflow-y-auto bg-slate-900 text-white border-slate-700">
       <DialogHeader>
         <div className="flex items-center gap-4 mb-4">
-          <div className={`w-16 h-16 bg-gradient-to-br ${project.gradient} rounded-2xl flex items-center justify-center text-3xl`}>
+          <div className={`w-16 h-16 bg-gradient-to-br ${project.gradient} rounded-2xl flex items-center justify-center text-3xl shadow-lg`}>
             {project.image}
           </div>
           <div>
-            <DialogTitle className="text-2xl font-bold text-slate-900">{project.title}</DialogTitle>
-            <div className="flex items-center gap-4 text-sm text-slate-700 mt-2">
+            <DialogTitle className="text-2xl font-bold text-white">{project.title}</DialogTitle>
+            <div className="flex items-center gap-4 text-sm text-slate-300 mt-2">
               <div className="flex items-center gap-1">
                 <Building2 className="w-4 h-4" />
                 {project.company}
@@ -219,11 +362,11 @@ export default function ProjectsSection() {
           {/* Impact Metrics */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {project.metrics.map((metric, index) => (
-              <Card key={index} className="border-l-4 border-l-emerald-500 shadow-sm">
+              <Card key={index} className="border-l-4 border-l-emerald-500 shadow-sm bg-slate-800/50 border-slate-700">
                 <CardContent className="p-4">
-                  <div className="text-2xl font-bold text-emerald-600">{metric.value}</div>
-                  <div className="text-slate-700 font-medium">{metric.label}</div>
-                  <div className="text-sm text-slate-600">{metric.change}</div>
+                  <div className="text-2xl font-bold text-emerald-400">{metric.value}</div>
+                  <div className="text-slate-200 font-medium">{metric.label}</div>
+                  <div className="text-sm text-slate-400">{metric.change}</div>
                 </CardContent>
               </Card>
             ))}
@@ -231,49 +374,49 @@ export default function ProjectsSection() {
 
           {/* Detailed Tabs */}
           <Tabs defaultValue="overview" className="w-full">
-            <TabsList className="grid w-full grid-cols-5">
-              <TabsTrigger value="overview">Overview</TabsTrigger>
-              <TabsTrigger value="architecture">Architecture</TabsTrigger>
-              <TabsTrigger value="impact">Business Impact</TabsTrigger>
-              <TabsTrigger value="challenges">Challenges</TabsTrigger>
-              <TabsTrigger value="technology">Tech Stack</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-5 bg-slate-800 border-slate-700">
+              <TabsTrigger value="overview" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-slate-300">Overview</TabsTrigger>
+              <TabsTrigger value="architecture" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-slate-300">Architecture</TabsTrigger>
+              <TabsTrigger value="impact" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-slate-300">Business Impact</TabsTrigger>
+              <TabsTrigger value="challenges" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-slate-300">Challenges</TabsTrigger>
+              <TabsTrigger value="technology" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-slate-300">Tech Stack</TabsTrigger>
             </TabsList>
 
             <TabsContent value="overview" className="mt-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card className="border-l-4 border-l-blue-500">
+                <Card className="border-l-4 border-l-blue-500 bg-slate-800/50 border-slate-700">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-2 mb-3">
-                      <Brain className="w-5 h-5 text-blue-600" />
-                      <h4 className="font-semibold text-blue-600">The Challenge</h4>
+                      <Brain className="w-5 h-5 text-blue-400" />
+                      <h4 className="font-semibold text-blue-400">The Challenge</h4>
                     </div>
-                    <p className="text-slate-800 text-sm leading-relaxed font-medium">
+                    <p className="text-slate-300 text-sm leading-relaxed font-medium">
                       {project.fullDetails.challenge}
                     </p>
                   </CardContent>
                 </Card>
 
-                <Card className="border-l-4 border-l-emerald-500">
+                <Card className="border-l-4 border-l-emerald-500 bg-slate-800/50 border-slate-700">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-2 mb-3">
-                      <Zap className="w-5 h-5 text-emerald-600" />
-                      <h4 className="font-semibold text-emerald-600">The Solution</h4>
+                      <Zap className="w-5 h-5 text-emerald-400" />
+                      <h4 className="font-semibold text-emerald-400">The Solution</h4>
                     </div>
-                    <p className="text-slate-800 text-sm leading-relaxed font-medium">
+                    <p className="text-slate-300 text-sm leading-relaxed font-medium">
                       {project.fullDetails.solution}
                     </p>
                   </CardContent>
                 </Card>
 
-                <Card className="border-l-4 border-l-purple-500">
+                <Card className="border-l-4 border-l-purple-500 bg-slate-800/50 border-slate-700">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-2 mb-3">
-                      <Target className="w-5 h-5 text-purple-600" />
-                      <h4 className="font-semibold text-purple-600">The Impact</h4>
+                      <Target className="w-5 h-5 text-purple-400" />
+                      <h4 className="font-semibold text-purple-400">The Impact</h4>
                     </div>
-                    <p className="text-slate-800 text-sm leading-relaxed font-medium">
-                      {project.id === 'hawk' 
-                        ? "99.5% accuracy achievement with 60% cost reduction, processing 1000+ daily transactions while providing complete transparency and audit trails."
+                    <p className="text-slate-300 text-sm leading-relaxed font-medium">
+                      {project.id === 'hawk'
+                        ? "99.5% accuracy achievement with 60% cost reduction, processing 10,000 transactions per second while providing complete transparency and audit trails."
                         : "96% processing time reduction with 100% regulatory compliance across €750M+ revenue threshold MNEs, achieving readiness 3 months ahead of FY2025 deadline with zero-downtime logic updates."
                       }
                     </p>
@@ -283,49 +426,49 @@ export default function ProjectsSection() {
             </TabsContent>
 
             <TabsContent value="architecture" className="mt-6">
-              <Card className="shadow-sm">
+              <Card className="shadow-sm bg-slate-800/50 border-slate-700">
                 <CardContent className="p-8">
-                  <h4 className="text-xl font-bold text-slate-900 mb-6">
+                  <h4 className="text-xl font-bold text-white mb-6">
                     {project.id === 'hawk' ? 'Multi-Agent AI Architecture' : 'Externalized Tax Calculation Architecture'}
                   </h4>
-                  
-                  <div className="bg-slate-50 p-8 rounded-lg mb-8 border">
-                    <h5 className="text-lg font-bold text-slate-900 mb-6">System Flow</h5>
+
+                  <div className="bg-slate-700/50 p-8 rounded-lg mb-8 border border-slate-600">
+                    <h5 className="text-lg font-bold text-white mb-6">System Flow</h5>
                     <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
                       {project.fullDetails.architecture.systemFlow.map((step, index) => (
                         <div key={index} className="flex items-center">
                           <div className={`px-4 py-3 rounded-lg font-semibold text-slate-900 border-2 ${
-                            index === 0 ? 'bg-blue-100 border-blue-300' :
-                            index === 1 ? 'bg-green-100 border-green-300' :
-                            index === 2 ? 'bg-purple-100 border-purple-300' :
-                            index === 3 ? 'bg-orange-100 border-orange-300' : 'bg-red-100 border-red-300'
+                            index === 0 ? 'bg-blue-200 border-blue-400' :
+                            index === 1 ? 'bg-green-200 border-green-400' :
+                            index === 2 ? 'bg-purple-200 border-purple-400' :
+                            index === 3 ? 'bg-orange-200 border-orange-400' : 'bg-red-200 border-red-400'
                           }`}>
                             {step}
                           </div>
                           {index < project.fullDetails.architecture.systemFlow.length - 1 && (
-                            <ArrowRight className="w-5 h-5 mx-3 text-slate-700" />
+                            <ArrowRight className="w-5 h-5 mx-3 text-slate-300" />
                           )}
                         </div>
                       ))}
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                      <h5 className="text-lg font-bold text-slate-900 mb-4">
+                      <h5 className="text-lg font-bold text-white mb-4">
                         {project.id === 'hawk' ? 'Agent Responsibilities' : 'Component Responsibilities'}
                       </h5>
-                      <ul className="space-y-3 text-slate-800">
+                      <ul className="space-y-3 text-slate-300">
                         {project.fullDetails.architecture.agentResponsibilities.map((item, index) => (
                           <li key={index} className="text-sm leading-relaxed">
-                            • <strong className="text-slate-900">{item.agent}:</strong> {item.role}
+                            • <strong className="text-white">{item.agent}:</strong> {item.role}
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <h5 className="text-lg font-bold text-slate-900 mb-4">Key Innovations</h5>
-                      <ul className="space-y-3 text-slate-800">
+                      <h5 className="text-lg font-bold text-white mb-4">Key Innovations</h5>
+                      <ul className="space-y-3 text-slate-300">
                         {project.fullDetails.architecture.keyInnovations.map((innovation, index) => (
                           <li key={index} className="text-sm leading-relaxed">• {innovation}</li>
                         ))}
@@ -339,30 +482,30 @@ export default function ProjectsSection() {
             <TabsContent value="impact" className="mt-6">
               <div className="space-y-8">
                 {/* Measurable Impact Dashboard */}
-                <Card className="shadow-sm">
+                <Card className="shadow-sm bg-slate-800/50 border-slate-700">
                   <CardContent className="p-8">
                     <div className="flex items-center gap-2 mb-6">
-                      <TrendingUp className="w-6 h-6 text-emerald-500" />
-                      <h4 className="text-xl font-bold text-slate-900">Measurable Impact Dashboard</h4>
+                      <TrendingUp className="w-6 h-6 text-emerald-400" />
+                      <h4 className="text-xl font-bold text-white">Measurable Impact Dashboard</h4>
                     </div>
                     <div className="overflow-x-auto">
-                      <table className="w-full border-collapse bg-white rounded-lg shadow-sm border border-slate-200">
+                      <table className="w-full border-collapse bg-slate-700/50 rounded-lg shadow-sm border border-slate-600">
                         <thead>
-                          <tr className="bg-slate-100">
-                            <th className="text-left p-4 font-bold text-slate-900 border-b-2 border-slate-300">Metric</th>
-                            <th className="text-left p-4 font-bold text-slate-900 border-b-2 border-slate-300">Before</th>
-                            <th className="text-left p-4 font-bold text-slate-900 border-b-2 border-slate-300">After</th>
-                            <th className="text-left p-4 font-bold text-slate-900 border-b-2 border-slate-300">Improvement</th>
+                          <tr className="bg-slate-600">
+                            <th className="text-left p-4 font-bold text-white border-b-2 border-slate-500">Metric</th>
+                            <th className="text-left p-4 font-bold text-white border-b-2 border-slate-500">Before</th>
+                            <th className="text-left p-4 font-bold text-white border-b-2 border-slate-500">After</th>
+                            <th className="text-left p-4 font-bold text-white border-b-2 border-slate-500">Improvement</th>
                           </tr>
                         </thead>
                         <tbody>
                           {project.fullDetails.results.map((result, index) => (
-                            <tr key={index} className="border-b border-slate-200 hover:bg-slate-50">
-                              <td className="p-4 font-semibold text-slate-900 text-sm">{result.metric}</td>
-                              <td className="p-4 text-red-600 font-medium text-sm">{result.before}</td>
-                              <td className="p-4 text-green-600 font-bold text-sm">{result.after}</td>
+                            <tr key={index} className="border-b border-slate-600 hover:bg-slate-700/50">
+                              <td className="p-4 font-semibold text-white text-sm">{result.metric}</td>
+                              <td className="p-4 text-red-400 font-medium text-sm">{result.before}</td>
+                              <td className="p-4 text-green-400 font-bold text-sm">{result.after}</td>
                               <td className="p-4">
-                                <Badge className="bg-emerald-100 text-black border-emerald-300 font-semibold">
+                                <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-400/30 font-semibold">
                                   {result.improvement}
                                 </Badge>
                               </td>
@@ -375,14 +518,14 @@ export default function ProjectsSection() {
                 </Card>
 
                 {/* Stakeholder Benefits */}
-                <Card className="shadow-sm">
+                <Card className="shadow-sm bg-slate-800/50 border-slate-700">
                   <CardContent className="p-8">
-                    <h4 className="text-xl font-bold text-slate-900 mb-6">Stakeholder Benefits</h4>
+                    <h4 className="text-xl font-bold text-white mb-6">Stakeholder Benefits</h4>
                     <div className="space-y-6">
                       {project.fullDetails.stakeholderBenefits.map((benefit, index) => (
                         <div key={index} className="border-l-4 border-l-blue-500 pl-6">
-                          <h5 className="font-bold text-blue-700 text-base">{benefit.stakeholder}</h5>
-                          <p className="text-slate-800 font-medium text-sm leading-relaxed mt-2">{benefit.benefit}</p>
+                          <h5 className="font-bold text-blue-400 text-base">{benefit.stakeholder}</h5>
+                          <p className="text-slate-300 font-medium text-sm leading-relaxed mt-2">{benefit.benefit}</p>
                         </div>
                       ))}
                     </div>
@@ -394,13 +537,13 @@ export default function ProjectsSection() {
             <TabsContent value="challenges" className="mt-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {project.fullDetails.challenges.map((item, index) => (
-                  <Card key={index} className="shadow-sm">
+                  <Card key={index} className="shadow-sm bg-slate-800/50 border-slate-700">
                     <CardContent className="p-6">
-                      <div className="flex items-center gap-2 mb-3">
+                      <div className="flex items-center gap-2 mb-3 text-slate-300">
                         {item.icon}
-                        <h4 className="font-semibold text-slate-900">{item.challenge}</h4>
+                        <h4 className="font-semibold text-white">{item.challenge}</h4>
                       </div>
-                      <p className="text-slate-800 text-sm font-medium leading-relaxed">{item.solution}</p>
+                      <p className="text-slate-300 text-sm font-medium leading-relaxed">{item.solution}</p>
                     </CardContent>
                   </Card>
                 ))}
@@ -408,32 +551,32 @@ export default function ProjectsSection() {
             </TabsContent>
 
             <TabsContent value="technology" className="mt-6">
-              <Card className="shadow-sm">
+              <Card className="shadow-sm bg-slate-800/50 border-slate-700">
                 <CardContent className="p-8">
-                  <h4 className="text-xl font-bold text-slate-900 mb-6">Technology Stack & Integration</h4>
+                  <h4 className="text-xl font-bold text-white mb-6">Technology Stack & Integration</h4>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                     {project.technologies.map((tech, index) => (
-                      <div key={index} className="text-center p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors border">
-                        <div className="font-semibold text-slate-900 text-sm">{tech}</div>
+                      <div key={index} className="text-center p-4 bg-slate-700/50 rounded-lg hover:bg-slate-600/50 transition-colors border border-slate-600">
+                        <div className="font-semibold text-slate-200 text-sm">{tech}</div>
                       </div>
                     ))}
                   </div>
-                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                    <h5 className="font-bold mb-4 text-blue-900">Integration Systems</h5>
+                  <div className="bg-blue-500/20 p-6 rounded-lg border border-blue-400/30">
+                    <h5 className="font-bold mb-4 text-blue-300">Integration Systems</h5>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                       {project.id === 'hawk' ? (
                         <>
-                          <div className="bg-white p-3 rounded text-center font-semibold text-slate-900 border">Murex</div>
-                          <div className="bg-white p-3 rounded text-center font-semibold text-slate-900 border">OFP</div>
-                          <div className="bg-white p-3 rounded text-center font-semibold text-slate-900 border">FRDV</div>
-                          <div className="bg-white p-3 rounded text-center font-semibold text-slate-900 border">GLGEN</div>
+                          <div className="bg-slate-700 p-3 rounded text-center font-semibold text-slate-200 border border-slate-600">Murex</div>
+                          <div className="bg-slate-700 p-3 rounded text-center font-semibold text-slate-200 border border-slate-600">OFP</div>
+                          <div className="bg-slate-700 p-3 rounded text-center font-semibold text-slate-200 border border-slate-600">FRDV</div>
+                          <div className="bg-slate-700 p-3 rounded text-center font-semibold text-slate-200 border border-slate-600">GLGEN</div>
                         </>
                       ) : (
                         <>
-                          <div className="bg-white p-3 rounded text-center font-semibold text-slate-900 border">HFM</div>
-                          <div className="bg-white p-3 rounded text-center font-semibold text-slate-900 border">CbCR</div>
-                          <div className="bg-white p-3 rounded text-center font-semibold text-slate-900 border">UAMS</div>
-                          <div className="bg-white p-3 rounded text-center font-semibold text-slate-900 border">IRAS Portal</div>
+                          <div className="bg-slate-700 p-3 rounded text-center font-semibold text-slate-200 border border-slate-600">HFM</div>
+                          <div className="bg-slate-700 p-3 rounded text-center font-semibold text-slate-200 border border-slate-600">CbCR</div>
+                          <div className="bg-slate-700 p-3 rounded text-center font-semibold text-slate-200 border border-slate-600">UAMS</div>
+                          <div className="bg-slate-700 p-3 rounded text-center font-semibold text-slate-200 border border-slate-600">IRAS Portal</div>
                         </>
                       )}
                     </div>
@@ -448,22 +591,34 @@ export default function ProjectsSection() {
   );
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
+    <section className="min-h-screen py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(99,102,241,0.05),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(168,85,247,0.05),transparent_50%)]" />
-      
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(147,51,234,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_40%,rgba(99,102,241,0.05),transparent_50%)]" />
+
+      {/* Floating Elements */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse" />
+      <div className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-xl animate-pulse delay-1000" />
+      <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-full blur-xl animate-pulse delay-500" />
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <Badge className="mb-6 px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 border-0">
-            Portfolio Showcase
-          </Badge>
-          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent mb-6">
-            Featured Projects
-          </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Transforming enterprise operations through intelligent systems that deliver 
+          <div className="relative inline-block mb-6">
+            <Badge className="mb-6 px-4 py-2 bg-blue-500/20 text-blue-300 border-blue-500/30">
+                Portfolio Showcase
+            </Badge>
+            <h2 className="text-4xl md:text-6xl font-bold mb-4">
+              <span className="text-white">Featured</span>{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Projects
+              </span>
+            </h2>
+            <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full"></div>
+          </div>
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            Transforming enterprise operations through intelligent systems that deliver
             quantifiable business results and measurable impact
           </p>
         </div>
@@ -471,14 +626,14 @@ export default function ProjectsSection() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card 
-              key={project.id} 
-              className="group cursor-pointer hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm overflow-hidden"
+            <Card
+              key={project.id}
+              className="group cursor-pointer hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 border border-slate-700/50 bg-slate-800/50 backdrop-blur-sm overflow-hidden hover:border-blue-500/30"
               onClick={() => project.featured ? setSelectedProject(project.id) : null}
             >
               <CardContent className="p-8">
                 <div className="flex items-start justify-between mb-6">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${project.gradient} rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-16 h-16 bg-gradient-to-br ${project.gradient} rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                     {project.image}
                   </div>
                   {project.featured && (
@@ -487,38 +642,38 @@ export default function ProjectsSection() {
                     </Badge>
                   )}
                 </div>
-                
-                <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">
+
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h3>
-                
+
                 <div className="space-y-2 mb-4">
-                  <div className="flex items-center gap-2 text-slate-600">
+                  <div className="flex items-center gap-2 text-slate-400">
                     <Building2 className="w-4 h-4" />
                     <span className="text-sm">{project.company}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-slate-600">
+                  <div className="flex items-center gap-2 text-slate-400">
                     <Calendar className="w-4 h-4" />
                     <span className="text-sm">{project.timeline}</span>
                   </div>
                 </div>
-                
-                <p className="text-slate-600 mb-6 leading-relaxed">
+
+                <p className="text-slate-300 mb-6 leading-relaxed">
                   {project.description}
                 </p>
 
                 {project.featured && project.metrics.length > 0 && (
                   <div className="grid grid-cols-3 gap-4 mb-6">
                     {project.metrics.map((metric, metricIndex) => (
-                      <div key={metricIndex} className="text-center p-3 bg-slate-50 rounded-lg">
-                        <div className="text-2xl font-bold text-indigo-600">{metric.value}</div>
-                        <div className="text-xs text-slate-600">{metric.label}</div>
+                      <div key={metricIndex} className="text-center p-3 bg-slate-700/50 rounded-lg border border-slate-600">
+                        <div className="text-2xl font-bold text-blue-400">{metric.value}</div>
+                        <div className="text-xs text-slate-400">{metric.label}</div>
                       </div>
                     ))}
                   </div>
                 )}
 
-                <Button className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white group-hover:shadow-lg transition-all">
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white group-hover:shadow-lg transition-all">
                   View Project Details
                   <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Sparkles, Award, MapPin } from "lucide-react";
+import image from '../assets/image.jpg';
 
 interface HomeSectionProps {
   setActiveSection: (section: string) => void;
@@ -8,7 +9,8 @@ interface HomeSectionProps {
 
 export default function HomeSection({ setActiveSection }: HomeSectionProps) {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.1),transparent_50%)]" />
@@ -21,22 +23,35 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
       <div className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-xl animate-pulse delay-1000" />
       <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full blur-xl animate-pulse delay-500" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-32 text-center">
-        {/* Status Badge */}
-        <div className="mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+      {/* Main Content */}
+      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-8 md:pt-24 pb-8 md:pb-12 text-center space-y-8">
+
+        {/* Greeting */}
+        <div className="animate-in fade-in slide-in-from-bottom-2 duration-1000">
+           <h3 className="text-4xl md:text-5xl font-medium text-slate-300">
+                  Hey, I'm Ruchira Rajapaksha 👋
+           </h3>
+         </div>
+
+        {/* Ghibli Photo */}
+        <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
+          <div className="relative mx-auto w-56 h-[22rem] md:w-72 md:h-[26rem] lg:w-80 lg:h-[30rem]">
+            <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl border-4 border-white/10 shadow-2xl flex items-center justify-center backdrop-blur-sm">
+              <img
+                src={image}
+                alt="Ruchira Rajapaksha"
+                className="w-full h-full object-cover rounded-3xl border-4 border-white/10 shadow-2xl"
+              />
+            </div>
+
+            {/* Optional: Decorative rings around photo */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse -z-10" />
+            <div className="absolute -inset-8 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-2xl animate-pulse delay-1000 -z-20" />
+          </div>
         </div>
 
         {/* Main Identity */}
         <div className="space-y-8 mb-12 animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-200">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-            <span className="text-white">
-              Ruchira Madhushan
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Rajapaksha
-            </span>
-          </h1>
           
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-semibold text-slate-300">
@@ -90,13 +105,6 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
               <div className="font-semibold text-white">Singapore</div>
               <div className="text-sm text-slate-400">Based</div>
             </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-slate-500 rounded-full flex justify-center opacity-60">
-            <div className="w-1 h-3 bg-slate-500 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </div>

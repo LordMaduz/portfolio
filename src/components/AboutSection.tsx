@@ -35,7 +35,7 @@ export default function AboutSection() {
             About <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Me</span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-6"></div>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             Bridging business vision and AI reality through strategic leadership 
             and technical expertise in enterprise environments
           </p>
@@ -180,7 +180,7 @@ export default function AboutSection() {
         </div>
 
         {/* My Approach - Visual Design */}
-        <Card className="bg-gradient-to-br from-slate-800/80 to-slate-700/80 backdrop-blur-xl border-slate-700/50 relative overflow-hidden">
+        <Card className="bg-gradient-to-br from-slate-800/90 to-slate-700/80 backdrop-blur-xl border-slate-700/50 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.1),transparent_50%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(147,51,234,0.1),transparent_50%)]" />
           
@@ -198,7 +198,7 @@ export default function AboutSection() {
                     <Target className="w-8 h-8 text-blue-400" />
                   </div>
                   <h4 className="text-xl font-semibold mb-2 text-blue-300">Strategic Vision</h4>
-                  <p className="text-slate-400 text-sm">Aligning AI capabilities with business objectives</p>
+                  <p className="text-slate-200 text-sm">Aligning AI capabilities with business objectives</p>
                 </div>
                 
                 <div className="text-center">
@@ -206,7 +206,7 @@ export default function AboutSection() {
                     <Users className="w-8 h-8 text-purple-400" />
                   </div>
                   <h4 className="text-xl font-semibold mb-2 text-purple-300">Human-Centric</h4>
-                  <p className="text-slate-400 text-sm">Building systems that augment human capabilities</p>
+                  <p className="text-slate-200 text-sm">Building systems that augment human capabilities</p>
                 </div>
                 
                 <div className="text-center">
@@ -214,7 +214,7 @@ export default function AboutSection() {
                     <Zap className="w-8 h-8 text-emerald-400" />
                   </div>
                   <h4 className="text-xl font-semibold mb-2 text-emerald-300">Measurable Impact</h4>
-                  <p className="text-slate-400 text-sm">Delivering quantifiable business value</p>
+                  <p className="text-slate-200 text-sm">Delivering quantifiable business value</p>
                 </div>
               </div>
               

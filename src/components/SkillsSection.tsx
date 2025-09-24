@@ -71,22 +71,34 @@ export default function SkillsSection() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(99,102,241,0.05),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(168,85,247,0.05),transparent_50%)]" />
-      
+    <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+      {/* Background Elements - Updated for dark theme */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(147,51,234,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_40%,rgba(99,102,241,0.05),transparent_50%)]" />
+
+      {/* Floating Elements */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse" />
+      <div className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-xl animate-pulse delay-1000" />
+      <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full blur-xl animate-pulse delay-500" />
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <Badge className="mb-6 px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 border-0">
-            Technical Expertise
-          </Badge>
-          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent mb-6">
-            Skills & Technologies
-          </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive technical stack spanning AI frameworks, cloud architecture, 
+          <div className="relative inline-block mb-6">
+            <Badge className="mb-6 px-4 py-2 bg-blue-500/20 text-blue-300 border-blue-500/30">
+               Technical Expertise
+            </Badge>
+            <h2 className="text-4xl md:text-6xl font-bold mb-4">
+              <span className="text-white">Skills &</span>{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Technologies
+              </span>
+            </h2>
+            <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full"></div>
+          </div>
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            Comprehensive technical stack spanning AI frameworks, cloud architecture,
             and enterprise integration systems for scalable transformation
           </p>
         </div>
@@ -94,20 +106,20 @@ export default function SkillsSection() {
         {/* Technology Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {techCategories.map((category, index) => (
-            <Card key={index} className="group hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm overflow-hidden">
+            <Card key={index} className="group hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 border border-slate-700/50 bg-slate-800/50 backdrop-blur-sm overflow-hidden hover:border-blue-500/30">
               <CardContent className="p-8">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`p-4 rounded-2xl bg-gradient-to-br ${category.gradient} text-white group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`p-4 rounded-2xl bg-gradient-to-br ${category.gradient} text-white group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                     {category.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900">{category.title}</h3>
+                  <h3 className="text-2xl font-bold text-white">{category.title}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {category.technologies.map((tech, techIndex) => (
-                    <Badge 
-                      key={techIndex} 
-                      variant="secondary" 
-                      className="bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors text-sm py-1 px-3 rounded-lg font-medium"
+                    <Badge
+                      key={techIndex}
+                      variant="secondary"
+                      className="bg-slate-700/60 text-slate-200 hover:bg-slate-600/60 border border-slate-600/50 hover:border-slate-500/50 transition-all duration-200 text-sm py-1 px-3 rounded-lg font-medium"
                     >
                       {tech}
                     </Badge>
@@ -119,28 +131,28 @@ export default function SkillsSection() {
         </div>
 
         {/* Experience Highlight */}
-        <Card className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white border-0 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(255,255,255,0.1),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.1),transparent_50%)]" />
-          
+        <Card className="bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 text-white border-0 relative overflow-hidden shadow-2xl shadow-slate-500/20">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(99,102,241,0.3),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(168,85,247,0.3),transparent_50%)]" />
+
           <CardContent className="p-12 relative z-10">
             <div className="text-center">
               <h3 className="text-3xl md:text-4xl font-bold mb-8">Technical Leadership Experience</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="text-center">
                   <div className="text-4xl font-bold text-white mb-2">1 Year</div>
-                  <div className="text-lg text-indigo-100">AI Transformation Leadership</div>
-                  <div className="text-sm text-indigo-200 mt-2">Specialized AI systems and multi-agent frameworks</div>
+                  <div className="text-lg text-slate-300">AI Transformation Leadership</div>
+                  <div className="text-sm text-blue-300 mt-2">Specialized AI systems and multi-agent frameworks</div>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-bold text-white mb-2">5+</div>
-                  <div className="text-lg text-purple-100">Cross-Department Teams Led</div>
-                  <div className="text-sm text-purple-200 mt-2">Complex AI implementation projects</div>
+                  <div className="text-lg text-slate-300">Cross-Department Teams Led</div>
+                  <div className="text-sm text-purple-300 mt-2">Complex AI implementation projects</div>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-bold text-white mb-2">First</div>
-                  <div className="text-lg text-pink-100">Enterprise MetaGPT Implementation</div>
-                  <div className="text-sm text-pink-200 mt-2">Banking sector innovation pioneer</div>
+                  <div className="text-lg text-slate-300">Enterprise MetaGPT Implementation</div>
+                  <div className="text-sm text-emerald-300 mt-2">Banking sector innovation pioneer</div>
                 </div>
               </div>
             </div>
