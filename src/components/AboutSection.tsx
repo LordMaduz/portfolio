@@ -41,42 +41,6 @@ export default function AboutSection() {
           </p>
         </div>
 
-        {/* Experience Overview */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
-          <Card className="group hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 border-0 bg-slate-800/50 backdrop-blur-sm">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Building2 className="w-8 h-8 text-blue-400" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-3">6+ Years</h3>
-              <p className="text-slate-400 mb-4">Enterprise Experience</p>
-              <Badge variant="secondary" className="bg-blue-500/20 text-blue-300 border-blue-500/30">Total Professional Experience</Badge>
-            </CardContent>
-          </Card>
-
-          <Card className="group hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 border-0 bg-slate-800/50 backdrop-blur-sm">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Brain className="w-8 h-8 text-emerald-400" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-3">1 Year</h3>
-              <p className="text-slate-400 mb-4">AI Specialization</p>
-              <Badge variant="secondary" className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30">Focused AI Leadership</Badge>
-            </CardContent>
-          </Card>
-
-          <Card className="group hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 border-0 bg-slate-800/50 backdrop-blur-sm">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Globe className="w-8 h-8 text-purple-400" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Singapore</h3>
-              <p className="text-slate-400 mb-4">Global Perspective</p>
-              <Badge variant="secondary" className="bg-purple-500/20 text-purple-300 border-purple-500/30">International Experience</Badge>
-            </CardContent>
-          </Card>
-        </div>
-
         {/* Core Expertise */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           <div className="space-y-8">
@@ -156,7 +120,7 @@ export default function AboutSection() {
         <div className="mb-20">
           <h3 className="text-3xl font-bold text-white mb-8 text-center">AI-Enhanced Innovation</h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
             <div className="flex gap-4 group">
               <div className="w-14 h-14 bg-indigo-500/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                 <Briefcase className="w-7 h-7 text-indigo-400" />
