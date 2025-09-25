@@ -10,7 +10,7 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-All shadcn/ui components have been downloaded under `@/components/ui`.
+All shadcn/ui components have been downloaded under `@/components/ui` directry.
 
 ## File Structure
 
