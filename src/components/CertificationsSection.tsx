@@ -36,8 +36,8 @@ export default function CertificationsSection() {
           </p>
         </div>
 
-        {/* AWS Certification - Featured */}
-        <div className="mb-12">
+        {/* Certifications Grid - 2 per row */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
           <Card className="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 text-white border border-slate-600/50 max-w-4xl mx-auto shadow-2xl shadow-slate-500/20 hover:shadow-slate-500/30 transition-all duration-300">
             <CardContent className="p-8">
               <div className="flex items-center justify-between flex-wrap gap-4">
@@ -63,8 +63,8 @@ export default function CertificationsSection() {
               </div>
              <div className="mt-6 pt-6 border-t border-slate-500/30 flex flex-col items-start">
                 <p className="text-slate-300 leading-relaxed">
-                  Certified in designing distributed systems on AWS, including scalable, 
-                  highly available, and fault-tolerant systems. Expertise in AWS services 
+                  Certified in designing distributed systems on AWS, including scalable,
+                  highly available, and fault-tolerant systems. Expertise in AWS services
                   for compute, storage, database, and networking.
                 </p>
                 {/* Add vertical spacing */}
@@ -75,9 +75,8 @@ export default function CertificationsSection() {
               </div>
             </CardContent>
           </Card>
-        </div>
 
-        <div className="mb-12">
+
           {/* New Certification - Hugging Face AI Agents */}
             <Card className="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 text-white border border-slate-600/50 max-w-4xl mx-auto shadow-2xl shadow-slate-500/20 hover:shadow-slate-500/30 transition-all duration-300">
               <CardContent className="p-8">
@@ -87,7 +86,7 @@ export default function CertificationsSection() {
                       <Award className="w-8 h-8 text-purple-400" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-white">AI Agents Fundamentals</h3>
+                      <h3 className="text-2xl font-bold text-white">AI Agents Fundamentals Hugging Face</h3>
                       <p className="text-slate-300">Hugging Face</p>
                     </div>
                   </div>
