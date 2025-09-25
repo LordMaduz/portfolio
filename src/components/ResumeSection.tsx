@@ -60,9 +60,9 @@ export default function ResumeSection() {
 
               {/* Main Title */}
               <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
-                Professional{" "}
+                Download{" "}
                 <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                  Profile
+                  Resume
                 </span>
               </h2>
 
@@ -90,13 +90,13 @@ export default function ResumeSection() {
                       <Globe className="w-7 h-7 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-white">Interactive Resume</h3>
+                      <h3 className="text-2xl font-bold text-white">Interactive Portfolio</h3>
                       <p className="text-blue-400 text-sm">Digital Experience</p>
                     </div>
                   </div>
 
                   <p className="text-slate-300 mb-8 leading-relaxed text-lg">
-                    Immersive digital experience featuring interactive project showcases, dynamic timelines,
+                    Immersive digital experience featuring interactive project case studies,
                     and live demonstrations of technical capabilities.
                   </p>
 
@@ -107,22 +107,22 @@ export default function ResumeSection() {
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-purple-400 rounded-full" />
-                      <span className="text-slate-400 text-sm">Dynamic Timeline</span>
+                      <span className="text-slate-400 text-sm">Technical Deep-Dives</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-green-400 rounded-full" />
-                      <span className="text-slate-400 text-sm">Live Demos</span>
+                      <span className="text-slate-400 text-sm">Architecture Diagrams</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-cyan-400 rounded-full" />
-                      <span className="text-slate-400 text-sm">Responsive Design</span>
+                      <span className="text-slate-400 text-sm">Impact Metrics</span>
                     </div>
                   </div>
 
                   <button
                     onClick={handleInteractiveResume}
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 rounded-xl shadow-lg shadow-blue-500/25 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-blue-500/30 text-lg flex items-center justify-center gap-3"
-                  >
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 sm:py-4 rounded-xl shadow-lg shadow-emerald-500/25 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base flex items-center justify-center gap-2 sm:gap-3 min-h-[48px] touch-manipulation"
+                    >
                     <Eye className="w-5 h-5" />
                     Explore Interactive Resume
                     <ExternalLink className="w-4 h-4" />
@@ -146,8 +146,7 @@ export default function ResumeSection() {
                   </div>
 
                   <p className="text-slate-300 mb-8 leading-relaxed text-lg">
-                    Professionally formatted document optimized for applicant tracking systems,
-                    recruiters, and traditional hiring processes.
+                   Comprehensive resume optimized for applicant tracking systems, featuring quantified achievements and technical competencies.
                   </p>
 
                   <div className="grid grid-cols-2 gap-4 mb-8">
@@ -161,24 +160,24 @@ export default function ResumeSection() {
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-blue-400 rounded-full" />
-                      <span className="text-slate-400 text-sm">Easy Sharing</span>
+                      <span className="text-slate-400 text-sm">Quantified Results</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-purple-400 rounded-full" />
-                      <span className="text-slate-400 text-sm">Standard Format</span>
+                      <span className="text-slate-400 text-sm">Professional Format</span>
                     </div>
                   </div>
 
                   <button
                     onClick={handlePDFDownload}
                     disabled={isDownloading}
-                    className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-4 rounded-xl shadow-lg shadow-emerald-500/25 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-emerald-500/30 disabled:opacity-50 disabled:cursor-not-allowed text-lg flex items-center justify-center gap-3"
-                  >
+                    className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-3 sm:py-4 rounded-xl shadow-lg shadow-emerald-500/25 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-emerald-500/30 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base flex items-center justify-center gap-2 sm:gap-3 min-h-[48px] touch-manipulation"
+                    >
                     <Download className={`w-5 h-5 ${isDownloading ? 'animate-bounce' : ''}`} />
                     {isDownloading ? 'Downloading Resume...' : 'Download PDF Resume'}
                   </button>
 
-                  <div className="flex items-center justify-center gap-2 mt-4 text-sm text-slate-500">
+                  <div className="flex items-center justify-center gap-2 mt-4 text-sm text-slate-400">
                     <Calendar className="w-4 h-4" />
                     <span>Last updated: September 2025</span>
                   </div>
@@ -189,7 +188,7 @@ export default function ResumeSection() {
             {/* Professional Highlights */}
             <div className="bg-slate-900/40 backdrop-blur-sm p-10 rounded-3xl border border-slate-700/50">
               <div className="text-center mb-12">
-                <h3 className="text-3xl font-bold text-white mb-4">Professional Highlights</h3>
+                <h3 className="text-3xl font-bold text-white mb-4">Career Highlights</h3>
                 <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
               </div>
 
@@ -197,23 +196,23 @@ export default function ResumeSection() {
                 <div className="text-center group">
                   <div className="relative mb-4">
                     <div className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                      6+
+                      96%
                     </div>
-                    <div className="absolute -top-2 -right-2 w-3 h-3 bg-blue-400 rounded-full animate-pulse" />
+
                   </div>
-                  <div className="text-slate-300 font-medium text-lg">Years Experience</div>
-                  <div className="text-slate-500 text-sm mt-1">Software Development</div>
+                  <div className="text-slate-300 font-medium text-lg">Transaction Speed Improvement</div>
+                  <div className="text-slate-400 text-sm mt-1">Blockchain Payment Systems</div>
                 </div>
 
                 <div className="text-center group">
                   <div className="relative mb-4">
                     <div className="text-5xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                      20+
+                      70+
                     </div>
-                    <div className="absolute -top-2 -right-2 w-3 h-3 bg-emerald-400 rounded-full animate-pulse delay-300" />
+
                   </div>
-                  <div className="text-slate-300 font-medium text-lg">Projects Delivered</div>
-                  <div className="text-slate-500 text-sm mt-1">End-to-End Solutions</div>
+                  <div className="text-slate-300 font-medium text-lg">Cost Reduction Achieved</div>
+                  <div className="text-slate-400 text-sm mt-1">Enterprise Operations</div>
                 </div>
 
                 <div className="text-center group">
@@ -221,10 +220,10 @@ export default function ResumeSection() {
                     <div className="text-5xl font-bold bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
                       15+
                     </div>
-                    <div className="absolute -top-2 -right-2 w-3 h-3 bg-orange-400 rounded-full animate-pulse delay-700" />
+
                   </div>
-                  <div className="text-slate-300 font-medium text-lg">Technologies</div>
-                  <div className="text-slate-500 text-sm mt-1">Advanced Proficiency</div>
+                  <div className="text-slate-300 font-medium text-lg">Countries Served</div>
+                  <div className="text-slate-400 text-sm mt-1">Global Enterprise Solutions</div>
                 </div>
               </div>
             </div>

@@ -15,14 +15,12 @@ import {
   Target,
   Building2,
   Calendar,
-  Plus,
   ExternalLink,
   ArrowRight,
   Globe,
-  Settings,
-  FileText,
-  CheckCircle,
-  BarChart3
+  BarChart3,
+  Cpu,
+  Network
 } from "lucide-react";
 
 export default function ProjectsSection() {
@@ -31,319 +29,124 @@ export default function ProjectsSection() {
   const projects = [
     {
       id: "hawk",
-      title: "HAWK: AI-Powered Hedge Accounting Platform Driving Exponential Accuracy",
+      title: "HAWK: AI-Powered Hedge Accounting Platform",
       company: "DBS Bank Singapore",
       role: "Technical Lead & AI Solutions Architect",
-      timeline: "April 2025 - Present",
-      description: "Leading Singapore's largest bank through their first multi-agent financial AI system, achieving 99.5% accuracy and driving a 60% reduction in costs.",
-      image: "🏦",
+      timeline: "June 2024 - March 2025",
+      teamSize: "6-person cross-functional team",
+      description: "Led Singapore's largest bank through their first multi-agent financial AI system, achieving 99.5% accuracy and 60% cost reduction across hedge accounting operations.",
+      icon: <Brain className="w-8 h-8" />,
       gradient: "from-blue-500 to-indigo-600",
       metrics: [
-        { label: "Accuracy", value: "99.5%", change: "From 60%" },
+        { label: "Accuracy Improvement", value: "99.5%", change: "From 60%" },
         { label: "Cost Reduction", value: "60%", change: "Operational" },
-        { label: "TPS Capacity", value: "10,000+", change: "Concurrent" }
+        { label: "Faster Execution", value: "60%", change: "Faster cycles" }
       ],
-      technologies: ["Dify", "Multi-Agent Systems", "LangChain", "Python", "AWS", "Docker", "Kubernetes", "MongoDB"],
+      technologies: ["Dify", "Multi-Agent Systems", "MetaGPT", "Python", "AWS", "Docker", "Kubernetes"],
       featured: true,
+      impact: "First enterprise multi-agent AI implementation in Southeast Asian banking sector",
       fullDetails: {
-        overview: "Architected enterprise-grade multi-agent AI platform revolutionizing hedge accounting operations across banking sector with intelligent automation and predictive analytics capabilities.",
-        challenge: "Complex hedge accounting across Fair Value, Cash Flow, and Net Investment hedges with manual calculations prone to errors and 'black box' legacy systems experiencing 40% inefficiency rates.",
-        solution: "Industry-first Multi-Agent AI Architecture using Dify and LangChain frameworks with explainable AI providing detailed reasoning for every calculation and seamless integration with legacy banking systems.",
-        results: [
-          { metric: "Accuracy Rate", before: "60%", after: "99.5%", improvement: "+65% improvement" },
-          { metric: "Operational Costs", before: "Baseline", after: "60% reduction", improvement: "Through automation" },
-          { metric: "Processing Speed", before: "Manual", after: "50% faster", improvement: "Execution cycles" },
-          { metric: "Transactions per Second", before: "Limited", after: "10,000+", improvement: "Concurrent processing" },
-          { metric: "System Uptime", before: "97.2%", after: "99.8%", improvement: "+2.6% improvement" },
-          { metric: "User Satisfaction", before: "72%", after: "94%", improvement: "+22% increase" }
+        overview: "Architected enterprise-grade multi-agent AI platform revolutionizing hedge accounting operations with intelligent automation and explainable AI capabilities.",
+        challenge: "Manual hedge accounting processes across Fair Value, Cash Flow, and Net Investment hedges suffered from 40% error rates and 'black box' legacy systems limiting transparency and scalability.",
+        solution: "Industry-first Multi-Agent AI Architecture using Dify framework with explainable AI, providing detailed reasoning for every calculation while integrating seamlessly with legacy banking systems (Murex, OFP, FRDV).",
+        keyResults: [
+          { metric: "Accuracy Rate", improvement: "60% → 99.5% (+65%)" },
+          { metric: "Operational Costs", improvement: "60% reduction through automation" },
+          { metric: "Execution Cycles", improvement: "6,200 TPS → 10,000+ TPS (+60%)" },
+          { metric: "User Adoption", improvement: "72% → 94% (+22%) team acceptance rate" }
         ],
-        architecture: {
-          systemFlow: [
-            "User Request",
-            "Proxy Agent", 
-            "Orchestrator Agent",
-            "Specialized Agents",
-            "System Integration"
-          ],
-          agentResponsibilities: [
-            { agent: "Proxy Agent", role: "User interface and security guardrails" },
-            { agent: "Orchestrator", role: "Workflow coordination and decisions" },
-            { agent: "Allocation Agent", role: "Resource allocation optimization" },
-            { agent: "Booking Agent", role: "Transaction processing" },
-            { agent: "Posting Agent", role: "System integration and reporting" }
-          ],
-          keyInnovations: [
-            "Self-learning algorithms that improve with each execution",
-            "Explainable AI with detailed reasoning for compliance",
-            "Real-time processing of 1000+ concurrent transactions",
-            "No-code/low-code approach for team efficiency"
-          ]
-        },
-        challenges: [
-          {
-            challenge: "Stakeholder Resistance",
-            solution: "Conducted technical sessions demonstrating explainable AI capabilities",
-            icon: <Users className="w-5 h-5" />
-          },
-          {
-            challenge: "Integration Complexity", 
-            solution: "Connected AI agents with legacy banking systems (Murex, OFP)",
-            icon: <Database className="w-5 h-5" />
-          },
-          {
-            challenge: "Regulatory Concerns",
-            solution: "Built detailed audit trails and reasoning explanations for compliance",
-            icon: <Shield className="w-5 h-5" />
-          },
-          {
-            challenge: "Technical Learning Curve",
-            solution: "Focused on prompt engineering training rather than complex programming",
-            icon: <Code className="w-5 h-5" />
-          }
+        stakeholders: [
+          "Finance Teams (3 departments): 100% transparency in calculations",
+          "Compliance Teams: Automated audit trails for regulatory requirements",
+          "IT Operations: 90% reduced maintenance overhead"
         ],
-        stakeholderBenefits: [
-          { stakeholder: "Finance Teams", benefit: "100% transparency in hedge calculations with detailed explanations" },
-          { stakeholder: "Business Analysts", benefit: "Real-time optimization suggestions and automated reporting" },
-          { stakeholder: "Compliance Teams", benefit: "Detailed audit trails meeting banking regulatory requirements" },
-          { stakeholder: "Technical Teams", benefit: "Self-improving system requiring minimal maintenance" }
-        ]
+        recognition: "Featured as DBS innovation showcase for enterprise AI adoption"
       }
     },
     {
       id: "globe",
-      title: "GloBE: Regulatory-Compliant Tax Engine for High-Revenue MNEs",
+      title: "GloBE: Tax Compliance Engine for Global MNEs",
       company: "DBS Bank Singapore",
-      role: "Lead Solutions Architect & Technical Lead",
-      timeline: "June 2024 - April 2025",
-      description: "Architected externalized tax calculation engine enabling 96% processing time reduction while ensuring 100% regulatory compliance across €750M+ revenue threshold MNEs",
-      image: "🏛️",
+      role: "Lead Solutions Architect",
+      timeline: "June 2024 - June 2025",
+      teamSize: "8-person technical team + 15 stakeholders across jurisdictions",
+      description: "Architected externalized tax calculation engine achieving 96% processing time reduction while ensuring 100% OECD BEPS 2.0 compliance across 15+ jurisdictions.",
+      icon: <Globe className="w-8 h-8" />,
       gradient: "from-emerald-500 to-teal-600",
       metrics: [
-        { label: "Processing Reduction", value: "96%", change: "Time savings" },
-        { label: "Compliance Rate", value: "100%", change: "Regulatory" },
+        { label: "Processing Reduction", value: "96%", change: "Reduction" },
+        { label: "Compliance Rate", value: "100%", change: "OECD Standards" },
         { label: "Jurisdictions", value: "15+", change: "Coverage" }
       ],
-      technologies: ["MVEL", "Reactive Architecture", "Functional Programming", "HFM", "CbCR", "UAMS"],
+      technologies: ["MVEL", "Java", "Spring Boot", "HFM", "MongoDB", "Docker"],
       featured: true,
+      impact: "First externalized tax engine in Singapore banking sector, 3 months ahead of FY2025 deadline",
       fullDetails: {
-        overview: "Architected externalized tax calculation engine enabling 96% processing time reduction while ensuring 100% regulatory compliance across €750M+ revenue threshold MNEs for OECD BEPS 2.0 Pillar Two implementation.",
-        challenge: "New OECD regulations mandating 15% global minimum tax by FY2025 with complex, jurisdiction-specific formulas requiring quarterly provisioning from Q1 2025. Legacy systems inadequate for evolving regulatory requirements with need for historical recalculation capabilities for audit compliance.",
-        solution: "Designed externalized calculation engine using MVEL scripting framework with semantic versioning, reactive architecture, and custom UI for tax professional template modification enabling business logic independence from system changes.",
-        results: [
-          { metric: "Processing Time", before: "5 days per jurisdiction", after: "2 hours per jurisdiction", improvement: "96% reduction" },
-          { metric: "Accuracy Rate", before: "88% (12% error rate)", after: "99%+ (<1% error rate)", improvement: "+11% accuracy improvement" },
-          { metric: "Stakeholder Alignment", before: "6 weeks consensus time", after: "2 weeks consensus time", improvement: "67% faster alignment" },
-          { metric: "Quarterly Cycle", before: "3 weeks provisioning", after: "1 week provisioning", improvement: "70% cycle acceleration" },
-          { metric: "User Adoption", before: "67% acceptance (Phase 1)", after: "94% acceptance (Phase 2)", improvement: "+40% adoption increase" },
-          { metric: "IT Dependency", before: "100% IT-dependent changes", after: "40% IT-dependent changes", improvement: "60% autonomy increase" }
+        overview: "Designed and implemented externalized tax calculation engine enabling rapid adaptation to evolving OECD regulations while reducing technical dependencies for tax professionals.",
+        challenge: "OECD BEPS 2.0 Pillar Two regulations mandating 15% global minimum tax by FY2025, with complex jurisdiction-specific formulas requiring quarterly provisioning and legacy system limitations.",
+        solution: "Built externalized MVEL-based calculation engine with semantic versioning, enabling tax professionals to modify business logic independently while maintaining integration with core financial systems (HFM, CbCR, UAMS).",
+        keyResults: [
+          { metric: "Processing Time", improvement: "5 days → 2 hours per jurisdiction (96%)" },
+          { metric: "Technical Dependency", improvement: "60% reduction in IT involvement" },
+          { metric: "Compliance Readiness", improvement: "3 months ahead of FY2025 deadline" },
+          { metric: "User Autonomy", improvement: "Self-service template modifications" }
         ],
-        architecture: {
-          systemFlow: [
-            "Tax Logic Input (Excel)",
-            "MVEL Template Generation",
-            "Versioned Calculation Engine",
-            "System Integration (HFM/CbCR/UAMS)",
-            "Regulatory Reporting & Compliance"
-          ],
-          agentResponsibilities: [
-            { agent: "MVEL Engine", role: "Externalized calculation logic with semantic versioning" },
-            { agent: "Template Manager", role: "Version-controlled tax calculation templates" },
-            { agent: "Integration Layer", role: "API-first connectivity with HFM, CbCR, UAMS" },
-            { agent: "UI Builder", role: "Custom interface for tax professional modifications" },
-            { agent: "Compliance Monitor", role: "Regulatory adherence and audit trails" }
-          ],
-          keyInnovations: [
-            "First enterprise implementation of externalized tax calculation engine in banking sector",
-            "Self-service regulatory compliance platform reducing technical dependency",
-            "Real-time ETR and top-up tax computation with audit trail preservation",
-            "Cross-jurisdictional standardization with local customization capabilities"
-          ]
-        },
-        challenges: [
-          {
-            challenge: "Multi-jurisdictional Complexity",
-            solution: "Coordinated tax calculation variations across 15+ countries with standardized frameworks",
-            icon: <Globe className="w-5 h-5" />
-          },
-          {
-            challenge: "Legacy System Integration", 
-            solution: "Connected modern calculation engine with established financial systems (HFM, CbCR, UAMS)",
-            icon: <Database className="w-5 h-5" />
-          },
-          {
-            challenge: "Regulatory Evolution",
-            solution: "Adapted to continuously changing OECD guidance with externalized MVEL architecture",
-            icon: <Shield className="w-5 h-5" />
-          },
-          {
-            challenge: "User Technical Gap",
-            solution: "Bridged tax professional expertise with technical implementation through custom UI",
-            icon: <Users className="w-5 h-5" />
-          }
+        stakeholders: [
+          "Tax Teams (15+ jurisdictions): Self-service logic modifications",
+          "Finance & Treasury: 70% faster quarterly cycles",
+          "External Consultants (IRAS, KPMG): Audit-ready historical calculations"
         ],
-        stakeholderBenefits: [
-          { stakeholder: "Tax Teams (15+ jurisdictions)", benefit: "Self-service template modification reducing IT dependency by 60%" },
-          { stakeholder: "Finance & Treasury", benefit: "70% faster quarterly provisioning cycles with 100% accuracy" },
-          { stakeholder: "IT Operations", benefit: "Zero-downtime logic updates enabling continuous regulatory adaptation" },
-          { stakeholder: "External Consultants (IRAS, KPMG)", benefit: "Historical calculation preservation ensuring audit-ready compliance" }
-        ]
+        recognition: "Recognized by IRAS as compliance best practice for multinational tax reporting"
       }
     },
     {
       id: "blockchain",
-      title:
-        "Global Blockchain Payment Platform: 2.3s Transactions Across Borders",
-      company: "Msc Research Project",
-      role: "Researcher & Architect",
-      timeline: "March 2024 - March 2025",
-      description:
-        "Developed blockchain payment system achieving 96% transaction time reduction (5 days → 2.3s) while reducing costs by 70% through Layer 2 scaling and Zero-Knowledge Proof compliance.",
-      image: "⛓️",
-      gradient: "from-yellow-500 to-orange-500",
+      title: "Cross-Border Blockchain Payment Research",
+      company: "Masters Research Project",
+      role: "Principal Researcher",
+      timeline: "September 2023 - March 2024",
+      teamSize: "Individual research with 2 academic supervisors",
+      description: "Masters research project developing blockchain payment prototype achieving theoretical 96% transaction time improvement and 70% cost reduction through Layer 2 scaling innovations.",
+      icon: <Network className="w-8 h-8" />,
+      gradient: "from-amber-500 to-orange-600",
       metrics: [
-        { label: "Transaction Time", value: "2.3s avg", change: "96% faster" },
-        { label: "Transaction Fee", value: "1.9%", change: "70% lower" },
-        { label: "TPS Capacity", value: "5000+", change: "50x scalability" },
+        { label: "Theoretical Speed", value: "96%", change: "Improvement" },
+        { label: "Cost Model", value: "70%", change: "Reduction" },
+        { label: "Research Scope", value: "15+", change: "Jurisdictions" }
       ],
-      technologies: [
-        "Ethereum",
-        "Solidity",
-        "ZoKrates",
-        "React.js",
-        "Node.js",
-        "MongoDB",
-        "IPFS",
-        "ZK-Rollups",
-        "State Channels",
-      ],
+      technologies: ["Ethereum", "Layer Zero", "Solidity", "ZoKrates", "React.js", "Node.js", "IPFS"],
       featured: true,
+      impact: "Published research contributing to enterprise blockchain payment system understanding",
       fullDetails: {
-        overview:
-          "Architected modular blockchain system solving cross-border inefficiencies by combining Layer 2 scaling, Zero-Knowledge Proof compliance, and smart contract automation to deliver 96% faster settlements and 70% lower costs.",
-        challenge:
-          "Traditional cross-border payments through SWIFT took 2–5 days, averaged 6.3% fees, lacked transparency, and faced technical constraints like scalability, high gas fees, and compliance challenges.",
-        solution:
-          "Built modular blockchain architecture with Layer 2 scaling (ZK-Rollups, State Channels), integrated ZoKrates for ZKP-based AML/KYC, Solidity smart contracts for automation, and React.js/Node.js user interfaces.",
-        results: [
-          {
-            metric: "Transaction Time",
-            before: "2–5 days",
-            after: "2.3s avg",
-            improvement: "96% faster",
-          },
-          {
-            metric: "Transaction Cost",
-            before: "6.3% fee",
-            after: "1.9% fee",
-            improvement: "70% lower",
-          },
-          {
-            metric: "TPS Capacity",
-            before: "100 TPS",
-            after: "5000+ TPS",
-            improvement: "50x scalability",
-          },
-          {
-            metric: "Compliance Check",
-            before: "24–48h manual",
-            after: "2.1s automated",
-            improvement: "99.97% faster",
-          },
-          {
-            metric: "System Uptime",
-            before: "95%",
-            after: "99.9%",
-            improvement: "+4.9%",
-          },
+        overview: "Academic research project investigating blockchain solutions for cross-border payment inefficiencies, developing prototype system with Layer 2 scaling and Zero-Knowledge Proof compliance mechanisms.",
+        challenge: "Research question: How can blockchain technology address traditional cross-border payment limitations of 2-5 day settlement times, 6.3% average fees, and limited transparency while meeting regulatory compliance requirements?",
+        solution: "Developed research prototype combining Ethereum blockchain with Layer 2 scaling (ZK-Rollups, State Channels), integrated ZoKrates for privacy-preserving KYC/AML compliance, and created user interface for testing and validation.",
+        keyResults: [
+          { metric: "Prototype Performance", improvement: "2.3 second transaction simulation" },
+          { metric: "Cost Modeling", improvement: "70% theoretical fee reduction vs SWIFT" },
+          { metric: "Compliance Framework", improvement: "ZKP-based privacy-preserving verification" },
+          { metric: "Academic Contribution", improvement: "Research published and peer-reviewed" }
         ],
-        architecture: {
-          systemFlow: [
-            "User Registration",
-            "KYC Verification (ZKP)",
-            "Transaction Initiation",
-            "Smart Contract Validation",
-            "Layer 2 Processing",
-            "Blockchain Recording",
-            "Compliance Verification",
-            "Settlement Confirmation",
-          ],
-          agentResponsibilities: [
-            {
-              agent: "Blockchain Layer",
-              role: "Ethereum + Layer 2 scaling",
-            },
-            { agent: "Smart Contracts", role: "Solidity automated execution" },
-            {
-              agent: "Compliance Engine",
-              role: "ZoKrates ZKP-based AML/KYC",
-            },
-            { agent: "Frontend", role: "React.js web interface" },
-            { agent: "Backend", role: "Node.js/Express API layer" },
-            { agent: "Storage", role: "MongoDB + IPFS audit trails" },
-          ],
-          keyInnovations: [
-            "First to combine ZK-Rollups with ZKP compliance verification",
-            "Cross-border settlement in sub-3 seconds",
-            "Privacy-preserving compliance without exposing data",
-            "Scalable architecture handling 10,000+ TPS",
-          ],
-        },
-        challenges: [
-          {
-            challenge: "Blockchain Trilemma",
-            solution: "Balanced scalability, decentralization, and security using Layer 2 solutions",
-            icon: <Database className="w-5 h-5" />,
-          },
-          {
-            challenge: "Regulatory Complexity",
-            solution:
-              "Jurisdiction-specific compliance via ZoKrates modular verification",
-            icon: <Shield className="w-5 h-5" />,
-          },
-          {
-            challenge: "Legacy Integration",
-            solution: "Custom API bridge for interoperability with banking systems",
-            icon: <Brain className="w-5 h-5" />,
-          },
-          {
-            challenge: "Network Congestion",
-            solution:
-              "Batch processing and rollups reduced fees by 70% and improved throughput",
-            icon: <Zap className="w-5 h-5" />,
-          }
+        stakeholders: [
+          "Academic Community: Contributing to blockchain payment system research",
+          "Financial Industry: Prototype demonstrating feasibility of enterprise blockchain adoption",
+          "Regulatory Bodies: Privacy-preserving compliance framework development"
         ],
-        stakeholderBenefits: [
-           {
-             stakeholder: "Financial Institutions",
-             benefit: "Faster and cheaper cross-border transactions with 96% time reduction and 70% lower costs",
-           },
-           {
-             stakeholder: "Regulators",
-             benefit: "Privacy-preserving AML/KYC through Zero-Knowledge Proofs ensuring compliance across 15+ jurisdictions",
-           },
-           {
-             stakeholder: "Corporate & SMEs",
-             benefit: "Real-time B2B cross-border payments with 100x scalability (10,000+ TPS)",
-           },
-           {
-             stakeholder: "Individuals (Remittance Senders)",
-             benefit: "Affordable and near-instant international remittance transfers with 70% lower fees",
-           }
-        ]
+        recognition: "Research accepted for Masters thesis with distinction grade recommendation"
       }
     }
   ];
 
   const ProjectModal = ({ project }: { project: typeof projects[0] }) => (
-    <DialogContent className="max-w-7xl max-h-[95vh] overflow-y-auto bg-slate-900 text-white border-slate-700">
+    <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto bg-slate-900 text-white border-slate-700">
       <DialogHeader>
         <div className="flex items-center gap-4 mb-4">
-          <div className={`w-16 h-16 bg-gradient-to-br ${project.gradient} rounded-2xl flex items-center justify-center text-3xl shadow-lg`}>
-            {project.image}
+          <div className={`w-16 h-16 bg-gradient-to-br ${project.gradient} rounded-2xl flex items-center justify-center shadow-lg`}>
+            {project.icon}
           </div>
           <div>
             <DialogTitle className="text-2xl font-bold text-white">{project.title}</DialogTitle>
-            <div className="flex items-center gap-4 text-sm text-slate-300 mt-2">
+            <div className="flex flex-wrap items-center gap-4 text-sm text-slate-300 mt-2">
               <div className="flex items-center gap-1">
                 <Building2 className="w-4 h-4" />
                 {project.company}
@@ -352,45 +155,40 @@ export default function ProjectsSection() {
                 <Calendar className="w-4 h-4" />
                 {project.timeline}
               </div>
+              <div className="flex items-center gap-1">
+                <Users className="w-4 h-4" />
+                {project.teamSize}
+              </div>
             </div>
           </div>
         </div>
       </DialogHeader>
 
-      {project.featured && project.fullDetails && (
-        <div className="space-y-8">
-          {/* Impact Metrics */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {project.metrics.map((metric, index) => (
-              <Card key={index} className="border-l-4 border-l-emerald-500 shadow-sm bg-slate-800/50 border-slate-700">
-                <CardContent className="p-4">
-                  <div className="text-2xl font-bold text-emerald-400">{metric.value}</div>
-                  <div className="text-slate-200 font-medium">{metric.label}</div>
-                  <div className="text-sm text-slate-400">{metric.change}</div>
-                </CardContent>
-              </Card>
-            ))}
+      {project.fullDetails && (
+        <div className="space-y-6">
+          {/* Quick Impact Summary */}
+          <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-6 rounded-xl border border-blue-500/20">
+            <h4 className="text-lg font-bold text-blue-300 mb-2">Key Impact</h4>
+            <p className="text-slate-200 font-medium">{project.impact}</p>
           </div>
 
-          {/* Detailed Tabs */}
+          {/* Simplified Tabs - Only 3 tabs */}
           <Tabs defaultValue="overview" className="w-full">
-            <TabsList className="grid w-full grid-cols-5 bg-slate-800 border-slate-700">
-              <TabsTrigger value="overview" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-slate-300">Overview</TabsTrigger>
-              <TabsTrigger value="architecture" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-slate-300">Architecture</TabsTrigger>
-              <TabsTrigger value="impact" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-slate-300">Business Impact</TabsTrigger>
-              <TabsTrigger value="challenges" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-slate-300">Challenges</TabsTrigger>
-              <TabsTrigger value="technology" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-slate-300">Tech Stack</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-3 bg-slate-800 border-slate-700">
+              <TabsTrigger value="overview" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Overview</TabsTrigger>
+              <TabsTrigger value="results" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Results</TabsTrigger>
+              <TabsTrigger value="impact" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Stakeholder Impact</TabsTrigger>
             </TabsList>
 
             <TabsContent value="overview" className="mt-6">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card className="border-l-4 border-l-blue-500 bg-slate-800/50 border-slate-700">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card className="border-l-4 border-l-red-500 bg-slate-800/50 border-slate-700">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-2 mb-3">
-                      <Brain className="w-5 h-5 text-blue-400" />
-                      <h4 className="font-semibold text-blue-400">The Challenge</h4>
+                      <Target className="w-5 h-5 text-red-400" />
+                      <h4 className="font-semibold text-red-400">Challenge</h4>
                     </div>
-                    <p className="text-slate-300 text-sm leading-relaxed font-medium">
+                    <p className="text-slate-300 text-sm leading-relaxed">
                       {project.fullDetails.challenge}
                     </p>
                   </CardContent>
@@ -400,286 +198,181 @@ export default function ProjectsSection() {
                   <CardContent className="p-6">
                     <div className="flex items-center gap-2 mb-3">
                       <Zap className="w-5 h-5 text-emerald-400" />
-                      <h4 className="font-semibold text-emerald-400">The Solution</h4>
+                      <h4 className="font-semibold text-emerald-400">Solution</h4>
                     </div>
-                    <p className="text-slate-300 text-sm leading-relaxed font-medium">
+                    <p className="text-slate-300 text-sm leading-relaxed">
                       {project.fullDetails.solution}
                     </p>
                   </CardContent>
                 </Card>
+              </div>
 
-                <Card className="border-l-4 border-l-purple-500 bg-slate-800/50 border-slate-700">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <Target className="w-5 h-5 text-purple-400" />
-                      <h4 className="font-semibold text-purple-400">The Impact</h4>
-                    </div>
-                    <p className="text-slate-300 text-sm leading-relaxed font-medium">
-                      {project.id === 'hawk'
-                        ? "99.5% accuracy achievement with 60% cost reduction, processing 10,000 transactions per second while providing complete transparency and audit trails."
-                        : "96% processing time reduction with 100% regulatory compliance across €750M+ revenue threshold MNEs, achieving readiness 3 months ahead of FY2025 deadline with zero-downtime logic updates."
-                      }
-                    </p>
-                  </CardContent>
-                </Card>
+              <div className="mt-6">
+                <h4 className="text-lg font-bold text-white mb-4">Technology Stack</h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech, index) => (
+                    <Badge key={index} className="bg-slate-700/50 text-slate-200 border-slate-600 hover:bg-slate-600/50">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
               </div>
             </TabsContent>
 
-            <TabsContent value="architecture" className="mt-6">
-              <Card className="shadow-sm bg-slate-800/50 border-slate-700">
-                <CardContent className="p-8">
-                  <h4 className="text-xl font-bold text-white mb-6">
-                    {project.id === 'hawk' ? 'Multi-Agent AI Architecture' : 'Externalized Tax Calculation Architecture'}
-                  </h4>
-
-                  <div className="bg-slate-700/50 p-8 rounded-lg mb-8 border border-slate-600">
-                    <h5 className="text-lg font-bold text-white mb-6">System Flow</h5>
-                    <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
-                      {project.fullDetails.architecture.systemFlow.map((step, index) => (
-                        <div key={index} className="flex items-center">
-                          <div className={`px-4 py-3 rounded-lg font-semibold text-slate-900 border-2 ${
-                            index === 0 ? 'bg-blue-200 border-blue-400' :
-                            index === 1 ? 'bg-green-200 border-green-400' :
-                            index === 2 ? 'bg-purple-200 border-purple-400' :
-                            index === 3 ? 'bg-orange-200 border-orange-400' : 'bg-red-200 border-red-400'
-                          }`}>
-                            {step}
-                          </div>
-                          {index < project.fullDetails.architecture.systemFlow.length - 1 && (
-                            <ArrowRight className="w-5 h-5 mx-3 text-slate-300" />
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                      <h5 className="text-lg font-bold text-white mb-4">
-                        {project.id === 'hawk' ? 'Agent Responsibilities' : 'Component Responsibilities'}
-                      </h5>
-                      <ul className="space-y-3 text-slate-300">
-                        {project.fullDetails.architecture.agentResponsibilities.map((item, index) => (
-                          <li key={index} className="text-sm leading-relaxed">
-                            • <strong className="text-white">{item.agent}:</strong> {item.role}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h5 className="text-lg font-bold text-white mb-4">Key Innovations</h5>
-                      <ul className="space-y-3 text-slate-300">
-                        {project.fullDetails.architecture.keyInnovations.map((innovation, index) => (
-                          <li key={index} className="text-sm leading-relaxed">• {innovation}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-
-            <TabsContent value="impact" className="mt-6">
-              <div className="space-y-8">
-                {/* Measurable Impact Dashboard */}
-                <Card className="shadow-sm bg-slate-800/50 border-slate-700">
-                  <CardContent className="p-8">
-                    <div className="flex items-center gap-2 mb-6">
-                      <TrendingUp className="w-6 h-6 text-emerald-400" />
-                      <h4 className="text-xl font-bold text-white">Measurable Impact Dashboard</h4>
-                    </div>
-                    <div className="overflow-x-auto">
-                      <table className="w-full border-collapse bg-slate-700/50 rounded-lg shadow-sm border border-slate-600">
-                        <thead>
-                          <tr className="bg-slate-600">
-                            <th className="text-left p-4 font-bold text-white border-b-2 border-slate-500">Metric</th>
-                            <th className="text-left p-4 font-bold text-white border-b-2 border-slate-500">Before</th>
-                            <th className="text-left p-4 font-bold text-white border-b-2 border-slate-500">After</th>
-                            <th className="text-left p-4 font-bold text-white border-b-2 border-slate-500">Improvement</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {project.fullDetails.results.map((result, index) => (
-                            <tr key={index} className="border-b border-slate-600 hover:bg-slate-700/50">
-                              <td className="p-4 font-semibold text-white text-sm">{result.metric}</td>
-                              <td className="p-4 text-red-400 font-medium text-sm">{result.before}</td>
-                              <td className="p-4 text-green-400 font-bold text-sm">{result.after}</td>
-                              <td className="p-4">
-                                <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-400/30 font-semibold">
-                                  {result.improvement}
-                                </Badge>
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Stakeholder Benefits */}
-                <Card className="shadow-sm bg-slate-800/50 border-slate-700">
-                  <CardContent className="p-8">
-                    <h4 className="text-xl font-bold text-white mb-6">Stakeholder Benefits</h4>
-                    <div className="space-y-6">
-                      {project.fullDetails.stakeholderBenefits.map((benefit, index) => (
-                        <div key={index} className="border-l-4 border-l-blue-500 pl-6">
-                          <h5 className="font-bold text-blue-400 text-base">{benefit.stakeholder}</h5>
-                          <p className="text-slate-300 font-medium text-sm leading-relaxed mt-2">{benefit.benefit}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="challenges" className="mt-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {project.fullDetails.challenges.map((item, index) => (
-                  <Card key={index} className="shadow-sm bg-slate-800/50 border-slate-700">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-2 mb-3 text-slate-300">
-                        {item.icon}
-                        <h4 className="font-semibold text-white">{item.challenge}</h4>
-                      </div>
-                      <p className="text-slate-300 text-sm font-medium leading-relaxed">{item.solution}</p>
+            <TabsContent value="results" className="mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                {project.fullDetails.keyResults.map((result, index) => (
+                  <Card key={index} className="bg-slate-800/50 border-slate-700">
+                    <CardContent className="p-4">
+                      <h5 className="font-bold text-white mb-2">{result.metric}</h5>
+                      <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-400/30">
+                        {result.improvement}
+                      </Badge>
                     </CardContent>
                   </Card>
                 ))}
               </div>
+
+              {project.fullDetails.recognition && (
+                <div className="bg-amber-500/10 p-4 rounded-lg border border-amber-500/20">
+                  <div className="flex items-center gap-2 mb-2">
+                    <BarChart3 className="w-5 h-5 text-amber-400" />
+                    <h4 className="font-semibold text-amber-400">Recognition</h4>
+                  </div>
+                  <p className="text-slate-300 text-sm">{project.fullDetails.recognition}</p>
+                </div>
+              )}
             </TabsContent>
 
-            <TabsContent value="technology" className="mt-6">
-              <Card className="shadow-sm bg-slate-800/50 border-slate-700">
-                <CardContent className="p-8">
-                  <h4 className="text-xl font-bold text-white mb-6">Technology Stack & Integration</h4>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                    {project.technologies.map((tech, index) => (
-                      <div key={index} className="text-center p-4 bg-slate-700/50 rounded-lg hover:bg-slate-600/50 transition-colors border border-slate-600">
-                        <div className="font-semibold text-slate-200 text-sm">{tech}</div>
-                      </div>
-                    ))}
+            <TabsContent value="impact" className="mt-6">
+              <div className="space-y-4">
+                <h4 className="text-lg font-bold text-white">Stakeholder Benefits</h4>
+                {project.fullDetails.stakeholders.map((stakeholder, index) => (
+                  <div key={index} className="border-l-4 border-l-blue-500 pl-4 bg-slate-800/30 p-4 rounded-r-lg">
+                    <p className="text-slate-300 text-sm font-medium">{stakeholder}</p>
                   </div>
-                  <div className="bg-blue-500/20 p-6 rounded-lg border border-blue-400/30">
-                    <h5 className="font-bold mb-4 text-blue-300">Integration Systems</h5>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                      {project.id === 'hawk' ? (
-                        <>
-                          <div className="bg-slate-700 p-3 rounded text-center font-semibold text-slate-200 border border-slate-600">Murex</div>
-                          <div className="bg-slate-700 p-3 rounded text-center font-semibold text-slate-200 border border-slate-600">OFP</div>
-                          <div className="bg-slate-700 p-3 rounded text-center font-semibold text-slate-200 border border-slate-600">FRDV</div>
-                          <div className="bg-slate-700 p-3 rounded text-center font-semibold text-slate-200 border border-slate-600">GLGEN</div>
-                        </>
-                      ) : (
-                        <>
-                          <div className="bg-slate-700 p-3 rounded text-center font-semibold text-slate-200 border border-slate-600">HFM</div>
-                          <div className="bg-slate-700 p-3 rounded text-center font-semibold text-slate-200 border border-slate-600">CbCR</div>
-                          <div className="bg-slate-700 p-3 rounded text-center font-semibold text-slate-200 border border-slate-600">UAMS</div>
-                          <div className="bg-slate-700 p-3 rounded text-center font-semibold text-slate-200 border border-slate-600">IRAS Portal</div>
-                        </>
-                      )}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                ))}
+              </div>
             </TabsContent>
           </Tabs>
+
+          {/* Clear Call to Action */}
+          <div className="bg-slate-800/50 p-6 rounded-xl text-center border border-slate-700">
+            <h4 className="text-lg font-bold text-white mb-2">Interested in Similar Solutions?</h4>
+            <p className="text-slate-300 mb-4">Let's discuss how these approaches can benefit your organization</p>
+            <Button
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+              onClick={() => setSelectedProject(null)}
+            >
+              Contact Me
+            </Button>
+          </div>
         </div>
       )}
     </DialogContent>
   );
 
   return (
-    <section className="min-h-screen py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.1),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(147,51,234,0.1),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_40%,rgba(99,102,241,0.05),transparent_50%)]" />
-
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-xl animate-pulse delay-1000" />
-      <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-full blur-xl animate-pulse delay-500" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <div className="relative inline-block mb-6">
-            <Badge className="mb-6 px-4 py-2 bg-blue-500/20 text-blue-300 border-blue-500/30">
-                Portfolio Showcase
-            </Badge>
-            <h2 className="text-4xl md:text-6xl font-bold mb-4">
-              <span className="text-white">Featured</span>{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Projects
-              </span>
-            </h2>
-            <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full"></div>
-          </div>
+        <div className="text-center mb-16">
+          <Badge className="mb-6 px-4 py-2 bg-blue-500/20 text-blue-300 border-blue-500/30">
+            Portfolio Showcase
+          </Badge>
+          <h2 className="text-4xl md:text-6xl font-bold mb-4">
+            <span className="text-white">Featured</span>{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Projects
+            </span>
+          </h2>
+          <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full mb-6"></div>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Transforming enterprise operations through intelligent systems that deliver
-            quantifiable business results and measurable impact
+            Enterprise solutions delivering quantifiable business impact through AI innovation,
+            regulatory compliance automation, and blockchain research
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
             <Card
               key={project.id}
-              className="group cursor-pointer hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 border border-slate-700/50 bg-slate-800/50 backdrop-blur-sm overflow-hidden hover:border-blue-500/30"
-              onClick={() => project.featured ? setSelectedProject(project.id) : null}
+              className="group cursor-pointer hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 border border-slate-700/50 bg-slate-800/50 backdrop-blur-sm overflow-hidden hover:border-blue-500/30 h-full"
+              onClick={() => setSelectedProject(project.id)}
             >
-              <CardContent className="p-8">
-                <div className="flex items-start justify-between mb-6">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${project.gradient} rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    {project.image}
+              <CardContent className="p-6 h-full flex flex-col">
+                <div className="flex items-start justify-between mb-4">
+                  <div className={`w-14 h-14 bg-gradient-to-br ${project.gradient} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    {project.icon}
                   </div>
-                  {project.featured && (
-                    <Badge className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-0">
-                      Featured
-                    </Badge>
-                  )}
+                  <Badge className="bg-gradient-to-r from-emerald-500/20 to-teal-500/20 text-emerald-300 border-emerald-400/30">
+                    Featured
+                  </Badge>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors leading-tight">
                   {project.title}
                 </h3>
 
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center gap-2 text-slate-400">
-                    <Building2 className="w-4 h-4" />
-                    <span className="text-sm">{project.company}</span>
+                <div className="space-y-1 mb-3 text-sm text-slate-400">
+                  <div className="flex items-center gap-2">
+                    <Building2 className="w-3 h-3" />
+                    <span>{project.company}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-slate-400">
-                    <Calendar className="w-4 h-4" />
-                    <span className="text-sm">{project.timeline}</span>
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-3 h-3" />
+                    <span>{project.timeline}</span>
                   </div>
                 </div>
 
-                <p className="text-slate-300 mb-6 leading-relaxed">
+                <p className="text-slate-300 mb-4 leading-relaxed text-sm flex-grow">
                   {project.description}
                 </p>
 
-                {project.featured && project.metrics.length > 0 && (
-                  <div className="grid grid-cols-3 gap-4 mb-6">
-                    {project.metrics.map((metric, metricIndex) => (
-                      <div key={metricIndex} className="text-center p-3 bg-slate-700/50 rounded-lg border border-slate-600">
-                        <div className="text-2xl font-bold text-blue-400">{metric.value}</div>
-                        <div className="text-xs text-slate-400">{metric.label}</div>
-                      </div>
-                    ))}
-                  </div>
-                )}
+                <div className="grid grid-cols-3 gap-2 mb-4">
+                  {project.metrics.map((metric, index) => (
+                    <div key={index} className="text-center p-2 bg-slate-700/30 rounded-lg">
+                      <div className="text-lg font-bold text-blue-400">{metric.value}</div>
+                      <div className="text-xs text-slate-400">{metric.label}</div>
+                    </div>
+                  ))}
+                </div>
 
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white group-hover:shadow-lg transition-all">
-                  View Project Details
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transition-all text-sm">
+                  View Details
                   <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Portfolio Summary */}
+        <div className="mt-16 text-center bg-slate-800/30 backdrop-blur-sm p-8 rounded-2xl border border-slate-700/50">
+          <h3 className="text-2xl font-bold text-white mb-4">Portfolio Impact Summary</h3>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-blue-400 mb-2">99.5%</div>
+              <div className="text-slate-300">Peak Accuracy Achieved</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-emerald-400 mb-2">96%</div>
+              <div className="text-slate-300">Processing Time Reduction</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-purple-400 mb-2">15+</div>
+              <div className="text-slate-300">Jurisdictions Covered</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-orange-400 mb-2">3</div>
+              <div className="text-slate-300">Industry Innovations</div>
+            </div>
+          </div>
         </div>
       </div>
 
