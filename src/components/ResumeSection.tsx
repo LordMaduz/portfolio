@@ -121,8 +121,8 @@ export default function ResumeSection() {
 
                   <button
                     onClick={handleInteractiveResume}
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 rounded-xl shadow-lg shadow-blue-500/25 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-blue-500/30 text-lg flex items-center justify-center gap-3"
-                  >
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 sm:py-4 rounded-xl shadow-lg shadow-emerald-500/25 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base flex items-center justify-center gap-2 sm:gap-3 min-h-[48px] touch-manipulation"
+                    >
                     <Eye className="w-5 h-5" />
                     Explore Interactive Resume
                     <ExternalLink className="w-4 h-4" />
@@ -171,8 +171,8 @@ export default function ResumeSection() {
                   <button
                     onClick={handlePDFDownload}
                     disabled={isDownloading}
-                    className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-4 rounded-xl shadow-lg shadow-emerald-500/25 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-emerald-500/30 disabled:opacity-50 disabled:cursor-not-allowed text-lg flex items-center justify-center gap-3"
-                  >
+                    className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-3 sm:py-4 rounded-xl shadow-lg shadow-emerald-500/25 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-emerald-500/30 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base flex items-center justify-center gap-2 sm:gap-3 min-h-[48px] touch-manipulation"
+                    >
                     <Download className={`w-5 h-5 ${isDownloading ? 'animate-bounce' : ''}`} />
                     {isDownloading ? 'Downloading Resume...' : 'Download PDF Resume'}
                   </button>
