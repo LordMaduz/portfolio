@@ -9,7 +9,7 @@ interface HomeSectionProps {
 
 export default function HomeSection({ setActiveSection }: HomeSectionProps) {
   return (
-    <section className="min-h-screen flex flex-col justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden pt-safe-top">
 
       {/* Enhanced Mobile-First Animated Background */}
       <div className="absolute inset-0">
@@ -29,8 +29,8 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
       <div className="sm:hidden absolute top-16 right-8 w-12 h-12 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-lg animate-pulse" />
       <div className="sm:hidden absolute bottom-32 left-6 w-16 h-16 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full blur-lg animate-pulse delay-1000" />
 
-      {/* Main Content - Mobile-first approach */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12 md:py-16 text-center">
+      {/* Main Content - Mobile-first approach with header spacing */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 md:pt-16 pb-6 sm:pb-12 md:pb-16 text-center">
 
         {/* Mobile-optimized content container */}
         <div className="space-y-6 sm:space-y-8 md:space-y-10">
