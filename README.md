@@ -1,4 +1,4 @@
-# Shadcn-UI Template Usage Instructions
+# My Portfolio Usage Instructions
 
 ## technology stack
 
