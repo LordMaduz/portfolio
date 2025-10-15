@@ -73,10 +73,10 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
 
             <div className="space-y-3 sm:space-y-4">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-200 tracking-tight">
-                Innovation Driven Solutions Architect
+                Senior Software Engineer & Cloud Solutions Architect
               </h2>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-300 max-w-3xl lg:max-w-4xl mx-auto leading-relaxed font-light">
-                Transforming enterprise operations through intelligent systems and strategic AI implementation
+                Specializing in distributed systems, event-driven architecture, and high-performance engineering
               </p>
             </div>
           </div>
