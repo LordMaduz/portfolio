@@ -26,116 +26,188 @@ import {
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
-  const projects = [
-    {
-      id: "hawk",
-      title: "HAWK: AI-Powered Hedge Accounting Platform",
-      company: "DBS Bank Singapore",
-      role: "Technical Lead & AI Solutions Architect",
-      timeline: "June 2024 - March 2025",
-      teamSize: "6-person cross-functional team",
-      description: "Led Singapore's largest bank through their first multi-agent financial AI system, achieving 99.5% accuracy and 60% cost reduction across hedge accounting operations.",
-      icon: <Brain className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />,
-      gradient: "from-blue-500 to-indigo-600",
-      metrics: [
-        { label: "Accuracy Improvement", value: "99.5%", change: "From 60%" },
-        { label: "Cost Reduction", value: "60%", change: "Operational" },
-        { label: "Faster Execution", value: "60%", change: "Faster cycles" }
-      ],
-      technologies: ["Dify", "Multi-Agent Systems", "MetaGPT", "Python", "AWS", "Docker", "Kubernetes"],
-      featured: true,
-      impact: "Reduced operational costs by 60% while improving accuracy from 60% to 99.5%, generating measurable ROI through automated hedge accounting.",
-      fullDetails: {
-        overview: "Architected enterprise-grade multi-agent AI platform revolutionizing hedge accounting operations with intelligent automation and explainable AI capabilities.",
-        challenge: "Manual hedge accounting processes across Fair Value, Cash Flow, and Net Investment hedges suffered from 40% error rates and 'black box' legacy systems limiting transparency and scalability.",
-        solution: "Industry-first Multi-Agent AI Architecture using Dify framework with explainable AI, providing detailed reasoning for every calculation while integrating seamlessly with legacy banking systems (Murex, OFP, FRDV).",
-        keyResults: [
-          { metric: "Accuracy Rate", improvement: "60% → 99.5% (+65%)" },
-          { metric: "Operational Costs", improvement: "60% reduction through automation" },
-          { metric: "Execution Cycles", improvement: "6,200 TPS → 10,000+ TPS (+60%)" },
-          { metric: "User Adoption", improvement: "72% → 94% (+22%) team acceptance rate" }
-        ],
-        stakeholders: [
-          "Finance Teams (3 departments): 100% transparency in calculations",
-          "Compliance Teams: Automated audit trails for regulatory requirements",
-          "IT Operations: 90% reduced maintenance overhead"
-        ],
-        recognition: "Featured as DBS innovation showcase for enterprise AI adoption"
-      }
-    },
-    {
-      id: "globe",
-      title: "GloBE: Tax Compliance Engine for Global MNEs",
-      company: "DBS Bank Singapore",
-      role: "Lead Solutions Architect",
-      timeline: "June 2024 - June 2025",
-      teamSize: "8-person technical team + 15 stakeholders across jurisdictions",
-      description: "Architected externalized tax calculation engine achieving 96% processing time reduction while ensuring 100% OECD BEPS 2.0 compliance across 15+ jurisdictions.",
-      icon: <Globe className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />,
-      gradient: "from-emerald-500 to-teal-600",
-      metrics: [
-        { label: "Processing Reduction", value: "96%", change: "Reduction" },
-        { label: "Compliance Rate", value: "100%", change: "OECD Standards" },
-        { label: "Jurisdictions", value: "15+", change: "Coverage" }
-      ],
-      technologies: ["MVEL", "Java", "Spring Boot", "HFM", "MongoDB", "Docker"],
-      featured: true,
-      impact: "Cut processing time from 5 days to 2 hours per jurisdiction (96% reduction) while achieving 100% OECD compliance 3 months ahead of mandatory deadline.",
-      fullDetails: {
-        overview: "Designed and implemented externalized tax calculation engine enabling rapid adaptation to evolving OECD regulations while reducing technical dependencies for tax professionals.",
-        challenge: "OECD BEPS 2.0 Pillar Two regulations mandating 15% global minimum tax by FY2025, with complex jurisdiction-specific formulas requiring quarterly provisioning and legacy system limitations.",
-        solution: "Built externalized MVEL-based calculation engine with semantic versioning, enabling tax professionals to modify business logic independently while maintaining integration with core financial systems (HFM, CbCR, UAMS).",
-        keyResults: [
-          { metric: "Processing Time", improvement: "5 days → 2 hours per jurisdiction (96%)" },
-          { metric: "Technical Dependency", improvement: "60% reduction in IT involvement" },
-          { metric: "Compliance Readiness", improvement: "3 months ahead of FY2025 deadline" },
-          { metric: "User Autonomy", improvement: "Self-service template modifications" }
-        ],
-        stakeholders: [
-          "Tax Teams (15+ jurisdictions): Self-service logic modifications",
-          "Finance & Treasury: 70% faster quarterly cycles",
-          "External Consultants (IRAS, KPMG): Audit-ready historical calculations"
-        ],
-        recognition: "Recognized by IRAS as compliance best practice for multinational tax reporting"
-      }
-    },
-    {
-      id: "blockchain",
-      title: "Cross-Border Blockchain Payment Research",
-      company: "Masters Research Project",
-      role: "Principal Researcher",
-      timeline: "September 2023 - March 2024",
-      teamSize: "Individual research with 2 academic supervisors",
-      description: "Masters research project developing blockchain payment prototype achieving theoretical 96% transaction time improvement and 70% cost reduction through Layer 2 scaling innovations.",
-      icon: <Network className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />,
-      gradient: "from-amber-500 to-orange-600",
-      metrics: [
-        { label: "Theoretical Speed", value: "96%", change: "Improvement" },
-        { label: "Cost Model", value: "70%", change: "Reduction" },
-        { label: "Research Scope", value: "15+", change: "Jurisdictions" }
-      ],
-      technologies: ["Ethereum", "Layer Zero", "Solidity", "ZoKrates", "React.js", "Node.js", "IPFS"],
-      featured: true,
-      impact: "Demonstrated 96% transaction speed improvement with 70% cost reduction potential, earning Masters distinction for breakthrough cross-border payment research.",
-      fullDetails: {
-        overview: "Academic research project investigating blockchain solutions for cross-border payment inefficiencies, developing prototype system with Layer 2 scaling and Zero-Knowledge Proof compliance mechanisms.",
-        challenge: "Research question: How can blockchain technology address traditional cross-border payment limitations of 2-5 day settlement times, 6.3% average fees, and limited transparency while meeting regulatory compliance requirements?",
-        solution: "Developed research prototype combining Ethereum blockchain with Layer 2 scaling (ZK-Rollups, State Channels), integrated ZoKrates for privacy-preserving KYC/AML compliance, and created user interface for testing and validation.",
-        keyResults: [
-          { metric: "Prototype Performance", improvement: "2.3 second transaction simulation" },
-          { metric: "Cost Modeling", improvement: "70% theoretical fee reduction vs SWIFT" },
-          { metric: "Compliance Framework", improvement: "ZKP-based privacy-preserving verification" },
-          { metric: "Academic Contribution", improvement: "Research published and peer-reviewed" }
-        ],
-        stakeholders: [
-          "Academic Community: Contributing to blockchain payment system research",
-          "Financial Industry: Prototype demonstrating feasibility of enterprise blockchain adoption",
-          "Regulatory Bodies: Privacy-preserving compliance framework development"
-        ],
-        recognition: "Research accepted for Masters thesis with distinction grade recommendation"
-      }
-    }
-  ];
+ const projects = [
+     {
+       id: "hedge-accounting",
+       title: "Corporate Banking Hedge Accounting Platform",
+       company: "DBS Bank Singapore",
+       role: "Technical Lead",
+       timeline: "June 2024 - Present",
+       teamSize: "Cross-functional team across 5+ departments",
+       description: "Built enterprise scale hedge accounting platform processing 1M+ daily transactions with reactive microservices, supporting fair value, cash flow, and net investment hedges for corporate banking clients.",
+       icon: <Database className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />,
+       gradient: "from-blue-500 to-indigo-600",
+       metrics: [
+         { label: "Daily Transactions", value: "1M+", change: "12K req/sec" },
+         { label: "Response Time", value: "20ms", change: "Low latency" },
+         { label: "System Uptime", value: "99.9%", change: "High availability" }
+       ],
+       technologies: ["Java 21", "Spring Boot", "Kafka", "CloudEvents", "Project Reactor", "Redis", "PostgreSQL", "Kubernetes"],
+       featured: true,
+       impact: "Processed 1M+ daily hedge accounting transactions (12K requests per second) with 20ms latency and 99.9% uptime, enabling real-time hedge effectiveness testing and valuation for corporate banking clients.",
+       fullDetails: {
+         overview: "Architected and implemented large-scale hedge accounting platform for corporate banking, enabling real-time processing of fair value hedges (interest rate risk), cash flow hedges (FX risk), and net investment hedges (foreign subsidiaries) with event-driven reactive microservices architecture.",
+         challenge: "Legacy batch-processing systems couldn't handle real-time hedge accounting requirements for corporate clients, causing delays in hedge effectiveness testing and valuation. System needed to process 1M+ daily transactions with sub-20ms latency while maintaining data consistency across multiple hedge types and accounting standards (IFRS 9, FAS 133).",
+         solution: "Built event-driven hedge accounting platform using Kafka and CloudEvents for real-time financial event streaming. Implemented reactive microservices with Project Reactor for non-blocking transaction handling. Designed distributed Redis caching for high-speed hedge valuation calculations and query performance across multiple hedge relationships.",
+         keyResults: [
+           { metric: "Transaction Volume", improvement: "1M+ daily transactions at 12K requests/second" },
+           { metric: "Processing Speed", improvement: "Sub-20ms latency for hedge valuations" },
+           { metric: "System Reliability", improvement: "99.9% uptime for critical banking operations" },
+           { metric: "Operational Efficiency", improvement: "Real-time hedge effectiveness testing vs daily batch" }
+         ],
+         stakeholders: [
+           "Corporate Clients: Real-time hedge accounting for interest rate, FX, and equity risks",
+           "Treasury Teams: Immediate hedge effectiveness testing and rebalancing decisions",
+           "Risk & Compliance: Reduced codebase issues by 30% through comprehensive testing standards"
+         ],
+         recognition: "Led technical architecture sessions elevating engineering standards across 15+ microservices"
+       }
+     },
+     {
+       id: "notification-platform",
+       title: "Dynamic Multi-Channel Notification Orchestration Platform",
+       company: "DBS Bank Singapore",
+       role: "Technical Lead",
+       timeline: "June 2024 - Present",
+       teamSize: "Platform engineering team",
+       description: "Designed enterprise notification orchestration platform with dynamic channel integration (Email, Teams, Mobile, Webhooks), reducing cross-department coordination time from 48 hours to 4 hours (92%).",
+       icon: <Network className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />,
+       gradient: "from-purple-500 to-pink-600",
+       metrics: [
+         { label: "Coordination Time", value: "92%", change: "Reduced" },
+         { label: "Channels", value: "Multi", change: "Email/Teams/App" },
+         { label: "Response Time", value: "50%", change: "Improved" }
+       ],
+       technologies: ["Java 21", "Spring Boot", "Apache Camel", "Kafka", "CloudEvents", "REST APIs", "Webhooks", "Kubernetes"],
+       featured: true,
+       impact: "Reduced cross-department coordination time by 92% (48 hours to 4 hours) and improved operational responsiveness by 50% through dynamic multi-channel notification platform supporting Email, Teams, Mobile, and custom Webhooks.",
+       fullDetails: {
+         overview: "Built standalone enterprise notification orchestration platform enabling dynamic channel integration and configurable workflow-based alerts, supporting Email, Microsoft Teams, mobile app notifications, and custom webhooks for real-time business process automation.",
+         challenge: "Disparate notification systems across departments created communication silos and coordination delays. Each team built custom notification implementations, making it difficult to implement timely workflow updates, approval alerts, and cross-functional collaboration. Manual coordination took 48 hours for critical business processes.",
+         solution: "Designed centralized notification orchestration platform with dynamic channel plugins supporting Email, Teams, mobile push, and custom webhooks. Built configurable workflow triggers enabling business users to define notification rules without code changes. Implemented event-driven architecture using Kafka and CloudEvents for reliable message delivery across channels.",
+         keyResults: [
+           { metric: "Coordination Efficiency", improvement: "48 hours → 4 hours (92% reduction)" },
+           { metric: "Channel Integration", improvement: "Multi-channel support (Email, Teams, App, Webhooks)" },
+           { metric: "Operational Response", improvement: "50% faster response to workflow updates" },
+           { metric: "Configuration", improvement: "Self-service workflow trigger configuration" }
+         ],
+         stakeholders: [
+           "Platform Teams: Centralized notification infrastructure reducing maintenance overhead",
+           "Business Users: Self-service configuration for workflow-based notifications",
+           "Operations: 92% faster cross-department coordination through real-time alerts"
+         ],
+         recognition: "Standalone platform enabling real-time workflow automation across business units"
+       }
+     },
+     {
+       id: "globe",
+       title: "GloBE: Tax Compliance Engine for Global MNEs",
+       company: "DBS Bank Singapore",
+       role: "Lead Solutions Architect",
+       timeline: "June 2024 - June 2025",
+       teamSize: "8-person technical team + 15 stakeholders across jurisdictions",
+       description: "Architected externalized tax calculation engine achieving 96% processing time reduction while ensuring 100% OECD BEPS 2.0 compliance across 15+ jurisdictions.",
+       icon: <Globe className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />,
+       gradient: "from-emerald-500 to-teal-600",
+       metrics: [
+         { label: "Processing Reduction", value: "96%", change: "Reduction" },
+         { label: "Compliance Rate", value: "100%", change: "OECD Standards" },
+         { label: "Jurisdictions", value: "15+", change: "Coverage" }
+       ],
+       technologies: ["MVEL", "Java", "Spring Boot", "HFM", "MongoDB", "Docker"],
+       featured: true,
+       impact: "Cut processing time from 5 days to 2 hours per jurisdiction (96% reduction) while achieving 100% OECD compliance 3 months ahead of mandatory deadline.",
+       fullDetails: {
+         overview: "Designed and implemented externalized tax calculation engine enabling rapid adaptation to evolving OECD regulations while reducing technical dependencies for tax professionals.",
+         challenge: "OECD BEPS 2.0 Pillar Two regulations mandating 15% global minimum tax by FY2025, with complex jurisdiction-specific formulas requiring quarterly provisioning and legacy system limitations.",
+         solution: "Built externalized MVEL-based calculation engine with semantic versioning, enabling tax professionals to modify business logic independently while maintaining integration with core financial systems (HFM, CbCR, UAMS).",
+         keyResults: [
+           { metric: "Processing Time", improvement: "5 days → 2 hours per jurisdiction (96%)" },
+           { metric: "Technical Dependency", improvement: "60% reduction in IT involvement" },
+           { metric: "Compliance Readiness", improvement: "3 months ahead of FY2025 deadline" },
+           { metric: "User Autonomy", improvement: "Self-service template modifications" }
+         ],
+         stakeholders: [
+           "Tax Teams (15+ jurisdictions): Self-service logic modifications",
+           "Finance & Treasury: 70% faster quarterly cycles",
+           "External Consultants (IRAS, KPMG): Audit-ready historical calculations"
+         ],
+         recognition: "Recognized by IRAS as compliance best practice for multinational tax reporting"
+       }
+     },
+     {
+       id: "derivative-trading",
+       title: "Derivative Trading File Processing & Settlement System",
+       company: "DBS Bank Singapore",
+       role: "Senior Application Developer",
+       timeline: "September 2022 - April 2024",
+       teamSize: "Trade operations team",
+       description: "Engineered reactive file processing system handling 50,000+ monthly trade files from Bloomberg and market data sources, achieving 60% faster processing and 20% cost reduction for derivative trading operations.",
+       icon: <TrendingUp className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />,
+       gradient: "from-cyan-500 to-blue-600",
+       metrics: [
+         { label: "Monthly Files", value: "50K+", change: "Processed" },
+         { label: "Processing Speed", value: "60%", change: "Faster" },
+         { label: "Cost Reduction", value: "20%", change: "Infrastructure" }
+       ],
+       technologies: ["Java 17", "Spring WebFlux", "AWS SDK v2", "AWS S3", "Project Reactor", "OpenShift", "Docker"],
+       featured: true,
+       impact: "Achieved 60% faster trade file processing and 20% infrastructure cost reduction while handling 50,000+ monthly files for 1,000+ daily trading users, supporting derivative trading operations and market data integration.",
+       fullDetails: {
+         overview: "Developed high-performance file processing system for derivative trading operations, enabling efficient ingestion of trade data and market data from Bloomberg and external sources for trade settlement, risk management, and compliance reporting.",
+         challenge: "Traditional blocking I/O for trade file processing caused bottlenecks during market volatility periods when file volumes spike. Legacy systems struggled with large trade confirmation files (100MB+) from Bloomberg and market data feeds, causing delays in settlement and risk reporting for trading desk operations.",
+         solution: "Migrated to reactive AWS SDK v2 with Spring WebFlux for non-blocking file operations. Implemented asynchronous parallel uploads/downloads using AWS Transfer Manager. Built efficient streaming for large trade files with minimal memory footprint, enabling real-time processing of Bloomberg feeds and trade confirmations.",
+         keyResults: [
+           { metric: "Processing Speed", improvement: "60% faster file uploads/downloads for trade data" },
+           { metric: "User Base", improvement: "1,000+ daily trading users supported" },
+           { metric: "File Volume", improvement: "50,000+ trade files processed monthly" },
+           { metric: "Cost Efficiency", improvement: "20% reduction in infrastructure costs" }
+         ],
+         stakeholders: [
+           "Trade Teams: 60% faster processing of Bloomberg feeds and trade confirmations",
+           "Risk Management: Real-time trade data for position monitoring and risk calculations",
+           "IT Infrastructure: 20% cost savings through optimized resource utilization"
+         ],
+         recognition: "Production system deployed supporting critical derivative trading operations"
+       }
+     },
+     {
+       id: "food-ordering",
+       title: "High-Volume Food Order Management & Inventory System",
+       company: "GrubTech Sri Lanka",
+       role: "Senior Software Engineer",
+       timeline: "April 2022 - September 2022",
+       teamSize: "Platform engineering team",
+       description: "Built scalable multi-brand food order processing system handling 500,000+ daily orders with real-time inventory management, reducing database load by 40% and API response times by 35%.",
+       icon: <Code className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />,
+       gradient: "from-orange-500 to-red-600",
+       metrics: [
+         { label: "Daily Orders", value: "500K+", change: "Processed" },
+         { label: "Database Load", value: "40%", change: "Reduced" },
+         { label: "Response Time", value: "35%", change: "Faster" }
+       ],
+       technologies: ["Java 11", "Spring Boot", "Redis", "Redisson", "MongoDB", "Confluent Kafka", "AWS", "Docker"],
+       featured: true,
+       impact: "Processed 500,000+ daily food orders with 40% reduced database load and 35% faster API response times, enabling instant order confirmation and real-time inventory synchronization across multiple restaurant brands.",
+       fullDetails: {
+         overview: "Engineered high-performance order processing system for multi-brand food delivery platform, handling real-time order placement, inventory management, and order tracking for multiple restaurant brands simultaneously with write-behind caching architecture.",
+         challenge: "High-volume order placement during peak hours (lunch/dinner) overwhelmed database systems, causing slow order confirmations and inventory sync delays. Platform needed to handle 500K+ daily orders across multiple restaurant brands with instant response times while maintaining accurate real-time inventory to prevent overselling.",
+         solution: "Implemented write-behind caching architecture using Redis with Redisson for instant order confirmation with delayed database persistence. Built reactive processing pipeline for non-blocking order handling. Designed automatic inventory synchronization with conflict resolution for multi-brand operations across thousands of menu items.",
+         keyResults: [
+           { metric: "Order Volume", improvement: "500,000+ daily orders processed seamlessly" },
+           { metric: "Database Efficiency", improvement: "40% reduction in database write load" },
+           { metric: "API Performance", improvement: "35% faster order confirmation response" },
+           { metric: "Inventory Accuracy", improvement: "Real-time sync preventing overselling across brands" }
+         ],
+         stakeholders: [
+           "Customers: Instant order confirmation improving user experience during peak hours",
+           "Restaurant Partners: Real-time inventory management preventing overselling and order cancellations",
+           "Platform Operations: 40% lower database costs through efficient caching strategy"
+         ],
+         recognition: "Production system processing millions of orders monthly across multiple restaurant brands"
+       }
+     }
+   ];
 
   const ProjectModal = ({ project }: { project: typeof projects[0] }) => (
     <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto bg-slate-900 text-white border-slate-700">
@@ -357,20 +429,20 @@ export default function ProjectsSection() {
           <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">Portfolio Impact Summary</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-blue-400 mb-1 sm:mb-2">99.5%</div>
-              <div className="text-slate-300 text-xs sm:text-base">Peak Accuracy Achieved</div>
+              <div className="text-2xl sm:text-3xl font-bold text-blue-400 mb-1 sm:mb-2">1M+</div>
+              <div className="text-slate-300 text-xs sm:text-base">Transactions Processed Daily</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-emerald-400 mb-1 sm:mb-2">96%</div>
-              <div className="text-slate-300 text-xs sm:text-base">Processing Time Reduction</div>
+              <div className="text-2xl sm:text-3xl font-bold text-emerald-400 mb-1 sm:mb-2">500K+</div>
+              <div className="text-slate-300 text-xs sm:text-base">Orders Handled Daily</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-purple-400 mb-1 sm:mb-2">15+</div>
-              <div className="text-slate-300 text-xs sm:text-base">Jurisdictions Covered</div>
+              <div className="text-2xl sm:text-3xl font-bold text-purple-400 mb-1 sm:mb-2">92%</div>
+              <div className="text-slate-300 text-xs sm:text-base">Faster Coordination</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-orange-400 mb-1 sm:mb-2">3</div>
-              <div className="text-slate-300 text-xs sm:text-base">Industry Innovations</div>
+              <div className="text-2xl sm:text-3xl font-bold text-orange-400 mb-1 sm:mb-2">5</div>
+              <div className="text-slate-300 text-xs sm:text-base">Enterprise Systems Built</div>
             </div>
           </div>
         </div>
