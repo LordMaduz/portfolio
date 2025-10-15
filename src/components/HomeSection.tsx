@@ -76,7 +76,7 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
                 Senior Software Engineer & Cloud Solutions Architect
               </h2>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-300 max-w-3xl lg:max-w-4xl mx-auto leading-relaxed font-light">
-                Specializing in distributed systems, event-driven architecture, and high-performance engineering
+                Building scalable distributed systems and event-driven microservices for enterprise platforms serving millions of users
               </p>
             </div>
           </div>
