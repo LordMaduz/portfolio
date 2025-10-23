@@ -21,6 +21,7 @@ export default function ProjectsSection() {
   const projects = [
     {
       id: "hedge-accounting",
+      number: "01",
       title: "Corporate Banking Hedge Accounting Platform",
       company: "DBS Bank Singapore",
       role: "Technical Lead",
@@ -55,6 +56,7 @@ export default function ProjectsSection() {
     },
     {
       id: "notification-platform",
+      number: "02",
       title: "Dynamic Multi-Channel Notification Orchestration Platform",
       company: "DBS Bank Singapore",
       role: "Technical Lead",
@@ -89,6 +91,7 @@ export default function ProjectsSection() {
     },
     {
       id: "globe",
+      number: "03",
       title: "GloBE: Tax Compliance Engine for Global MNEs",
       company: "DBS Bank Singapore",
       role: "Lead Solutions Architect",
@@ -123,6 +126,7 @@ export default function ProjectsSection() {
     },
     {
       id: "derivative-trading",
+      number: "04",
       title: "Derivative Trading File Processing & Settlement System",
       company: "DBS Bank Singapore",
       role: "Senior Application Developer",
@@ -157,6 +161,7 @@ export default function ProjectsSection() {
     },
     {
       id: "food-ordering",
+      number: "05",
       title: "High-Volume Food Order Management & Inventory System",
       company: "GrubTech Sri Lanka",
       role: "Senior Software Engineer",
@@ -212,19 +217,15 @@ export default function ProjectsSection() {
        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Section Label */}
         <div className="mb-20">
-          <span className="text-xs sm:text-sm tracking-[0.3em] text-gray-500 uppercase font-light">
-            03. Projects
+          <span className="text-xs sm:text-sm tracking-[0.3em] text-gray-300 uppercase font-light">
+            03. MY RECENT WORK
           </span>
           <div className="w-12 h-[1px] bg-lime-400 mt-2"></div>
         </div>
 
         {/* Large Section Title */}
         <div className="mb-20">
-           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight mb-8">
-            <span className="text-white">RECENT</span>
-            <br />
-            <span className="text-gray-700">WORK</span>
-          </h2>
+
         </div>
 
         {/* Projects List - Jony Style */}
@@ -236,17 +237,26 @@ export default function ProjectsSection() {
                 setSelectedProject(project.id);
                 setActiveTab("overview");
               }}
-              className="border-t border-gray-800 hover:border-lime-400 transition-all cursor-pointer group"
+              className="border-t border-gray-800 transition-all cursor-pointer group"
             >
-              <div className="flex items-center">
+              <div className="flex items-start py-8">
+                {/* Number */}
+                <span className="text-lg text-gray-400 font-medium min-w-[3rem] mr-6">
+                  {project.number}.
+                </span>
+
+                {/* Content */}
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-lime-400 transition-colors mb-2">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white group-hover:text-lime-400 transition-colors mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-500 text-sm group-hover:text-white">{project.company}</p>
+                  <div className="flex items-center gap-4">
+                    <p className="text-gray-400 text-sm group-hover:text-white">{project.company}</p>
+                    <span className="text-gray-700">•</span>
+                    <p className="text-gray-400 text-sm group-hover:text-white">{project.timeline}</p>
+                  </div>
                 </div>
-                <div className={`w-96 h-48 bg-gradient-to-br rounded-lg flex items-center justify-center`}>
-
+                <div className={`w-96 h-34 bg-gradient-to-br rounded-lg flex items-center justify-center`}>
                 </div>
               </div>
             </div>
