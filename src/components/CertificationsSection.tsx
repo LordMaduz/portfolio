@@ -25,7 +25,7 @@ export default function CertificationsSection() {
   ];
 
   return (
-    <section className="min-h-screen bg-black text-white py-32 relative overflow-hidden">
+    <section className="min-h-screen bg-black text-white py-20 sm:py-32 relative overflow-hidden">
 
       {/* Subtle diagonal pattern background */}
       <div className="absolute inset-0 opacity-[0.015]">
@@ -40,42 +40,36 @@ export default function CertificationsSection() {
         }} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
 
         {/* Section Label */}
-        <div className="mb-20">
-          <span className="text-xs sm:text-sm tracking-[0.3em] text-gray-500 uppercase font-light">
+        <div className="mb-12 sm:mb-20">
+          <span className="text-[10px] sm:text-xs lg:text-sm tracking-[0.2em] sm:tracking-[0.3em] text-gray-300 uppercase font-light">
             04. Certifications
           </span>
-          <div className="w-12 h-[1px] bg-lime-400 mt-2"></div>
+          <div className="w-8 sm:w-12 h-[1px] bg-lime-400 mt-2"></div>
         </div>
 
         {/* Large Section Title */}
-        <div className="mb-20">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight mb-8">
-            <span className="text-white">CERTIFICATIONS &</span>
-            <br />
-            <span className="text-gray-700">CREDENTIALS</span>
-          </h2>
+        <div className="mb-12 sm:mb-20">
+
         </div>
 
-        {/* Certifications Grid - 2 columns */}
-        <div className="grid md:grid-cols-2 gap-8 mb-32">
+        {/* Certifications Grid - 2 columns on desktop, 1 column on mobile */}
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-20 sm:mb-32">
           {certifications.map((cert) => (
             <div
               key={cert.id}
-              className="border border-gray-900 hover:border-gray-800 transition-colors p-8"
+              className="border border-gray-700 transition-colors p-5 sm:p-6 lg:p-8"
             >
-              <div className="space-y-6">
-                {/* Number */}
-                <div className="text-5xl font-bold text-gray-900">{cert.number}</div>
+              <div className="space-y-4 sm:space-y-6">
 
                 {/* Title & Issuer */}
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-white mb-2">
                     {cert.title}
                   </h3>
-                  <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500">
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-400">
                     <span>{cert.issuer}</span>
                     <span>•</span>
                     <span>{cert.issued}</span>
@@ -85,7 +79,7 @@ export default function CertificationsSection() {
                 </div>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                   {cert.description}
                 </p>
 
@@ -94,10 +88,10 @@ export default function CertificationsSection() {
                   href={cert.credentialUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-lime-400 text-white hover:bg-lime-400 hover:text-black transition-colors text-sm font-medium"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 border-2 border-lime-400 text-white hover:bg-lime-400 hover:text-black transition-colors text-xs sm:text-sm font-medium"
                 >
                   <span>View Credential</span>
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </a>
               </div>
             </div>

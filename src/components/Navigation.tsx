@@ -12,11 +12,10 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
 
   const navItems = [
     { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'resume', label: 'Resume' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'certifications', label: 'Certifications' },
+    { id: 'resume', label: 'Resume' },
     { id: 'education', label: 'Education' },
     { id: 'contact', label: 'Contact' }
   ];
@@ -68,7 +67,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
           </div>
 
           {/* Mobile Menu Button - Minimalistic */}
-          <div className="md:hidden">
+          <div className="md:hidden relative z-50">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="w-10 h-10 flex items-center justify-center text-gray-500 hover:text-lime-400 transition-colors"
@@ -77,79 +76,70 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
             </button>
           </div>
         </div>
-
-        {/* Mobile Navigation - Full screen overlay */}
-        {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-20 bg-black/98 backdrop-blur-xl border-t border-gray-900">
-            <div className="h-full overflow-y-auto">
-              <div className="max-w-md mx-auto px-6 py-12">
-
-                {/* Mobile menu header */}
-                <div className="mb-12">
-                  <span className="text-xs tracking-[0.3em] text-gray-600 uppercase">
-                    Navigation
-                  </span>
-                  <div className="w-12 h-[1px] bg-lime-400 mt-2"></div>
-                </div>
-
-                {/* Mobile nav items - Large, clean */}
-                <div className="space-y-2">
-                  {navItems.map((item, index) => (
-                    <button
-                      key={item.id}
-                      onClick={() => {
-                        setActiveSection(item.id);
-                        setIsMenuOpen(false);
-                      }}
-                      className={`group w-full text-left py-4 border-b border-gray-900 transition-colors ${
-                        activeSection === item.id
-                          ? 'text-lime-400'
-                          : 'text-gray-500 hover:text-white'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4">
-                          {/* Number prefix */}
-                          <span className="text-xs text-gray-700 font-light w-6">
-                            {String(index + 1).padStart(2, '0')}.
-                          </span>
-                          {/* Label */}
-                          <span className="text-2xl font-semibold">
-                            {item.label}
-                          </span>
-                        </div>
-                        {/* Arrow indicator */}
-                        <span className={`text-xl transition-transform ${
-                          activeSection === item.id ? 'text-lime-400' : 'text-gray-700 group-hover:translate-x-1'
-                        }`}>
-                          →
-                        </span>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-
-                {/* Mobile menu footer */}
-                <div className="mt-12 pt-8 border-t border-gray-900">
-                  <div className="text-xs text-gray-600 uppercase tracking-wider mb-4">
-                    Get in Touch
-                  </div>
-                  <button
-                    onClick={() => {
-                      setActiveSection('contact');
-                      setIsMenuOpen(false);
-                    }}
-                    className="w-full bg-lime-400 hover:bg-lime-500 text-black px-6 py-4 text-base font-semibold transition-colors"
-                  >
-                    Contact Me
-                  </button>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Mobile Navigation - Optimized for Mobile Screens */}
+      {isMenuOpen && (
+        <div className="md:hidden absolute left-0 right-0 top-full bg-black border-t border-gray-900 shadow-xl">
+          <div className="px-4 py-4">
+
+            {/* Mobile menu header - Compact */}
+            <div className="mb-4">
+              <span className="text-[10px] tracking-[0.2em] text-gray-600 uppercase font-medium">
+                Menu
+              </span>
+              <div className="w-8 h-[1px] bg-lime-400 mt-1"></div>
+            </div>
+
+            {/* Mobile nav items - Compact and touchable */}
+            <div className="space-y-0">
+              {navItems.map((item, index) => (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    setActiveSection(item.id);
+                    setIsMenuOpen(false);
+                  }}
+                  className={`group w-full text-left py-3 border-b border-gray-900 transition-colors ${
+                    activeSection === item.id
+                      ? 'text-lime-400'
+                      : 'text-gray-400 hover:text-white active:text-lime-400'
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      {/* Label - mobile optimized size */}
+                      <span className="text-base font-semibold">
+                        {item.label}
+                      </span>
+                    </div>
+                    {/* Arrow indicator - smaller */}
+                    <span className={`text-sm transition-transform ${
+                      activeSection === item.id ? 'text-lime-400' : 'text-gray-700'
+                    }`}>
+                      →
+                    </span>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Mobile menu footer - Compact */}
+            <div className="mt-4 pt-4 border-t border-gray-900">
+              <button
+                onClick={() => {
+                  setActiveSection('contact');
+                  setIsMenuOpen(false);
+                }}
+                className="w-full bg-lime-400 hover:bg-lime-500 active:bg-lime-600 text-black px-4 py-3 text-sm font-semibold transition-colors"
+              >
+                Contact Me
+              </button>
+            </div>
+
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

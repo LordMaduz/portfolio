@@ -233,7 +233,7 @@ export default function AboutSection() {
           <blockquote className="max-w-4xl">
             <div className="w-12 h-[2px] bg-lime-400 mb-8"></div>
             <p className="text-xl sm:text-2xl md:text-3xl font-light text-gray-400 leading-relaxed mb-8">
-              Building great software isn't just about code—it's about understanding
+              Building great software isn't just about code, it's about understanding
               business needs, collaborating across teams, and delivering reliable
               systems at scale.
             </p>

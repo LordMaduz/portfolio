@@ -27,7 +27,7 @@ export default function ResumeSection() {
   };
 
   return (
-    <section className="min-h-screen bg-black text-white py-32 relative overflow-hidden">
+    <section className="min-h-screen bg-black text-white py-20 sm:py-32 relative overflow-hidden">
 
       {/* Subtle diagonal pattern background */}
       <div className="absolute inset-0 opacity-[0.015]">
@@ -42,93 +42,83 @@ export default function ResumeSection() {
         }} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
 
         {/* Section Label */}
-        <div className="mb-20">
-          <span className="text-xs sm:text-sm tracking-[0.3em] text-gray-500 uppercase font-light">
-            02. Resume
+        <div className="mb-12 sm:mb-20">
+          <span className="text-[10px] sm:text-xs lg:text-sm tracking-[0.2em] sm:tracking-[0.3em] text-gray-300 uppercase font-light">
+            05. Resume
           </span>
-          <div className="w-12 h-[1px] bg-lime-400 mt-2"></div>
+          <div className="w-8 sm:w-12 h-[1px] bg-lime-400 mt-2"></div>
         </div>
 
         {/* Large Section Title */}
-        <div className="mb-20">
-           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight mb-8">
-            <span className="text-white">DOWNLOAD</span>
-            <br />
-            <span className="text-gray-700">MY RESUME</span>
-          </h2>
+        <div className="mb-12 sm:mb-20">
+
         </div>
 
         {/* Resume Options - Clean minimal cards */}
-        <div className="grid md:grid-cols-2 gap-12 mb-32">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-20 sm:mb-32">
 
           {/* Interactive Portfolio Option */}
-          <div className="group border border-gray-900 hover:border-lime-400 transition-all duration-300">
-            <div className="p-8 space-y-6">
-
-              {/* Number */}
-              <div className="text-5xl font-bold text-gray-900">01</div>
+          <div className="group border border-gray-700 transition-colors">
+            <div className="p-5 sm:p-6 lg:p-8 space-y-4 sm:space-y-6">
 
               {/* Title */}
               <div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 group-hover:text-lime-400 transition-colors">
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 transition-colors">
                   Interactive Portfolio
                 </h3>
-                <p className="text-sm text-gray-600 uppercase tracking-wider">
+                <p className="text-xs sm:text-sm text-lime-400 uppercase tracking-wider">
                   Digital Experience
                 </p>
               </div>
 
               {/* Description */}
-              <p className="text-base text-gray-500 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                 Interactive digital resume on hello.cv with visual project showcases and live demonstrations.
               </p>
 
               {/* CTA */}
-              <div className="pt-6">
+              <div className="pt-4 sm:pt-6">
                 <button
                   onClick={handleInteractiveResume}
-                  className="w-full border-2 border-lime-400 hover:bg-lime-400 text-white hover:text-black py-4 px-6 font-semibold transition-colors flex items-center justify-between group disabled:opacity-50">
+                  className="w-full border-2 border-lime-400 hover:bg-lime-400 text-white hover:text-black py-3 sm:py-4 px-5 sm:px-6 text-sm sm:text-base font-semibold transition-colors flex items-center justify-between group disabled:opacity-50">
                   <span>View on hello.cv</span>
-                  <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
             </div>
           </div>
 
           {/* PDF Download Option */}
-          <div className="group border border-gray-900 hover:border-lime-400 transition-all duration-300">
-            <div className="p-8 space-y-6">
-
-              {/* Number */}
-              <div className="text-5xl font-bold text-gray-900">02</div>
+          <div className="group border border-gray-700 transition-colors">
+            <div className="p-5 sm:p-6 lg:p-8 space-y-4 sm:space-y-6">
 
               {/* Title */}
               <div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 group-hover:text-lime-400 transition-colors">
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2">
                   PDF Resume
                 </h3>
-                <p className="text-sm text-gray-600 uppercase tracking-wider">
+                <p className="text-xs sm:text-sm text-lime-400 uppercase tracking-wider">
                    Traditional Format
                 </p>
               </div>
 
               {/* Description */}
-              <p className="text-base text-gray-500 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                 Traditional PDF format optimized for recruiters and applicant tracking systems.
               </p>
 
               {/* CTA */}
-              <div className="pt-6">
+              <div className="pt-4 sm:pt-6">
                 <button
                   onClick={handlePDFDownload}
                   disabled={isDownloading}
-                  className="w-full border-2 border-lime-400 hover:bg-lime-400 text-white hover:text-black py-4 px-6 font-semibold transition-colors flex items-center justify-between group disabled:opacity-50"
+                  className="w-full border-2 border-lime-400 hover:bg-lime-400 text-white hover:text-black py-3 sm:py-4 px-5 sm:px-6 text-sm sm:text-base font-semibold transition-colors flex items-center justify-between group disabled:opacity-50"
                 >
                   <span>{isDownloading ? 'Downloading...' : 'Download PDF'}</span>
-                  <Download className={`w-5 h-5 ${isDownloading ? 'animate-bounce' : 'group-hover:-translate-y-1 transition-transform'}`} />
+                  <Download className={`w-4 h-4 sm:w-5 sm:h-5 ${isDownloading ? 'animate-bounce' : 'group-hover:-translate-y-1 transition-transform'}`} />
                 </button>
               </div>
             </div>

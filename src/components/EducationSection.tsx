@@ -21,7 +21,7 @@ export default function EducationSection() {
   ];
 
   return (
-    <section className="min-h-screen bg-black text-white py-32 relative overflow-hidden">
+    <section className="min-h-screen bg-black text-white py-20 sm:py-32 relative overflow-hidden">
 
       {/* Subtle diagonal pattern background */}
       <div className="absolute inset-0 opacity-[0.015]">
@@ -36,48 +36,42 @@ export default function EducationSection() {
         }} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
 
         {/* Section Label */}
-        <div className="mb-20">
-          <span className="text-xs sm:text-sm tracking-[0.3em] text-gray-500 uppercase font-light">
-            05. Education
+        <div className="mb-12 sm:mb-20">
+          <span className="text-[10px] sm:text-xs lg:text-sm tracking-[0.2em] sm:tracking-[0.3em] text-gray-300 uppercase font-light">
+            06. Education
           </span>
-          <div className="w-12 h-[1px] bg-lime-400 mt-2"></div>
+          <div className="w-8 sm:w-12 h-[1px] bg-lime-400 mt-2"></div>
         </div>
 
         {/* Large Section Title */}
-        <div className="mb-20">
-           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight mb-8">
-            <span className="text-white">ACADEMIC</span>
-            <br />
-            <span className="text-gray-700">FOUNDATION</span>
-          </h2>
+        <div className="mb-12 sm:mb-20">
+
         </div>
 
-        {/* Education Grid - 2 columns */}
-        <div className="grid md:grid-cols-2 gap-8 mb-32">
+        {/* Education Grid - 2 columns on desktop, 1 column on mobile */}
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-20 sm:mb-32">
           {education.map((edu) => (
             <div
               key={edu.id}
-              className="border border-gray-900 hover:border-gray-800 transition-colors p-8"
+              className="border border-gray-600 transition-colors p-5 sm:p-6 lg:p-8"
             >
-              <div className="space-y-6">
-                {/* Number */}
-                <div className="text-5xl font-bold text-gray-900">{edu.number}</div>
+              <div className="space-y-4 sm:space-y-6">
 
                 {/* Degree */}
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-white mb-2">
                     {edu.degree}
                   </h3>
-                  <p className="text-sm text-lime-400 uppercase tracking-wider mb-4">
+                  <p className="text-xs sm:text-sm text-lime-400 uppercase tracking-wider mb-3 sm:mb-4">
                     {edu.specialization}
                   </p>
                 </div>
 
                 {/* Institution & Details */}
-                <div className="space-y-2 text-sm text-gray-500">
+                <div className="space-y-2 text-xs sm:text-sm text-gray-400">
                   <div>{edu.institution}</div>
                   <div>{edu.duration}</div>
                   <div>{edu.location}</div>
