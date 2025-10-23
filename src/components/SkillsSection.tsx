@@ -1,247 +1,187 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { 
-  Server,
-  Cloud,
-  Database,
-  Code,
-  Zap,
-  Network,
-  Shield,
-  GitBranch,
-  Activity,
-  Terminal
-} from "lucide-react";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 interface TechCategory {
+  id: string;
+  number: string;
   title: string;
-  icon: React.ReactNode;
-  gradient: string;
   technologies: string[];
-  highlight?: string;
 }
 
 export default function SkillsSection() {
+  const [openItem, setOpenItem] = useState<string | null>(null);
+
+  const toggleItem = (id: string) => {
+    setOpenItem(openItem === id ? null : id);
+  };
+
   const techCategories: TechCategory[] = [
     {
+      id: "backend",
+      number: "01",
       title: "Backend Development",
-      icon: <Code className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7" />,
-      gradient: "from-blue-500 to-indigo-500",
-      technologies: ["Java (JDK 17, 21)", "Spring Framework (Boot, Cloud, Data)", "Go", "Node.js", "Akka Framework"],
-      highlight: "6+ Years Enterprise"
+      technologies: ["Java (JDK 17, 21)", "Spring Framework", "Spring Boot", "Go", "Node.js", "Akka Framework"]
     },
     {
-      title: "Distributed Systems Architecture",
-      icon: <Server className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7" />,
-      gradient: "from-purple-500 to-pink-500",
-      technologies: ["Microservices", "Event-Driven Architecture", "CQRS", "Serverless Architecture", "Cloud-Native Design", "Low-Latency Systems"],
-      highlight: "1M+ Daily Transactions"
+      id: "distributed",
+      number: "02",
+      title: "Distributed Systems",
+      technologies: ["Microservices Architecture", "Event-Driven Architecture", "CQRS", "Serverless", "Cloud-Native Design", "Low-Latency Systems"]
     },
     {
+      id: "cloud",
+      number: "03",
       title: "Cloud & Infrastructure",
-      icon: <Cloud className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7" />,
-      gradient: "from-emerald-500 to-teal-500",
-      technologies: ["AWS (EC2, S3, Lambda, ECS, EKS, Kinesis, SQS, Route53)", "Kubernetes", "Docker", "Red Hat OpenShift", "Terraform"],
-      highlight: "AWS Certified"
+      technologies: ["AWS (EC2, S3, Lambda, ECS, EKS)", "Kubernetes", "Docker", "Red Hat OpenShift", "Terraform"]
     },
     {
+      id: "streaming",
+      number: "04",
       title: "Event Streaming & Messaging",
-      icon: <GitBranch className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7" />,
-      gradient: "from-orange-500 to-red-500",
-      technologies: ["Apache Kafka", "Kafka Streams", "Confluent Kafka", "CloudEvents", "Amazon Kinesis", "Amazon SQS", "Reactor Kafka"],
-      highlight: "12K Requests/Second"
+      technologies: ["Apache Kafka", "Kafka Streams", "Confluent Kafka", "CloudEvents", "AWS Kinesis", "AWS SQS", "Reactor Kafka"]
     },
     {
+      id: "database",
+      number: "05",
       title: "Databases & Caching",
-      icon: <Database className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7" />,
-      gradient: "from-cyan-500 to-blue-500",
-      technologies: ["PostgreSQL", "Redis", "MongoDB", "Elasticsearch", "MySQL", "DynamoDB", "MariaDB", "Oracle", "Hibernate", "JDBC"],
-      highlight: "40% Performance Gain"
+      technologies: ["PostgreSQL", "Redis", "MongoDB", "Elasticsearch", "MySQL", "DynamoDB", "MariaDB", "Oracle", "Hibernate"]
     },
     {
+      id: "api",
+      number: "06",
       title: "API Design & Integration",
-      icon: <Network className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7" />,
-      gradient: "from-violet-500 to-purple-500",
-      technologies: ["RESTful APIs", "GraphQL", "gRPC", "OpenAPI3 (SpringDoc)", "Apache Camel", "Protocol Buffers", "WebSockets"],
-      highlight: "Sub-20ms Latency"
+      technologies: ["RESTful APIs", "GraphQL", "gRPC", "OpenAPI 3.0", "Apache Camel", "Protocol Buffers", "WebSockets"]
     },
     {
+      id: "reactive",
+      number: "07",
       title: "Reactive Programming",
-      icon: <Zap className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7" />,
-      gradient: "from-yellow-500 to-orange-500",
-      technologies: ["Project Reactor", "Spring WebFlux", "Reactive Kafka", "Akka Framework", "Non-blocking I/O", "Backpressure Handling"],
-      highlight: "Real-time Processing"
+      technologies: ["Project Reactor", "Spring WebFlux", "Reactive Kafka", "Akka Framework", "Non-blocking I/O", "Backpressure Handling"]
     },
     {
+      id: "security",
+      number: "08",
       title: "Security & Access Control",
-      icon: <Shield className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7" />,
-      gradient: "from-red-500 to-pink-500",
-      technologies: ["Zero-Trust Architecture", "ABAC (Cedar, OPA)", "OAuth 2.0", "RBAC", "APISIX Gateway", "Security Best Practices"],
-      highlight: "30+ Services Secured"
+      technologies: ["Zero-Trust Architecture", "ABAC (Cedar, OPA)", "OAuth 2.0", "RBAC", "APISIX Gateway", "Security Best Practices"]
     },
     {
+      id: "observability",
+      number: "09",
       title: "Observability & Monitoring",
-      icon: <Activity className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7" />,
-      gradient: "from-indigo-500 to-blue-500",
-      technologies: ["OpenTelemetry", "Grafana", "Prometheus", "Distributed Tracing", "System Monitoring", "Performance Optimization"],
-      highlight: "80% Faster MTTD"
+      technologies: ["OpenTelemetry", "Grafana", "Prometheus", "Distributed Tracing", "System Monitoring", "Performance Optimization"]
     },
     {
+      id: "devops",
+      number: "10",
       title: "DevOps & CI/CD",
-      icon: <Terminal className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7" />,
-      gradient: "from-teal-500 to-emerald-500",
-      technologies: ["Jenkins", "CircleCI", "GitLab", "GitHub", "Spring Cloud Config", "Spring Cloud Bus", "Docker", "Agile Methodologies"],
-      highlight: "Real-time Config Updates"
+      technologies: ["Jenkins", "CircleCI", "GitLab", "GitHub", "Spring Cloud Config", "Docker", "Agile Methodologies"]
     }
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.1),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(147,51,234,0.1),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_40%,rgba(99,102,241,0.05),transparent_50%)]" />
+    <section className="min-h-screen bg-black text-white py-32 relative overflow-hidden">
 
-      {/* Floating Elements - Mobile Optimized */}
-      <div className="absolute top-10 sm:top-20 left-4 sm:left-10 w-12 h-12 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse" />
-      <div className="absolute bottom-10 sm:bottom-20 right-4 sm:right-10 w-16 h-16 sm:w-32 sm:h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-xl animate-pulse delay-1000" />
-      <div className="absolute top-1/3 right-1/4 w-8 h-8 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full blur-xl animate-pulse delay-500" />
+      {/* Subtle diagonal pattern background */}
+      <div className="absolute inset-0 opacity-[0.015]">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(255,255,255,0.03) 10px,
+            rgba(255,255,255,0.03) 11px
+          )`
+        }} />
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <Badge className="mb-4 sm:mb-6 px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-blue-500/20 text-blue-300 border-blue-500/30">
-            Technical Expertise
-          </Badge>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-3 sm:mb-4">
-            <span className="text-white">Skills &</span>{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Technologies
-            </span>
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+
+        {/* Section Label */}
+        <div className="mb-20">
+          <span className="text-xs sm:text-sm tracking-[0.3em] text-gray-500 uppercase font-light">
+            03. Skills
+          </span>
+          <div className="w-12 h-[1px] bg-lime-400 mt-2"></div>
+        </div>
+
+        {/* Large Section Title */}
+        <div className="mb-20">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight mb-8">
+            <span className="text-white">TECHNICAL</span>
+            <br />
+            <span className="text-gray-700">EXPERTISE</span>
           </h2>
-          <div className="h-0.5 sm:h-1 w-16 sm:w-24 lg:w-32 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full mb-4 sm:mb-6"></div>
-          <p className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Proven expertise in building high-performance distributed systems, event-driven microservices,
-            and scalable cloud-native solutions for enterprise platforms
-          </p>
         </div>
 
-        {/* Technology Grid with Enhanced Mobile Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
-          {techCategories.map((category, index) => (
-            <Card key={index} className="group hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 border border-slate-700/50 bg-slate-800/50 backdrop-blur-sm overflow-hidden hover:border-blue-500/30 relative">
-              <CardContent className="p-4 sm:p-5 lg:p-6 xl:p-8">
-                {/* Mobile-First Header Layout */}
-                <div className="flex flex-col gap-3 sm:gap-4 mb-4 sm:mb-6">
-                  <div className="flex items-center gap-3 sm:gap-4">
-                    <div className={`p-2.5 sm:p-3 lg:p-4 rounded-lg sm:rounded-xl lg:rounded-2xl bg-gradient-to-br ${category.gradient} text-white group-hover:scale-110 transition-transform duration-300 shadow-lg flex-shrink-0`}>
-                      {category.icon}
+        {/* Technology Categories - Collapsible List with Logos */}
+        <div className="mb-32">
+          <div className="space-y-0">
+            {techCategories.map((category) => (
+              <div
+                key={category.id}
+                className="border-t border-gray-900 group"
+              >
+                <button
+                  onClick={() => toggleItem(category.id)}
+                  className="w-full py-8 flex items-start justify-between text-left hover:bg-gray-950/50 transition-colors px-4 -mx-4"
+                >
+                  <div className="flex items-start gap-6 flex-1">
+                    {/* Number */}
+                    <span className="text-base sm:text-lg text-gray-400 font-medium min-w-[2.5rem] pt-1">
+                      {category.number}.
+                    </span>
+
+                    {/* Title & Content */}
+                    <div className="flex-1">
+                      <h3 className="text-lg sm:text-md md:text-xl font-semibold text-white group-hover:text-lime-400 transition-colors mb-2">
+                        {category.title}
+                      </h3>
+
+                      {/* Technologies - Collapsible */}
+                      <div
+                        className={`overflow-hidden transition-all duration-500 ${
+                          openItem === category.id
+                            ? 'max-h-96 opacity-100 mt-6'
+                            : 'max-h-0 opacity-0'
+                        }`}
+                      >
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-3">
+                          {category.technologies.map((tech, techIndex) => (
+                            <div
+                              key={techIndex}
+                              className="text-sm text-gray-500 hover:text-gray-300 transition-colors"
+                            >
+                              {tech}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                    <h3 className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-white leading-tight">{category.title}</h3>
                   </div>
-                  {category.highlight && (
-                    <Badge className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 border-blue-400/30 text-xs px-2 py-1 flex-shrink-0 self-start">
-                      {category.highlight}
-                    </Badge>
-                  )}
-                </div>
 
-                {/* Mobile-Optimized Technology Tags */}
-                <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  {category.technologies.map((tech, techIndex) => (
-                    <Badge
-                      key={techIndex}
-                      variant="secondary"
-                      className="bg-slate-700/60 text-slate-200 hover:bg-slate-600/60 border border-slate-600/50 hover:border-slate-500/50 transition-all duration-200 text-xs sm:text-sm py-1 px-2 sm:px-3 rounded-md sm:rounded-lg font-medium hover:scale-105 leading-relaxed"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                  {/* Arrow Icon - Inside visible box */}
+                  <div className={`w-10 h-10 border flex items-center justify-center flex-shrink-0 transition-all ${
+                    openItem === category.id
+                      ? 'border-lime-400 bg-lime-400'
+                      : 'border-gray-800 hover:border-lime-400'
+                  }`}>
+                    <ChevronDown
+                      className={`w-5 h-5 transition-all ${
+                        openItem === category.id
+                          ? 'rotate-180 text-black'
+                          : 'text-gray-500 group-hover:text-lime-400'
+                      }`}
+                    />
+                  </div>
+                </button>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom border */}
+          <div className="border-t border-gray-900 mt-0"></div>
         </div>
 
-        {/* Enhanced Experience Highlight with REAL Metrics from Resume */}
-        <Card className="bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 text-white border-0 relative overflow-hidden shadow-2xl shadow-slate-500/20 mb-12 sm:mb-16">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(99,102,241,0.3),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(168,85,247,0.3),transparent_50%)]" />
-
-          <CardContent className="p-6 sm:p-8 lg:p-12 relative z-10">
-            <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">Proven Performance Impact</h3>
-              <p className="text-slate-300 max-w-3xl mx-auto text-sm sm:text-base lg:text-lg">
-                Real metrics from building and optimizing enterprise-scale distributed systems
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-              <div className="text-center">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1 sm:mb-2">1M+</div>
-                <div className="text-sm sm:text-base lg:text-lg text-slate-300 mb-1">Daily Transactions</div>
-                <div className="text-xs sm:text-sm text-blue-300">12K requests/second</div>
-              </div>
-
-              <div className="text-center">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-1 sm:mb-2">92%</div>
-                <div className="text-sm sm:text-base lg:text-lg text-slate-300 mb-1">Faster Coordination</div>
-                <div className="text-xs sm:text-sm text-emerald-300">48 hours to 4 hours</div>
-              </div>
-
-              <div className="text-center">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-1 sm:mb-2">99.9%</div>
-                <div className="text-sm sm:text-base lg:text-lg text-slate-300 mb-1">System Uptime</div>
-                <div className="text-xs sm:text-sm text-purple-300">High availability systems</div>
-              </div>
-
-              <div className="text-center">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent mb-1 sm:mb-2">20ms</div>
-                <div className="text-sm sm:text-base lg:text-lg text-slate-300 mb-1">Response Time</div>
-                <div className="text-xs sm:text-sm text-orange-300">Low-latency architecture</div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Core Competencies Summary */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          <Card className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 hover:border-blue-500/30 transition-all duration-300">
-            <CardContent className="p-5 sm:p-6 lg:p-8 text-center">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                <Server className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-blue-400" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">Event-Driven Architecture</h3>
-              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                Built large-scale data streaming systems processing 1M+ daily transactions with Kafka and CloudEvents, supporting multi-domain financial workflows
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 hover:border-purple-500/30 transition-all duration-300">
-            <CardContent className="p-5 sm:p-6 lg:p-8 text-center">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                <Zap className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-purple-400" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">Reactive Systems</h3>
-              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                Engineered reactive microservices with Project Reactor achieving 60% faster processing and handling thousands of concurrent operations
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 hover:border-emerald-500/30 transition-all duration-300">
-            <CardContent className="p-5 sm:p-6 lg:p-8 text-center">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                <Cloud className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-emerald-400" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">Cloud-Native Solutions</h3>
-              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                AWS Certified Solutions Architect delivering containerized workloads with Kubernetes achieving 99% uptime and 20% cost reduction
-              </p>
-            </CardContent>
-          </Card>
-        </div>
       </div>
     </section>
   );
