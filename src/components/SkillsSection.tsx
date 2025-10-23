@@ -46,7 +46,7 @@ export default function SkillsSection() {
       number: "01",
       title: "Backend Engineering & Microservices",
       technologies: ["Java 21", "Spring Boot", "Spring Framework", "Go", "Node.js"],
-      story: "I build backend systems that handle millions of requests without breaking a sweat. My approach? Design APIs that feel intuitive to developers while being robust enough for enterprise scale. Every endpoint I create is crafted thinking about the developer experience first — clear contracts, predictable behavior, and responses that make sense. Because when backend systems just work, everyone's day gets better.",
+      story: "I build backend systems that handle millions of requests. My approach is simple where I design APIs that feel intuitive to developers while being robust enough for enterprise scale. Every endpoint I create is crafted thinking about the developer experience first, clear contracts, predictable behavior, and responses that make sense. Because when backend systems just work, everyone's day gets better.",
       impact: "Users get instant responses. Developers get APIs they actually enjoy working with. Operations teams sleep peacefully at night."
     },
     {
@@ -54,7 +54,7 @@ export default function SkillsSection() {
       number: "02",
       title: "Distributed Systems & Event-Driven Architecture",
       technologies: ["Microservices", "Event-Driven Design", "CQRS", "Domain-Driven Design"],
-      story: "I architect systems where services communicate like a well-orchestrated conversation — not shouting at each other, but listening, responding, and staying in sync. When one service processes data, others react in real-time without polling or waiting. This isn't just about technical elegance; it's about building systems that scale naturally and degrade gracefully when things go wrong.",
+      story: "I architect systems where services communicate like a well-orchestrated conversation, not shouting at each other, but listening, responding, and staying in sync. When one service processes data, others react in real-time without polling or waiting. This isn't just about technical elegance; it's about building systems that scale naturally and degrade gracefully when things go wrong.",
       impact: "Real-time experiences without the complexity. Systems that grow with your business, not against it."
     },
     {
@@ -62,7 +62,7 @@ export default function SkillsSection() {
       number: "03",
       title: "Event Streaming & Real-Time Data",
       technologies: ["Apache Kafka", "Kafka Streams", "CloudEvents", "AWS Kinesis", "Reactor Kafka"],
-      story: "I design event streams that ensure users never wait for something that can happen in the background. When a customer places an order, they get instant confirmation — not because of magic, but because of well-architected event pipelines that prioritize user experience over system complexity. Every event tells a story, and I make sure that story reaches the right audience at the right time.",
+      story: "I design event streams that ensure users never wait for something that can happen in the background. When a customer places an order, they get instant confirmation, not because of magic, but because of well-architected event pipelines that prioritize user experience over system complexity. Every event tells a story, and I make sure that story reaches the right audience at the right time.",
       impact: "Instant user feedback. Zero data loss. Systems that feel responsive even under heavy load."
     },
     {
@@ -70,7 +70,7 @@ export default function SkillsSection() {
       number: "04",
       title: "Reactive Programming & High-Performance Systems",
       technologies: ["Project Reactor", "Spring WebFlux", "Non-blocking I/O", "Backpressure Handling"],
-      story: "I write code that doesn't waste time waiting. While traditional systems sit idle waiting for databases or external APIs, reactive systems I build keep working — handling thousands of concurrent users without spinning up thousands of threads. It's about respecting server resources while delivering blazing-fast responses to users. Every millisecond saved is a better user experience delivered.",
+      story: "I write code that doesn't waste time waiting. While traditional systems sit idle waiting for databases or external APIs, reactive systems I build keep working, handling thousands of concurrent users without spinning up thousands of threads. It's about respecting server resources while delivering blazing-fast responses to users. Every millisecond saved is a better user experience delivered.",
       impact: "Sub-20ms response times. Servers that handle 10x more load with the same resources. Smooth experiences even during traffic spikes."
     },
     {
@@ -78,7 +78,7 @@ export default function SkillsSection() {
       number: "05",
       title: "Cloud-Native Architecture & Infrastructure",
       technologies: ["AWS (EC2, S3, Lambda, ECS, EKS)", "Kubernetes", "Docker", "OpenShift", "Terraform"],
-      story: "I build applications that were born for the cloud — not retrofitted into it. Auto-scaling when traffic surges, self-healing when things fail, and costing pennies when idle. My infrastructure code is as important as application code, because reliability and cost-efficiency shouldn't be afterthoughts. I design systems that operations teams can deploy with confidence and finance teams can approve without hesitation.",
+      story: "I build applications that were born for the cloud not retrofitted into it. Auto-scaling when traffic surges, self-healing when things fail, and costing pennies when idle. My infrastructure code is as important as application code, because reliability and cost-efficiency shouldn't be afterthoughts. I design systems that operations teams can deploy with confidence and finance teams can approve without hesitation.",
       impact: "20% lower infrastructure costs. Zero-downtime deployments. Systems that scale automatically when you need them."
     },
     {
@@ -86,7 +86,7 @@ export default function SkillsSection() {
       number: "06",
       title: "Data Architecture & Caching Strategies",
       technologies: ["PostgreSQL", "Redis", "MongoDB", "Elasticsearch", "DynamoDB"],
-      story: "I choose databases like a chef chooses ingredients — each one serving a specific purpose. PostgreSQL for transactional integrity, Redis for lightning-fast caching, MongoDB for flexible schemas, Elasticsearch for powerful search. But it's not just about picking the right database; it's about designing data flows where users get instant results while maintaining consistency behind the scenes. Smart caching means users see their changes immediately, even if the full save happens later.",
+      story: "I choose databases like a chef choosing ingredients, each one serving a specific purpose. PostgreSQL for transactional integrity, Redis for lightning-fast caching, MongoDB for flexible schemas, Elasticsearch for powerful search. But it's not just about picking the right database; it's about designing data flows where users get instant results while maintaining consistency behind the scenes. Smart caching means users see their changes immediately, even if the full save happens later.",
       impact: "35% faster API responses. 40% reduced database load. Users see instant updates without compromise on data integrity."
     },
     {
@@ -94,7 +94,7 @@ export default function SkillsSection() {
       number: "07",
       title: "API Design & Integration",
       technologies: ["RESTful APIs", "GraphQL", "gRPC", "OpenAPI 3.0", "Apache Camel", "WebSockets"],
-      story: "I design APIs that feel like conversations, not contracts. Whether it's REST for simplicity, GraphQL for flexibility, or gRPC for performance, I choose the right protocol for the right job. Every endpoint is documented, every error message is helpful, and every response is structured in a way that makes frontend developers smile. Integration shouldn't be painful — it should be predictable and pleasant.",
+      story: "I design APIs that feel like conversations, not contracts. Whether it's REST for simplicity, GraphQL for flexibility, or gRPC for performance, I choose the right protocol for the right job. Every endpoint is documented, every error message is helpful, and every response is structured in a way that makes frontend developers smile. Integration shouldn't be painful, it should be predictable and pleasant.",
       impact: "Developers integrate in hours, not days. Clear documentation means fewer support tickets. APIs that evolve without breaking existing clients."
     },
     {
@@ -102,7 +102,7 @@ export default function SkillsSection() {
       number: "08",
       title: "Security & Access Control",
       technologies: ["Zero-Trust Architecture", "ABAC (Cedar, OPA)", "OAuth 2.0", "RBAC", "APISIX Gateway"],
-      story: "I build security into systems from day one — not as an afterthought. Zero-trust means never assuming anyone or anything is safe by default. Attribute-based access control means users can do exactly what they need, nothing more, nothing less. And when something goes wrong, audit trails tell us exactly what happened. Security doesn't have to be a user experience nightmare; it should be invisible to legitimate users and impenetrable to bad actors.",
+      story: "I build security into systems from day one, not as an afterthought. Zero-trust means never assuming anyone or anything is safe by default. Attribute-based access control means users can do exactly what they need, nothing more, nothing less. And when something goes wrong, audit trails tell us exactly what happened. Security doesn't have to be a user experience nightmare; it should be invisible to legitimate users and impenetrable to bad actors.",
       impact: "99.9% uptime with zero security breaches. Users stay secure without friction. Compliance teams get audit trails that actually make sense."
     },
     {
@@ -110,16 +110,8 @@ export default function SkillsSection() {
       number: "09",
       title: "Observability & Performance Monitoring",
       technologies: ["OpenTelemetry", "Grafana", "Prometheus", "Distributed Tracing", "APM Tools"],
-      story: "I build systems that tell me when something's wrong before users notice. Distributed tracing means I can follow a single request across dozens of services and pinpoint exactly where the slowdown happened. Metrics and dashboards aren't just pretty graphs — they're early warning systems that help teams fix issues in minutes instead of hours. When production incidents happen (and they will), my monitoring setup tells us exactly what, where, and why.",
+      story: "I build systems that tell me when something's wrong before users notice. Distributed tracing means I can follow a single request across dozens of services and pinpoint exactly where the slowdown happened. Metrics and dashboards aren't just pretty graphs, they're early warning systems that help teams fix issues in minutes instead of hours. When production incidents happen, my monitoring setup tells us exactly what, where, and why.",
       impact: "80% faster incident detection. 75% faster resolution times. Problems fixed before customers complain."
-    },
-    {
-      id: "devops",
-      number: "10",
-      title: "DevOps & Continuous Delivery",
-      technologies: ["Jenkins", "CircleCI", "GitLab CI/CD", "GitHub Actions", "Docker", "Infrastructure as Code"],
-      story: "I automate everything that can be automated. Code pushed to main? Tests run automatically. Tests pass? Deployed to staging automatically. Staging looks good? Production deployment is one button away. My CI/CD pipelines don't just deploy code — they run security scans, performance tests, and rollback automatically if something goes wrong. Deployments should be boring, predictable, and frequent.",
-      impact: "Deploy 10+ times a day with confidence. Rollbacks in under 2 minutes. Zero manual deployment errors."
     }
   ];
 
