@@ -245,7 +245,7 @@ export default function ProjectsSection() {
 
                 {/* Content */}
                 <div className="flex-1">
-                  <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white group-hover:text-lime-400 transition-colors mb-2">
+                  <h3 className="text-md sm:text-base md:text-lg lg:text-xl font-bold text-white group-hover:text-lime-400 transition-colors mb-2">
                     {project.title}
                   </h3>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
@@ -317,7 +317,7 @@ export default function ProjectsSection() {
                   </div>
                 </div>
                 <button
-                  onClick={() => setSelectedProject(null)}
+                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); setSelectedProject(null); }}
                   className="w-8 h-8 sm:w-10 sm:h-10 border border-gray-800 hover:border-lime-400 flex items-center justify-center transition-colors group flex-shrink-0"
                 >
                   <X className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:text-lime-400" />

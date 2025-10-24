@@ -102,9 +102,11 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
               {expandedSections.beginning && (
                 <div className="space-y-4 sm:space-y-6 animate-fadeIn">
                   <p className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed">
-                    I stumbled upon programming almost by accident, but what started as curiosity quickly became
-                    fascination. There was something magical about turning ideas into working systems, about
-                    solving puzzles that seemed impossible at first glance.
+                    I stumbled upon programming almost by accident, but what started as
+                    curiosity quickly became fascination. There was something magical about
+                    turning ideas into working systems, not just the code itself, but the
+                    puzzle-solving, the AHA moments when something clicks, and the quiet
+                    satisfaction of building something that actually works.
                   </p>
                 </div>
               )}
@@ -139,17 +141,25 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
             <div className="space-y-4 sm:space-y-6">
               {/* Always visible first paragraph */}
               <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed">
-                I traded tropical beaches for Singapore's skyline, anime marathons for system designs,
-                and quiet evenings for loud ideas. But that fascination never faded, it evolved.
+                I left the comfort of home for Singapore’s skyline, where fast-moving ideas,
+                and a world of new people collide, not for the career
+                opportunities alone, but because I wanted to be where ideas moved fast
+                and problems were big enough to matter.
               </p>
 
               {/* Collapsible content */}
               {expandedSections.evolution && (
                 <div className="space-y-4 sm:space-y-6 animate-fadeIn">
                   <p className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed">
-                    I pursued a Master's degree at the University of Westminster, specializing in Blockchain
-                    Technology. I earned my AWS Solutions Architect Associate certification, not just for the credential, but to
-                    master the tools that power modern cloud infrastructure.
+                    Moving from a small island to one of Asia's tech hubs taught me that growth happens
+                    outside comfort zones. I pursued deeper knowledge not just to earn
+                    credentials, but because I wanted to truly understand the systems I was
+                    building.
+                  </p>
+                  <p className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed">
+                    Singapore's demanding pace showed me that technical excellence isn't
+                    enough, you need to communicate, collaborate, and bring others along.
+                    The best engineers aren't lone wolves; they're force multipliers.
                   </p>
                 </div>
               )}
@@ -184,15 +194,20 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
             <div className="space-y-4 sm:space-y-6">
               {/* Always visible first paragraph */}
               <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed">
-                I believe the best solutions come from genuine curiosity, not just technical knowledge.
+                I believe the best solutions come from genuine curiosity, not just
+                technical knowledge. I'm not interested in being the smartest person
+                in the room, I'm interested in asking the questions no one else is asking.
               </p>
 
               {/* Collapsible content */}
               {expandedSections.approach && (
                 <div className="space-y-4 sm:space-y-6 animate-fadeIn">
                   <p className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed">
-                    I'm the person who asks WHY many times, who challenges assumptions with respect.
-                    I don't just write code, I craft systems that are reliable today and maintainable tomorrow.
+                    I'm the person who asks WHY until we get to the real problem, not the
+                    symptom. Someone who challenges assumptions respectfully, because the best ideas
+                    often hide behind "that's how we've always done it." Someone who finds joy in
+                    making complex things beautifully simple, not for elegance's sake, but
+                    because simplicity is kindness to the next person who has to maintain it.
                   </p>
 
                   <p className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed">
@@ -233,17 +248,26 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
             <div className="space-y-4 sm:space-y-6">
               {/* Always visible first paragraph */}
               <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed">
-                Today, I architect distributed and event-driven systems that scale effortlessly while maintaining
-                seamless flow, and I lead technical initiatives that deliver measurable impact.
+                Today, I work on systems where reliability isn't optional and scale isn't
+                theoretical. But what drives me isn't the technology itself, it's the impact
+                it enables and the people I get to work with along the way.
               </p>
 
               {/* Collapsible content */}
               {expandedSections.present && (
                 <div className="space-y-4 sm:space-y-6 animate-fadeIn">
                   <p className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed">
-                    But here's what really drives me: I'm not here to be the smartest person in the room.
-                    I'm here to make the room smarter, through collaboration, curiosity, and the genuine belief
-                    that the best ideas come from the most unexpected places.
+                  I've learned that the most valuable skill isn't knowing every framework or
+                  design pattern, it's the ability to translate business needs into technical
+                  solutions that people can understand and trust. To mentor junior engineers
+                  without making them feel small. To say "I don't know, but I'll find out"
+                  without shame.
+                  </p>
+                <p className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed">
+                    The engineer I want to be isn't defined by lines of code or systems
+                    architected, it's defined by problems solved, teams uplifted, and knowledge
+                    shared. Because at the end of the day, code is temporary, but the impact
+                    you have on people and the culture you help build, that's what lasts.
                   </p>
                 </div>
               )}
@@ -289,7 +313,7 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
           <div className="relative z-10">
             {/* Section Header */}
             <div className="text-center mb-8 sm:mb-10">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white">
                 What Drives Me
               </h3>
             </div>
@@ -308,11 +332,13 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
                 <div className="absolute inset-0 bg-lime-400/0 group-hover:bg-lime-400/5 transition-colors duration-300"></div>
 
                 <div className="relative space-y-4">
-                  <h4 className="text-lg sm:text-xl font-bold text-white group-hover:text-lime-400 transition-colors pt-2">
-                    Curiosity Over Knowledge
+                  <h4 className="text-base sm:text-lg lg:text-xl font-bold text-white group-hover:text-lime-400 transition-colors pt-2">
+                    Curiosity Over Ego
                   </h4>
                   <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
-                    The best solutions come from asking WHY repeatedly, not from knowing all the answers upfront.
+                    I'd rather be the person asking DUMB questions than the one pretending
+                    to have all the answers. The best breakthroughs come from being curious
+                    enough to challenge what everyone assumes is true.
                   </p>
                 </div>
               </div>
@@ -328,11 +354,12 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
                 <div className="absolute inset-0 bg-lime-400/0 group-hover:bg-lime-400/5 transition-colors duration-300"></div>
 
                 <div className="relative space-y-4">
-                  <h4 className="text-lg sm:text-xl font-bold text-white group-hover:text-lime-400 transition-colors pt-2">
-                    Collaboration First
+                  <h4 className="text-base sm:text-lg lg:text-xl font-bold text-white group-hover:text-lime-400 transition-colors pt-2">
+                    Collaboration Over Competition
                   </h4>
                   <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
-                    Great systems are built by great teams. I prioritize listening, mentoring, and lifting others.
+                    I measure success by how many people I can bring along, not how far ahead
+                    I get. The engineers I admire most are the ones who make everyone around them better.
                   </p>
                 </div>
               </div>
@@ -348,11 +375,12 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
                 <div className="absolute inset-0 bg-lime-400/0 group-hover:bg-lime-400/5 transition-colors duration-300"></div>
 
                 <div className="relative space-y-4">
-                  <h4 className="text-lg sm:text-xl font-bold text-white group-hover:text-lime-400 transition-colors pt-2">
-                    Simplicity as Art
+                  <h4 className="text-base sm:text-lg lg:text-xl font-bold text-white group-hover:text-lime-400 transition-colors pt-2">
+                    Impact Over Complexity
                   </h4>
                   <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
-                    Complex problems deserve elegant solutions. Beautiful code is simple code that others can understand.
+                    I don't write code to show how clever I am. I write it so the next person
+                    doesn't curse my name. Simplicity is respect for your teammates.
                   </p>
                 </div>
               </div>

@@ -19,8 +19,6 @@ export default function SkillsSection() {
     if (selectedMobileItem) {
       // Prevent body scroll
       document.body.style.overflow = 'hidden';
-      // Scroll modal to top when opened
-      window.scrollTo(0, 0);
     } else {
       // Restore body scroll
       document.body.style.overflow = 'unset';
@@ -175,6 +173,9 @@ export default function SkillsSection() {
                 className="w-full text-left bg-gray-950/30 border border-gray-900  p-4 transition-all group"
               >
                 <div className="flex items-start justify-between gap-3">
+                  <span className="text-base font-semibold text-gray-400 font-medium min-w-[2.5rem] pt-1">
+                    {category.number}.
+                  </span>
                   <div className="flex-1 min-w-0">
                     <h3 className="text-base font-semibold text-white group-hover:text-lime-400 transition-colors mb-2">
                       {category.title}
@@ -211,17 +212,14 @@ export default function SkillsSection() {
             <div className="min-h-screen p-4 pt-10 pb-8 sm:pt-8">
               <div className="max-w-2xl mx-auto">
                 {/* Header */}
-                <div className="flex items-start justify-between mb-6 pt-2">
+                <div className="flex items-start justify-between mb-6 pt-4">
                   <div className="flex-1">
-                    <span className="text-xs text-gray-500 uppercase tracking-wider">
-                      {selectedCategory.number}
-                    </span>
-                    <h2 className="text-xl font-bold text-white mt-2">
+                    <h2 className="text-lg font-bold text-white mt-2">
                       {selectedCategory.title}
                     </h2>
                   </div>
                   <button
-                    onClick={() => setSelectedMobileItem(null)}
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); setSelectedMobileItem(null); }}
                     className="w-10 h-10 border border-gray-800 hover:border-lime-400 flex items-center justify-center flex-shrink-0 ml-4"
                   >
                     <span className="text-gray-400 hover:text-lime-400 text-2xl leading-none">×</span>
@@ -270,7 +268,7 @@ export default function SkillsSection() {
 
                 {/* Close Button */}
                 <button
-                  onClick={() => setSelectedMobileItem(null)}
+                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); setSelectedMobileItem(null); }}
                   className="w-full mt-8 bg-lime-400 hover:bg-lime-500 text-black px-6 py-4 text-sm font-semibold transition-colors"
                 >
                   Close

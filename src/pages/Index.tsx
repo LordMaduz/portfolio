@@ -33,17 +33,14 @@ export default function Index() {
         {/* Projects Section */}
         <ProjectsSection />
 
-        {/* Recommendation Section */}
-        <RecommendationSection />
-
         {/* Certifications Section */}
         <CertificationsSection />
 
-         {/* Resume Section */}
-         <ResumeSection />
-
         {/* Education Section */}
         <EducationSection />
+
+        {/* Recommendation Section */}
+        <RecommendationSection />
 
         {/* Contact Section */}
         <ContactSection />
