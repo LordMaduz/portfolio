@@ -220,7 +220,7 @@ export default function ProjectsSection() {
         <div className="mb-16 sm:mb-20">
           <div className="flex items-center gap-4 mb-6 sm:mb-8">
             <div className="w-12 sm:w-16 h-[3px] bg-lime-400"></div>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.05] tracking-tight">
               <span className="text-white">WHAT I'VE BUILT AND WHY</span>
             </h2>
           </div>
