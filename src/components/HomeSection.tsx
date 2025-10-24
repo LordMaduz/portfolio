@@ -7,22 +7,23 @@ interface HomeSectionProps {
   setActiveSection: (section: string) => void;
 }
 
-const scrollToSection = (sectionId: string) => {
-  const element = document.getElementById(sectionId);
-  if (element) {
-    const offset = 80; // Height of fixed navbar
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-    });
-
-    setActiveSection(sectionId);
-  }
-};
 export default function HomeSection({ setActiveSection }: HomeSectionProps) {
+  // Scroll handler function
+const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navHeight = 80; // Height of fixed navbar
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - navHeight;
+
+      window.scrollTo({
+        top: sectionId === 'home' ? 0 : offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    setActiveSection(sectionId);
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-black text-white relative overflow-hidden">
       {/* Subtle pattern background */}
@@ -42,10 +43,10 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
       </div>
 
       {/* Content Wrapper */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-20 sm:py-28">
+      <div className="relative z-10 max-w-10xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-20 sm:py-28">
 
         {/* Mobile Only: Name at Top */}
-        <div className="lg:hidden text-center mb-10">
+        <div className="lg:hidden text-center mb-8">
           <h1 className="text-4xl sm:text-5xl font-bold leading-[1.05] tracking-tight">
             <span className="text-white">RUCHIRA</span>
             <br />
@@ -54,13 +55,16 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
           <p className="text-base sm:text-lg text-gray-500 mt-3 font-medium">
             Senior Software Engineer
           </p>
+           <p className="text-base sm:text-lg text-gray-500 font-medium">
+               AWS Certified Solutions Architect
+            </p>
         </div>
 
         {/* Balanced Grid Layout */}
-        <div className="grid lg:grid-cols-[50%_50%] gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-[55%_45%] gap-12 lg:gap-16 items-center">
 
           {/* Left Column - Intriguing Glimpse (Hidden on Mobile) */}
-          <div className="hidden lg:block space-y-14 text-center lg:text-left">
+          <div className="hidden lg:block space-y-12 text-center lg:text-left">
 
             {/* Name - Desktop Only */}
             <div>
@@ -70,72 +74,68 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
                 <span className="text-gray-700">RAJAPAKSHA</span>
               </h1>
               <p className="text-2xl text-gray-500 mt-4 font-medium">
-                Senior Software Engineer
+                Senior Software Engineer & AWS Certified Solutions Architect
               </p>
             </div>
 
-            {/* One Intriguing Line - Hook */}
-            <div className="space-y-6 text-xl lg:text-2xl leading-relaxed max-w-xl mx-auto lg:mx-0">
+            {/* Updated Value Proposition */}
+            <div className="space-y-6 text-xl lg:text-2xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
               <p className="text-gray-300">
-                A Sri Lankan in Singapore who codes by day, writes by night, and believes the best
-                engineering happens when curiosity meets collaboration.
+                 I'm an event-driven cloud architecture specialist who builds distributed systems that don't break when they scale. The kind that process 1M+ daily transactions while you sleep.
               </p>
+              <p className="text-gray-300">
+                  As a Featured Baeldung Author, I share my hard-earned lessons with developers worldwide.
+               </p>
             </div>
 
-            {/* Minimal Identity Hints */}
-            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto lg:mx-0 pt-8">
+            {/* Visible Metrics */}
+            <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto lg:mx-0 pt-6">
               <div className="space-y-2 border-l-2 border-lime-400 pl-4">
-                <div className="text-3xl font-bold text-white">🇱🇰</div>
-                <div className="text-sm text-gray-400 leading-tight">
-                  Born
+                <div className="text-3xl font-bold text-lime-400">1M+</div>
+                <div className="text-md text-gray-400 leading-tight">
+                  Daily
                   <br />
-                  <span className="text-gray-400">Sri Lanka</span>
+                  <span className="text-gray-400">Transactions</span>
                 </div>
               </div>
 
               <div className="space-y-2 border-l-2 border-lime-400 pl-4">
-                <div className="text-3xl font-bold text-white">🇸🇬</div>
-                <div className="text-sm text-gray-400 leading-tight">
-                  Based
+                <div className="text-3xl font-bold text-lime-400">5</div>
+                <div className="text-md text-gray-400 leading-tight">
+                  Enterprise
                   <br />
-                  <span className="text-gray-400">Singapore</span>
+                  <span className="text-gray-400">Systems Built</span>
                 </div>
               </div>
 
               <div className="space-y-2 border-l-2 border-lime-400 pl-4">
-                <div className="h-8 flex items-center ">
-                  <img
-                    src={baeldung}
-                    alt="Baeldung"
-                    className="h-7 w-auto"
-                  />
-                </div>
-                <div className="text-sm text-gray-400 leading-tight">
-                  Baeldung
+                <div className="text-3xl font-bold text-lime-400">6+</div>
+                <div className="text-md text-gray-400 leading-tight">
+                  Years
                   <br />
-                  <span className="text-gray-400">Writer</span>
+                  <span className="text-gray-400">Experience</span>
                 </div>
               </div>
             </div>
 
-            {/* CTA Section */}
+            {/* CTA Section - Updated */}
             <div className="flex flex-col sm:flex-row items-center gap-6 pt-8">
               <Button
                 size="lg"
                 className="bg-lime-400 hover:bg-lime-500 text-black px-8 py-6 text-lg font-semibold rounded-none transition-all duration-300 group shadow-none hover:shadow-none w-full sm:w-auto"
-                onClick={() => scrollToSection("about")}
+                onClick={() => scrollToSection("projects")}
               >
                 <span className="flex items-center justify-center gap-3">
-                  Discover My Story
+                  See How I Build Systems at Scale
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </Button>
 
               <button
-                onClick={() => scrollToSection("projects")}
+                onClick={() => scrollToSection("about")}
                 className="text-gray-400 hover:text-lime-400 transition-colors text-base font-medium"
               >
-                See my work →
+                Discover My Story →
               </button>
             </div>
           </div>
@@ -155,6 +155,8 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               </div>
+              <div className="absolute inset-0 border-2 border-transparent group-hover:border-lime-400 transition-all duration-500 -m-2"></div>
+              <div className="absolute -bottom-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 border-b-2 border-r-2 border-lime-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
 
             {/* Mysterious Quote - Makes Them Curious */}
@@ -170,70 +172,66 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
         </div>
 
         {/* Mobile Only: Content Below Image & Quote */}
-        <div className="lg:hidden mt-10 space-y-10 text-center">
+        <div className="lg:hidden mt-10 space-y-8 text-center">
 
-          {/* Hook - Mobile */}
+          {/* Updated Value Proposition - Mobile */}
           <div className="space-y-5 text-base sm:text-lg leading-relaxed max-w-xl mx-auto">
             <p className="text-gray-300">
-              A Sri Lankan in Singapore who codes by day, writes by night, and believes the best
-              engineering happens when curiosity meets collaboration.
+              I'm an event-driven architecture specialist who builds distributed systems that don't break when they scale, the kind that process 1M+ daily transactions while you sleep.
             </p>
+            <p className="text-gray-300">
+               As a Featured Baeldung Author, I turn the lessons real systems taught me into stories for developers worldwide.
+             </p>
           </div>
 
-          {/* Identity Hints - Mobile */}
-          <div className="grid grid-cols-3 gap-4 sm:gap-6 max-w-2xl mx-auto pt-4">
-            <div className="space-y-2 border-l-2 border-lime-400 pl-3 sm:pl-4">
-              <div className="text-2xl sm:text-3xl font-bold text-white">🇱🇰</div>
-              <div className="text-[10px] sm:text-xs text-gray-400 leading-tight">
-                Born
+          {/* Visible Metrics - Mobile */}
+          <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto pt-4">
+            <div className="space-y-2 border-l-2 border-lime-400 pl-3">
+              <div className="text-2xl sm:text-3xl font-bold text-lime-400">1M+</div>
+              <div className="text-[14px] sm:text-xs text-gray-400 leading-tight">
+                Daily
                 <br />
-                <span className="text-gray-400">Sri Lanka</span>
+                <span className="text-gray-400">Transactions</span>
               </div>
             </div>
 
-            <div className="space-y-2 border-l-2 border-lime-400 pl-3 sm:pl-4">
-              <div className="text-2xl sm:text-3xl font-bold text-white">🇸🇬</div>
-              <div className="text-[10px] sm:text-xs text-gray-400 leading-tight">
-                Based
+            <div className="space-y-2 border-l-2 border-lime-400 pl-3">
+              <div className="text-2xl sm:text-3xl font-bold text-lime-400">5</div>
+              <div className="text-[14px] sm:text-xs text-gray-400 leading-tight">
+                Enterprise
                 <br />
-                <span className="text-gray-400">Singapore</span>
+                <span className="text-gray-400">Systems</span>
               </div>
             </div>
 
-            <div className="space-y-2 border-l-2 border-lime-400 pl-3 sm:pl-4">
-              <div className="h-6 sm:h-8 flex items-center justify-center">
-                <img
-                  src={baeldung}
-                  alt="Baeldung"
-                  className="h-5 sm:h-6 w-auto"
-                />
-              </div>
-              <div className="text-[10px] sm:text-xs text-gray-400 leading-tight">
-                Baeldung
+            <div className="space-y-2 border-l-2 border-lime-400 pl-3">
+              <div className="text-2xl sm:text-3xl font-bold text-lime-400">6+</div>
+              <div className="text-[14px] sm:text-xs text-gray-400 leading-tight">
+                Years
                 <br />
-                <span className="text-gray-400">Writer</span>
+                <span className="text-gray-400">Experience</span>
               </div>
             </div>
           </div>
 
-          {/* CTA Section - Mobile */}
+          {/* CTA Section - Mobile Updated */}
           <div className="flex flex-col sm:flex-row items-center gap-4 pt-6">
             <Button
               size="lg"
               className="bg-lime-400 hover:bg-lime-500 text-black px-6 py-4 sm:px-8 sm:py-6 text-sm sm:text-base font-semibold rounded-none transition-all duration-300 group shadow-none hover:shadow-none w-full sm:w-auto"
-              onClick={() => scrollToSection("about")}
+              onClick={() => scrollToSection("projects")}
             >
               <span className="flex items-center justify-center gap-2 sm:gap-3">
-                Discover My Story
+                See How I Build Systems at Scale
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </Button>
 
             <button
-              onClick={() => scrollToSection("projects")}
+              onClick={() => scrollToSection("about")}
               className="text-gray-400 hover:text-lime-400 transition-colors text-s sm:text-sm font-medium"
             >
-              See my work →
+              Discover My Story →
             </button>
           </div>
         </div>

@@ -1,24 +1,34 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
+const RESUME_DRIVE_FILE_ID = import.meta.env.VITE_RESUME_DRIVE_FILE_ID;
 
 interface NavigationProps {
   activeSection: string;
   setActiveSection: (section: string) => void;
 }
 
+
 export default function Navigation({ activeSection, setActiveSection }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const downloadResume = () => {
+       try {
+          const pdfResume = `https://drive.google.com/uc?export=download&id=${RESUME_DRIVE_FILE_ID}`;
+          window.open(pdfResume, '_blank', 'noopener,noreferrer');
+        } catch (error) {
+          console.error('Download failed:', error);
+        }
+  };
 
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
-    { id: 'recommendations', label: 'Recommendations' },
     { id: 'certifications', label: 'Certifications' },
-    { id: 'resume', label: 'Resume' },
     { id: 'education', label: 'Education' },
+    { id: 'recommendations', label: 'Recommendations' },
     { id: 'contact', label: 'Contact' }
   ];
 
@@ -80,7 +90,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
         : 'bg-black/95 backdrop-blur-xl border-b border-gray-900'
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-12 sm:h-20">
 
           {/* Logo/Brand - Minimalistic */}
           <button
@@ -88,7 +98,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
             className="flex items-center gap-3 group"
           >
             {/* Simple initial instead of icon */}
-            <div className="w-10 h-10 border-2 border-lime-400 flex items-center justify-center transition-all group-hover:bg-lime-400">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 border-2 border-lime-400 flex items-center justify-center transition-all group-hover:bg-lime-400">
               <span className="text-lime-400 font-bold text-lg group-hover:text-black transition-colors">R</span>
             </div>
             <div className="hidden sm:block">
@@ -98,8 +108,9 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
             </div>
           </button>
 
-          {/* Desktop Navigation - Clean text links */}
+          {/* Desktop Navigation - Clean text links + Resume Button */}
           <div className="hidden md:flex items-center gap-1">
+            {/* Regular Nav Items */}
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -121,6 +132,15 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
                 )}
               </button>
             ))}
+
+            {/* Dedicated Resume Download Button */}
+            <button
+              onClick={downloadResume}
+              className="ml-4 px-4 py-2 bg-lime-400 hover:bg-lime-500 text-black text-sm font-semibold transition-all duration-300 flex items-center gap-2 group"
+            >
+              <span>Resume</span>
+              <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+            </button>
           </div>
 
           {/* Mobile Menu Button - Minimalistic */}
@@ -179,14 +199,20 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
               ))}
             </div>
 
-            {/* Mobile menu footer - Compact */}
-            <div className="mt-4 pt-4 border-t border-gray-900">
+            {/* Mobile menu footer - Compact with Resume Download */}
+            <div className="mt-4 pt-4 border-t border-gray-900 space-y-3">
+              {/* Resume Download Button - Mobile */}
               <button
-                onClick={() => scrollToSection('contact')}
-                className="w-full bg-lime-400 hover:bg-lime-500 active:bg-lime-600 text-black px-4 py-3 text-sm font-semibold transition-colors"
+                onClick={() => {
+                  downloadResume();
+                  setIsMenuOpen(false);
+                }}
+                className="w-full bg-lime-400 hover:bg-lime-500 active:bg-lime-600 text-black px-4 py-3 text-sm font-semibold transition-colors flex items-center justify-center gap-2"
               >
-                Contact Me
+                <Download className="w-4 h-4" />
+                <span>Download Resume</span>
               </button>
+
             </div>
 
           </div>
