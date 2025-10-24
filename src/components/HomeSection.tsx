@@ -100,13 +100,14 @@ const scrollToSection = (sectionId: string) => {
               </div>
 
               <div className="space-y-2 border-l-2 border-lime-400 pl-4">
-                <div className="text-3xl font-bold text-lime-400">5</div>
+                <div className="text-3xl font-bold text-lime-400">10+</div>
                 <div className="text-md text-gray-400 leading-tight">
                   Enterprise
                   <br />
                   <span className="text-gray-400">Systems Built</span>
                 </div>
               </div>
+
 
               <div className="space-y-2 border-l-2 border-lime-400 pl-4">
                 <div className="text-3xl font-bold text-lime-400">6+</div>
