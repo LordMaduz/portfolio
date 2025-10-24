@@ -8,43 +8,49 @@ import ResumeSection from "@/components/ResumeSection";
 import CertificationsSection from "@/components/CertificationsSection";
 import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
+import RecommendationSection from "@/components/RecommendationSection";
 import Footer from "@/components/Footer";
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState('home');
 
-  const renderSection = () => {
-    switch (activeSection) {
-      case 'home':
-        return <HomeSection setActiveSection={setActiveSection} />;
-      case 'about':
-        return <AboutSection />;
-      case 'skills':
-        return <SkillsSection />;
-      case 'projects':
-        return <ProjectsSection />;
-      case 'resume':
-              return <ResumeSection />;
-      case 'certifications':
-        return <CertificationsSection />;
-      case 'education':
-        return <EducationSection />;
-      case 'contact':
-        return (
-          <>
-            <ContactSection />
-            <Footer />
-          </>
-        );
-      default:
-        return <HomeSection setActiveSection={setActiveSection} />;
-    }
-  };
-
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-black">
+      {/* Fixed Navigation */}
       <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
-      {renderSection()}
+
+      {/* All Sections Rendered - Smooth Scroll */}
+      <main>
+        {/* Home Section - KEEP min-h-screen */}
+        <HomeSection setActiveSection={setActiveSection} />
+
+        {/* About Section - Natural height */}
+        <AboutSection setActiveSection={setActiveSection} />
+
+        {/* Skills Section */}
+        <SkillsSection />
+
+        {/* Projects Section */}
+        <ProjectsSection />
+
+        {/* Recommendation Section */}
+        <RecommendationSection />
+
+        {/* Certifications Section */}
+        <CertificationsSection />
+
+         {/* Resume Section */}
+         <ResumeSection />
+
+        {/* Education Section */}
+        <EducationSection />
+
+        {/* Contact Section */}
+        <ContactSection />
+
+        {/* Footer */}
+        <Footer />
+      </main>
     </div>
   );
 }

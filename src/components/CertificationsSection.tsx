@@ -25,7 +25,7 @@ export default function CertificationsSection() {
   ];
 
   return (
-    <section className="min-h-screen bg-black text-white py-20 sm:py-32 relative overflow-hidden">
+    <section id="certifications" className="bg-black text-white py-10 sm:py-12 relative overflow-hidden">
 
       {/* Subtle diagonal pattern background */}
       <div className="absolute inset-0 opacity-[0.015]">
@@ -42,21 +42,19 @@ export default function CertificationsSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
 
-        {/* Section Label */}
-        <div className="mb-12 sm:mb-20">
-          <span className="text-[10px] sm:text-xs lg:text-sm tracking-[0.2em] sm:tracking-[0.3em] text-gray-300 uppercase font-light">
-            04. Certifications
-          </span>
-          <div className="w-8 sm:w-12 h-[1px] bg-lime-400 mt-2"></div>
-        </div>
-
         {/* Large Section Title */}
-        <div className="mb-12 sm:mb-20">
-
+        <div className="mb-16 sm:mb-20">
+          <div className="flex items-center gap-4 mb-6 sm:mb-8">
+            <div className="w-12 sm:w-16 h-[3px] bg-lime-400"></div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight">
+              <span className="text-white">PROOF OF MY CURIOSITY</span>
+            </h2>
+          </div>
         </div>
+
 
         {/* Certifications Grid - 2 columns on desktop, 1 column on mobile */}
-        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-20 sm:mb-32">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-0 sm:mb-20">
           {certifications.map((cert) => (
             <div
               key={cert.id}

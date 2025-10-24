@@ -27,7 +27,7 @@ export default function ResumeSection() {
   };
 
   return (
-    <section className="min-h-screen bg-black text-white py-20 sm:py-32 relative overflow-hidden">
+    <section id="resume" className="bg-black bg-black text-white py-10 sm:py-12 relative overflow-hidden">
 
       {/* Subtle diagonal pattern background */}
       <div className="absolute inset-0 opacity-[0.015]">
@@ -44,21 +44,18 @@ export default function ResumeSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
 
-        {/* Section Label */}
-        <div className="mb-12 sm:mb-20">
-          <span className="text-[10px] sm:text-xs lg:text-sm tracking-[0.2em] sm:tracking-[0.3em] text-gray-300 uppercase font-light">
-            05. Resume
-          </span>
-          <div className="w-8 sm:w-12 h-[1px] bg-lime-400 mt-2"></div>
-        </div>
-
         {/* Large Section Title */}
-        <div className="mb-12 sm:mb-20">
-
+        <div className="mb-16 sm:mb-20">
+          <div className="flex items-center gap-4 mb-6 sm:mb-8">
+            <div className="w-12 sm:w-16 h-[3px] bg-lime-400"></div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight">
+              <span className="text-white">CHAPTERS OF MY CAREER</span>
+            </h2>
+          </div>
         </div>
 
         {/* Resume Options - Clean minimal cards */}
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-20 sm:mb-32">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
 
           {/* Interactive Portfolio Option */}
           <div className="group border border-gray-700 transition-colors">

@@ -199,7 +199,7 @@ export default function ProjectsSection() {
   const selectedProjectData = projects.find(p => p.id === selectedProject);
 
   return (
-     <section className="min-h-screen bg-black text-white py-32 relative overflow-hidden">
+     <section id="projects" className="bg-black bg-black text-white py-10 relative overflow-hidden">
 
         {/* Subtle diagonal pattern background */}
        <div className="absolute inset-0 opacity-[0.015]">
@@ -215,17 +215,15 @@ export default function ProjectsSection() {
        </div>
 
        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
-        {/* Section Label */}
-        <div className="mb-20">
-          <span className="text-xs sm:text-sm tracking-[0.3em] text-gray-300 uppercase font-light">
-            03. MY RECENT WORK
-          </span>
-          <div className="w-12 h-[1px] bg-lime-400 mt-2"></div>
-        </div>
 
         {/* Large Section Title */}
-        <div className="mb-20">
-
+        <div className="mb-16 sm:mb-20">
+          <div className="flex items-center gap-4 mb-6 sm:mb-8">
+            <div className="w-12 sm:w-16 h-[3px] bg-lime-400"></div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight">
+              <span className="text-white">WHAT I'VE BUILT AND WHY</span>
+            </h2>
+          </div>
         </div>
 
         {/* Projects List - Jony Style */}
@@ -241,23 +239,22 @@ export default function ProjectsSection() {
             >
               <div className="flex items-start py-8">
                 {/* Number */}
-                <span className="text-lg text-gray-400 font-medium min-w-[3rem] mr-6">
+                <span className="text-base sm:text-lg text-gray-400 font-medium min-w-[2rem] sm:min-w-[3rem] mr-4 sm:mr-6">
                   {project.number}.
                 </span>
 
                 {/* Content */}
                 <div className="flex-1">
-                  <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white group-hover:text-lime-400 transition-colors mb-2">
+                  <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white group-hover:text-lime-400 transition-colors mb-2">
                     {project.title}
                   </h3>
-                  <div className="flex items-center gap-4">
-                    <p className="text-gray-400 text-sm group-hover:text-white">{project.company}</p>
-                    <span className="text-gray-700">•</span>
-                    <p className="text-gray-400 text-sm group-hover:text-white">{project.timeline}</p>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+                    <p className="text-gray-400 text-xs sm:text-sm group-hover:text-white">{project.company}</p>
+                    <span className="hidden sm:inline text-gray-700">•</span>
+                    <p className="text-gray-400 text-xs sm:text-sm group-hover:text-white">{project.timeline}</p>
                   </div>
                 </div>
-                <div className={`w-96 h-34 bg-gradient-to-br rounded-lg flex items-center justify-center`}>
-                </div>
+
               </div>
             </div>
           ))}
@@ -266,51 +263,54 @@ export default function ProjectsSection() {
         <div className="border-t border-gray-800"></div>
 
         {/* Portfolio Impact Summary */}
+        {/*
         <div className="mt-24 pt-12 border-t border-gray-800">
-          <h3 className="text-2xl font-bold mb-8">Portfolio Impact</h3>
-          <div className="grid grid-cols-4 gap-8">
+          <h3 className="text-xl sm:text-2xl font-bold mb-8">Portfolio Impact</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
             <div>
-              <div className="text-5xl font-bold text-white mb-2">1M+</div>
-              <div className="text-gray-400">Transactions Daily</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">1M+</div>
+              <div className="text-xs sm:text-sm text-gray-400">Transactions Daily</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-white mb-2">500K+</div>
-              <div className="text-gray-400">Orders Daily</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">500K+</div>
+              <div className="text-xs sm:text-sm text-gray-400">Orders Daily</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-white mb-2">92%</div>
-              <div className="text-gray-400">Faster Coordination</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">92%</div>
+              <div className="text-xs sm:text-sm text-gray-400">Faster Coordination</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-white mb-2">5</div>
-              <div className="text-gray-400">Enterprise Systems</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">5</div>
+              <div className="text-xs sm:text-sm text-gray-400">Enterprise Systems</div>
             </div>
           </div>
         </div>
+        */}
       </div>
+
 
       {/* Original Modal Structure with Minimalist Colors */}
       {selectedProject && selectedProjectData && (
-        <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-6">
+        <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 sm:p-6">
           <div className="bg-black border border-gray-800 max-w-5xl w-full max-h-[90vh] overflow-y-auto">
             {/* Header */}
-            <div className="border-b border-gray-800 p-6">
+            <div className="border-b border-gray-800 p-4 sm:p-6">
               <div className="flex items-start justify-between mb-4">
-                <div className="flex items-start gap-4 flex-1">
+                <div className="flex items-start gap-3 sm:gap-4 flex-1 pr-2">
                   <div className="flex items-center justify-center flex-shrink-0"/>
                   <div className="min-w-0 flex-1">
-                    <h2 className="text-2xl font-bold text-white mb-2">{selectedProjectData.title}</h2>
-                    <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+                    <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 leading-tight">{selectedProjectData.title}</h2>
+                    <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-400">
                       <div className="flex items-center gap-2">
-                        <Building2 className="w-4 h-4" />
+                        <Building2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                         <span>{selectedProjectData.company}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4" />
+                        <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                         <span>{selectedProjectData.timeline}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Users className="w-4 h-4" />
+                        <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                         <span>{selectedProjectData.teamSize}</span>
                       </div>
                     </div>
@@ -318,28 +318,28 @@ export default function ProjectsSection() {
                 </div>
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="w-10 h-10 border border-gray-800 hover:border-lime-400 flex items-center justify-center transition-colors group flex-shrink-0"
+                  className="w-8 h-8 sm:w-10 sm:h-10 border border-gray-800 hover:border-lime-400 flex items-center justify-center transition-colors group flex-shrink-0"
                 >
-                  <X className="w-5 h-5 text-white group-hover:text-lime-400" />
+                  <X className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:text-lime-400" />
                 </button>
               </div>
 
               {/* Key Impact */}
-              <div className="bg-gray-900 border border-gray-800 p-6 mt-4">
-                <h4 className="text-sm font-bold text-lime-400 mb-2">KEY IMPACT</h4>
-                <p className="text-white">{selectedProjectData.impact}</p>
+              <div className="bg-gray-900 border border-gray-800 p-4 sm:p-6 mt-4">
+                <h4 className="text-xs sm:text-sm font-bold text-lime-400 mb-2">KEY IMPACT</h4>
+                <p className="text-sm sm:text-base text-white leading-relaxed">{selectedProjectData.impact}</p>
               </div>
             </div>
 
             {/* Tabs */}
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <div className="border-b border-gray-800 mb-6">
-                <div className="flex gap-2">
+                <div className="flex gap-1 sm:gap-2 overflow-x-auto">
                   {['overview', 'results', 'impact'].map((tab) => (
                     <button
                       key={tab}
                       onClick={() => setActiveTab(tab)}
-                      className={`px-6 py-3 font-semibold transition-colors border-b-2 ${
+                      className={`px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-semibold transition-colors border-b-2 whitespace-nowrap ${
                         activeTab === tab
                           ? 'text-lime-400 border-lime-400'
                           : 'text-gray-400 hover:text-white border-transparent'
@@ -354,19 +354,19 @@ export default function ProjectsSection() {
               {/* Tab Content */}
               {activeTab === 'overview' && (
                 <div className="space-y-6">
-                  <div className="grid grid-cols-1 gap-6">
+                  <div className="grid grid-cols-1 gap-4 sm:gap-6">
                     {/* Challenge */}
-                     <div className="bg-gray-900 border border-gray-800 p-4">
-                      <h4 className="font-semibold text-white mb-3">CHALLENGE</h4>
-                      <p className="text-gray-300 text-sm leading-relaxed">
+                     <div className="bg-gray-900 border border-gray-800 p-3 sm:p-4">
+                      <h4 className="text-sm sm:text-base font-semibold text-white mb-2 sm:mb-3">CHALLENGE</h4>
+                      <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                         {selectedProjectData.fullDetails.challenge}
                       </p>
                     </div>
 
                     {/* Solution */}
-                    <div className="bg-gray-900 border border-gray-800 p-4">
-                      <h4 className="font-semibold text-white mb-3">SOLUTION</h4>
-                      <p className="text-gray-300 text-sm leading-relaxed">
+                    <div className="bg-gray-900 border border-gray-800 p-3 sm:p-4">
+                      <h4 className="text-sm sm:text-base font-semibold text-white mb-2 sm:mb-3">SOLUTION</h4>
+                      <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                         {selectedProjectData.fullDetails.solution}
                       </p>
                     </div>
@@ -374,12 +374,12 @@ export default function ProjectsSection() {
 
                   {/* Technology Stack */}
                   <div>
-                    <h4 className="text-lg font-bold text-white mb-4">Technology Stack</h4>
+                    <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Technology Stack</h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedProjectData.technologies.map((tech, index) => (
                         <span
                           key={index}
-                          className="px-3 py-1 border border-gray-800 text-gray-300 text-sm"
+                          className="px-2 sm:px-3 py-1 border border-gray-800 text-gray-300 text-xs sm:text-sm"
                         >
                           {tech}
                         </span>
@@ -391,11 +391,11 @@ export default function ProjectsSection() {
 
               {activeTab === 'results' && (
                 <div className="space-y-6">
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     {selectedProjectData.fullDetails.keyResults.map((result, index) => (
-                      <div key={index} className="bg-gray-900 border border-gray-800 p-4">
-                        <h5 className="font-bold text-white mb-2">{result.metric}</h5>
-                        <div className="text-gray-300 text-sm">
+                      <div key={index} className="bg-gray-900 border border-gray-800 p-3 sm:p-4">
+                        <h5 className="text-sm sm:text-base font-bold text-white mb-2">{result.metric}</h5>
+                        <div className="text-gray-300 text-xs sm:text-sm">
                           {result.improvement}
                         </div>
                       </div>
@@ -404,9 +404,9 @@ export default function ProjectsSection() {
 
                   {/* Recognition */}
                   {selectedProjectData.fullDetails.recognition && (
-                    <div className="bg-gray-900 border border-gray-800 p-6">
-                      <h4 className="font-semibold text-white mb-3">RECOGNITION</h4>
-                      <p className="text-gray-300">{selectedProjectData.fullDetails.recognition}</p>
+                    <div className="bg-gray-900 border border-gray-800 p-4 sm:p-6">
+                      <h4 className="text-sm sm:text-base font-semibold text-white mb-2 sm:mb-3">RECOGNITION</h4>
+                      <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">{selectedProjectData.fullDetails.recognition}</p>
                     </div>
                   )}
                 </div>
@@ -414,10 +414,10 @@ export default function ProjectsSection() {
 
               {activeTab === 'impact' && (
                 <div className="space-y-4">
-                  <h4 className="text-lg font-bold text-white mb-4">Stakeholder Benefits</h4>
+                  <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Stakeholder Benefits</h4>
                   {selectedProjectData.fullDetails.stakeholders.map((stakeholder, index) => (
-                    <div key={index} className="bg-gray-900 border border-gray-800 p-4">
-                      <p className="text-gray-300">{stakeholder}</p>
+                    <div key={index} className="bg-gray-900 border border-gray-800 p-3 sm:p-4">
+                      <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">{stakeholder}</p>
                     </div>
                   ))}
                 </div>
