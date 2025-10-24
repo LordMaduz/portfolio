@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, X } from "lucide-react";
+import { createPortal } from "react-dom";
 
 interface ExpertiseCategory {
   id: string;
@@ -116,245 +117,236 @@ export default function SkillsSection() {
   const selectedCategory = expertiseCategories.find(cat => cat.id === selectedMobileItem);
 
   return (
-    <section id="skills" className="bg-black text-white py-10 sm:py-12 relative overflow-hidden">
+    <>
+      <section id="skills" className="bg-black text-white py-10 relative overflow-hidden">
 
-      {/* Subtle diagonal pattern background */}
-      <div className="absolute inset-0 opacity-[0.015]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 10px,
-            rgba(255,255,255,0.03) 10px,
-            rgba(255,255,255,0.03) 11px
-          )`
-        }} />
-      </div>
+        {/* Subtle diagonal pattern background */}
+        <div className="absolute inset-0 opacity-[0.015]">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `repeating-linear-gradient(
+              45deg,
+              transparent,
+              transparent 10px,
+              rgba(255,255,255,0.03) 10px,
+              rgba(255,255,255,0.03) 11px
+            )`
+          }} />
+        </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
 
-
-
-        {/* Large Section Title */}
-        <div className="mb-16 sm:mb-20">
-          <div className="flex items-center gap-4 mb-6 sm:mb-8">
-            <div className="w-12 sm:w-16 h-[3px] bg-lime-400"></div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.05] tracking-tight">
-              <span className="text-white">WHAT I CAN DO</span>
-            </h2>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 sm:gap-0">
-            <div className="flex-1">
-              <blockquote className="text-sm sm:text-base lg:text-xl font-light text-gray-400 leading-relaxed">
-                Technology is just a tool. What matters is how you wield it, not to show off technical prowess, but to solve real problems and make people's lives better.
-              </blockquote>
+          {/* Large Section Title */}
+          <div className="mb-16 sm:mb-20">
+            <div className="flex items-center gap-4 mb-6 sm:mb-8">
+              <div className="w-12 sm:w-16 h-[3px] bg-lime-400"></div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.05] tracking-tight">
+                <span className="text-white">WHAT I CAN DO</span>
+              </h2>
             </div>
 
-            {/* Expand/Collapse All Button - Desktop Only */}
-            <button
-              onClick={() => toggleItem('all')}
-              className="hidden lg:flex border border-gray-800 hover:border-lime-400 px-6 py-3 text-sm font-semibold transition-colors group flex-shrink-0"
-            >
-              <span className="text-gray-400 group-hover:text-lime-400">
-                {openItem === 'all' ? 'Collapse All' : 'Expand All'}
-              </span>
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Only: Condensed Summary Cards */}
-        <div className="lg:hidden mb-5">
-          <div className="space-y-3">
-            {expertiseCategories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setSelectedMobileItem(category.id)}
-                className="w-full text-left bg-gray-950/30 border border-gray-900  p-4 transition-all group"
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <span className="text-base font-semibold text-gray-400 font-medium min-w-[2.5rem] pt-1">
-                    {category.number}.
-                  </span>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-semibold text-white group-hover:text-lime-400 transition-colors mb-2">
-                      {category.title}
-                    </h3>
-                    <div className="flex flex-wrap gap-1.5 mb-3">
-                      {category.technologies.slice(0, 3).map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-2 py-0.5 border border-gray-800 text-gray-400 text-xs"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                      {category.technologies.length > 3 && (
-                        <span className="px-2 py-0.5 text-gray-600 text-xs">
-                          +{category.technologies.length - 3} more
-                        </span>
-                      )}
-                    </div>
-
-                  </div>
-                  <div className="flex-shrink-0 w-8 h-8 border border-gray-800 group-hover:border-lime-400 flex items-center justify-center">
-                    <span className="text-gray-500 group-hover:text-lime-400 text-lg">→</span>
-                  </div>
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile Modal for Details */}
-        {selectedMobileItem && selectedCategory && (
-          <div className="lg:hidden fixed inset-0 bg-black/95 z-50 overflow-y-auto pt-safe">
-            <div className="min-h-screen p-4 pt-10 pb-8 sm:pt-8">
-              <div className="max-w-2xl mx-auto">
-                {/* Header */}
-                <div className="flex items-start justify-between mb-6 pt-4">
-                  <div className="flex-1">
-                    <h2 className="text-lg font-bold text-white mt-2">
-                      {selectedCategory.title}
-                    </h2>
-                  </div>
-                  <button
-                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); setSelectedMobileItem(null); }}
-                    className="w-10 h-10 border border-gray-800 hover:border-lime-400 flex items-center justify-center flex-shrink-0 ml-4"
-                  >
-                    <span className="text-gray-400 hover:text-lime-400 text-2xl leading-none">×</span>
-                  </button>
-                </div>
-
-                {/* Content */}
-                <div className="space-y-6">
-                  {/* Technologies */}
-                  <div>
-                    <h3 className="text-xs text-gray-400 uppercase tracking-wider mb-3 font-semibold">
-                      Technologies
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedCategory.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-3 py-1 border border-gray-800 text-gray-300 text-sm"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Story */}
-                  <div>
-                    <h3 className="text-xs text-gray-400 uppercase tracking-wider mb-3 font-semibold">
-                      How I Use It
-                    </h3>
-                    <p className="text-sm text-gray-300 leading-relaxed">
-                      {selectedCategory.story}
-                    </p>
-                  </div>
-
-                  {/* Impact */}
-                  <div className="border-l-2 border-lime-400 pl-4 py-3 bg-gray-900/30">
-                    <h3 className="text-xs text-lime-400 uppercase tracking-wider mb-2 font-semibold">
-                      Real Impact
-                    </h3>
-                    <p className="text-sm text-gray-300">
-                      {selectedCategory.impact}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Close Button */}
-                <button
-                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); setSelectedMobileItem(null); }}
-                  className="w-full mt-8 bg-lime-400 hover:bg-lime-500 text-black px-6 py-4 text-sm font-semibold transition-colors"
-                >
-                  Close
-                </button>
+            <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 sm:gap-0">
+              <div className="flex-1">
+                <blockquote className="text-sm sm:text-base lg:text-xl font-light text-gray-400 leading-relaxed">
+                  Technology is just a tool. What matters is how you wield it, not to show off technical prowess, but to solve real problems and make people's lives better.
+                </blockquote>
               </div>
+
+              {/* Expand/Collapse All Button - Desktop Only */}
+              <button
+                onClick={() => toggleItem('all')}
+                className="hidden lg:flex border border-gray-800 hover:border-lime-400 px-6 py-3 text-sm font-semibold transition-colors group flex-shrink-0"
+              >
+                <span className="text-gray-400 group-hover:text-lime-400">
+                  {openItem === 'all' ? 'Collapse All' : 'Expand All'}
+                </span>
+              </button>
             </div>
           </div>
-        )}
 
-        {/* Desktop: Full Accordion View (Always Visible) */}
-        <div className="hidden lg:block mb-30">
-          <div className="space-y-0">
-            {expertiseCategories.map((category) => (
-              <div
-                key={category.id}
-                className="border-t border-gray-900 group"
-              >
+          {/* Mobile Only: Condensed Summary Cards */}
+          <div className="lg:hidden mb-5">
+            <div className="space-y-3">
+              {expertiseCategories.map((category) => (
                 <button
-                  onClick={() => toggleItem(category.id)}
-                  className="w-full py-8 flex items-start justify-between text-left hover:bg-gray-950/50 transition-colors px-4 -mx-4"
+                  key={category.id}
+                  onClick={() => setSelectedMobileItem(category.id)}
+                  className="w-full text-left bg-gray-950/30 border border-gray-900 p-4 transition-all group"
                 >
-                  <div className="flex items-start gap-6 flex-1">
-                    <span className="text-lg text-gray-400 font-medium min-w-[2.5rem] pt-1">
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="text-base font-semibold text-gray-400 font-medium min-w-[2.5rem] pt-1">
                       {category.number}.
                     </span>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-white group-hover:text-lime-400 transition-colors mb-2">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-base font-semibold text-white group-hover:text-lime-400 transition-colors mb-2">
                         {category.title}
                       </h3>
-                      <div className="mt-4">
-                        <div className="flex flex-wrap gap-2">
-                          {category.technologies.map((tech, techIndex) => (
-                            <span
-                              key={techIndex}
-                              className="px-3 py-1 border border-gray-800 text-gray-300 text-sm hover:border-lime-400 hover:text-lime-400 transition-colors"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
+                      <div className="flex flex-wrap gap-1.5 mb-3">
+                        {category.technologies.slice(0, 3).map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="px-2 py-0.5 border border-gray-800 text-gray-400 text-xs"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                        {category.technologies.length > 3 && (
+                          <span className="px-2 py-0.5 text-gray-600 text-xs">
+                            +{category.technologies.length - 3} more
+                          </span>
+                        )}
                       </div>
-                      <div
-                        className={`overflow-hidden transition-all duration-500 ${
-                          openItem === category.id || openItem === 'all'
-                            ? 'max-h-[800px] opacity-100 mt-6'
-                            : 'max-h-0 opacity-0'
-                        }`}
-                      >
-                        <div className="space-y-6 pr-8">
-                          <div>
-                            <h4 className="text-sm text-gray-400 uppercase tracking-wider mb-3 font-semibold">How I Use It</h4>
-                            <p className="text-base text-gray-300 leading-relaxed">
-                              {category.story}
-                            </p>
+                    </div>
+                    <div className="flex-shrink-0 w-8 h-8 border border-gray-800 group-hover:border-lime-400 flex items-center justify-center">
+                      <span className="text-gray-500 group-hover:text-lime-400 text-lg">→</span>
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: Full Accordion View (Always Visible) */}
+          <div className="hidden lg:block mb-30">
+            <div className="space-y-0">
+              {expertiseCategories.map((category) => (
+                <div
+                  key={category.id}
+                  className="border-t border-gray-900 group"
+                >
+                  <button
+                    onClick={() => toggleItem(category.id)}
+                    className="w-full py-8 flex items-start justify-between text-left hover:bg-gray-950/50 transition-colors px-4 -mx-4"
+                  >
+                    <div className="flex items-start gap-6 flex-1">
+                      <span className="text-lg text-gray-400 font-medium min-w-[2.5rem] pt-1">
+                        {category.number}.
+                      </span>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-semibold text-white group-hover:text-lime-400 transition-colors mb-2">
+                          {category.title}
+                        </h3>
+                        <div className="mt-4">
+                          <div className="flex flex-wrap gap-2">
+                            {category.technologies.map((tech, techIndex) => (
+                              <span
+                                key={techIndex}
+                                className="px-3 py-1 border border-gray-800 text-gray-300 text-sm hover:border-lime-400 hover:text-lime-400 transition-colors"
+                              >
+                                {tech}
+                              </span>
+                            ))}
                           </div>
-                          <div className="border-l-2 border-lime-400 pl-4 py-2 bg-gray-900/30">
-                            <h4 className="text-xs text-lime-400 uppercase tracking-wider mb-2">Real Impact</h4>
-                            <p className="text-sm text-gray-300">
-                              {category.impact}
-                            </p>
+                        </div>
+                        <div
+                          className={`overflow-hidden transition-all duration-500 ${
+                            openItem === category.id || openItem === 'all'
+                              ? 'max-h-[800px] opacity-100 mt-6'
+                              : 'max-h-0 opacity-0'
+                          }`}
+                        >
+                          <div className="space-y-6 pr-8">
+                            <div>
+                              <h4 className="text-sm text-gray-400 uppercase tracking-wider mb-3 font-semibold">How I Use It</h4>
+                              <p className="text-base text-gray-300 leading-relaxed">
+                                {category.story}
+                              </p>
+                            </div>
+                            <div className="border-l-2 border-lime-400 pl-4 py-2 bg-gray-900/30">
+                              <h4 className="text-xs text-lime-400 uppercase tracking-wider mb-2">Real Impact</h4>
+                              <p className="text-s text-gray-200">
+                                {category.impact}
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className={`w-10 h-10 border flex items-center justify-center flex-shrink-0 transition-all ${
-                    openItem === category.id || openItem === 'all'
-                      ? 'border-lime-400 bg-lime-400'
-                      : 'border-gray-800 hover:border-lime-400'
-                  }`}>
-                    <ChevronDown
-                      className={`w-5 h-5 transition-all ${
-                        openItem === category.id || openItem === 'all'
-                          ? 'rotate-180 text-black'
-                          : 'text-gray-500 group-hover:text-lime-400'
-                      }`}
-                    />
-                  </div>
-                </button>
-              </div>
-            ))}
+                    <div className={`w-10 h-10 border flex items-center justify-center flex-shrink-0 transition-all ${
+                      openItem === category.id || openItem === 'all'
+                        ? 'border-lime-400 bg-lime-400'
+                        : 'border-gray-800 hover:border-lime-400'
+                    }`}>
+                      <ChevronDown
+                        className={`w-5 h-5 transition-all ${
+                          openItem === category.id || openItem === 'all'
+                            ? 'rotate-180 text-black'
+                            : 'text-gray-500 group-hover:text-lime-400'
+                        }`}
+                      />
+                    </div>
+                  </button>
+                </div>
+              ))}
+            </div>
+            <div className="border-t border-gray-900 mt-0"></div>
           </div>
-          <div className="border-t border-gray-900 mt-0"></div>
-        </div>
 
-      </div>
-    </section>
+        </div>
+      </section>
+
+      {/* Mobile Modal - Clean Boxed Design */}
+      {selectedMobileItem && selectedCategory && typeof window !== 'undefined' && createPortal(
+        <div className="lg:hidden fixed inset-0 bg-black z-[9999] overflow-y-auto p-6">
+
+          {/* Main Content Container with Border */}
+          <div className="min-h-screen border-2 border-gray-800 bg-black p-6">
+
+            {/* Header with Close Button */}
+            <div className="flex items-start justify-between gap-4 mb-8">
+              <div className="flex-1">
+                <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-white leading-tight">
+                  {selectedCategory.title}
+                </h1>
+              </div>
+              <button
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); setSelectedMobileItem(null); }}
+                className="w-10 h-10 border border-gray-800 hover:border-lime-400 flex items-center justify-center flex-shrink-0 transition-colors"
+                aria-label="Close"
+              >
+                <X className="w-5 h-5 text-gray-400 hover:text-lime-400" />
+              </button>
+            </div>
+
+            {/* Technologies Box */}
+            <div className="border-2 border-gray-800 bg-gray-950 p-5 mb-6">
+              <h2 className="text-xs sm:text-sm font-bold font-bold text-lime-400 uppercase tracking-wider mb-4">
+                Technologies
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {selectedCategory.technologies.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="px-3 py-2 border border-gray-800 bg-black text-white text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* How I Use It Box */}
+            <div className="border-2 border-gray-800 bg-gray-950 p-5 mb-6">
+              <h2 className="text-sm sm:text-base font-bold font-semibold text-white mb-4">
+                How I Use It
+              </h2>
+              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                {selectedCategory.story}
+              </p>
+            </div>
+
+            {/* Real Impact Box */}
+            <div className="border-2 border-gray-800 bg-gray-950 p-5 mb-6">
+              <h2 className="text-xs sm:text-sm font-bold text-lime-400 uppercase tracking-wider mb-4">
+                Real Impact
+              </h2>
+              <p className="text-sm text-white leading-relaxed">
+                {selectedCategory.impact}
+              </p>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+    </>
   );
 }
