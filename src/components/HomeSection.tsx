@@ -1,14 +1,30 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import image from "../assets/IMG_3.png";
+import baeldung from "../assets/baeldung.jpg";
 
 interface HomeSectionProps {
   setActiveSection: (section: string) => void;
 }
 
+const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    const offset = 80; // Height of fixed navbar
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+
+    setActiveSection(sectionId);
+  }
+};
 export default function HomeSection({ setActiveSection }: HomeSectionProps) {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-black text-white relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-black text-white relative overflow-hidden">
       {/* Subtle pattern background */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none">
         <div
@@ -28,7 +44,7 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
       {/* Content Wrapper */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-20 sm:py-28">
 
-        {/* Mobile Only: Name & Role at Top */}
+        {/* Mobile Only: Name at Top */}
         <div className="lg:hidden text-center mb-10">
           <h1 className="text-4xl sm:text-5xl font-bold leading-[1.05] tracking-tight">
             <span className="text-white">RUCHIRA</span>
@@ -43,9 +59,10 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
         {/* Balanced Grid Layout */}
         <div className="grid lg:grid-cols-[50%_50%] gap-12 lg:gap-16 items-center">
 
-          {/* Left Column - Text Story (Hidden on Mobile, Shows on Desktop) */}
+          {/* Left Column - Intriguing Glimpse (Hidden on Mobile) */}
           <div className="hidden lg:block space-y-14 text-center lg:text-left">
-            {/* Heading - Desktop Only */}
+
+            {/* Name - Desktop Only */}
             <div>
               <h1 className="text-7xl font-bold leading-[1.05] tracking-tight">
                 <span className="text-white">RUCHIRA</span>
@@ -57,93 +74,76 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
               </p>
             </div>
 
-            {/* Narrative Story */}
-            <div className="space-y-8 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+            {/* One Intriguing Line - Hook */}
+            <div className="space-y-6 text-xl lg:text-2xl leading-relaxed max-w-xl mx-auto lg:mx-0">
               <p className="text-gray-300">
-                A Sri Lankan soul surviving and thriving in Singapore. When I'm not
-                deep in code or designing systems, you'll find me lost in anime
-                or writing on Baeldung and Medium, because great
-                engineering deserves great storytelling.
-              </p>
-
-              <p className="text-gray-300">
-                I'm a simple-minded individual who stumbled upon programming and
-                found it fascinating. That fascination evolved into a deep
-                tech enthusiasm where I
-                thrive on learning, sharing, and lifting others along the way.
+                A Sri Lankan in Singapore who codes by day, writes by night, and believes the best
+                engineering happens when curiosity meets collaboration.
               </p>
             </div>
 
-            {/* Stats Grid */}
-            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto lg:mx-0 pt-6">
-              <div
-                className="space-y-2 border-l-2 border-lime-400 pl-4 cursor-pointer group"
-                onClick={() => setActiveSection("about")}
-              >
-                <div className="text-4xl font-bold text-white group-hover:text-lime-400 transition-colors">
-                  6+
-                </div>
+            {/* Minimal Identity Hints */}
+            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto lg:mx-0 pt-8">
+              <div className="space-y-2 border-l-2 border-lime-400 pl-4">
+                <div className="text-3xl font-bold text-white">🇱🇰</div>
                 <div className="text-sm text-gray-400 leading-tight">
-                  Years
+                  Born
                   <br />
-                  <span className="text-gray-400">Experience</span>
+                  <span className="text-gray-400">Sri Lanka</span>
                 </div>
               </div>
 
-              <div
-                className="space-y-2 border-l-2 border-gray-800 pl-4 cursor-pointer group"
-                onClick={() => setActiveSection("certifications")}
-              >
-                <div className="text-4xl font-bold text-white group-hover:text-lime-400 transition-colors">
-                  AWS
-                </div>
+              <div className="space-y-2 border-l-2 border-lime-400 pl-4">
+                <div className="text-3xl font-bold text-white">🇸🇬</div>
                 <div className="text-sm text-gray-400 leading-tight">
-                  Certified
+                  Based
                   <br />
-                  <span className="text-gray-400">Architect</span>
+                  <span className="text-gray-400">Singapore</span>
                 </div>
               </div>
 
-              <div
-                className="space-y-2 border-l-2 border-gray-800 pl-4 cursor-pointer group"
-                onClick={() => setActiveSection("contact")}
-              >
-                <div className="text-3xl font-bold text-white group-hover:text-lime-400 transition-colors">
-                  SG
+              <div className="space-y-2 border-l-2 border-lime-400 pl-4">
+                <div className="h-8 flex items-center ">
+                  <img
+                    src={baeldung}
+                    alt="Baeldung"
+                    className="h-7 w-auto"
+                  />
                 </div>
                 <div className="text-sm text-gray-400 leading-tight">
-                  Singapore
+                  Baeldung
                   <br />
-                  <span className="text-gray-400">Based</span>
+                  <span className="text-gray-400">Writer</span>
                 </div>
               </div>
             </div>
 
             {/* CTA Section */}
-            <div className="flex flex-col sm:flex-row items-center gap-6 pt-6">
+            <div className="flex flex-col sm:flex-row items-center gap-6 pt-8">
               <Button
                 size="lg"
                 className="bg-lime-400 hover:bg-lime-500 text-black px-8 py-6 text-lg font-semibold rounded-none transition-all duration-300 group shadow-none hover:shadow-none w-full sm:w-auto"
-                onClick={() => setActiveSection("projects")}
+                onClick={() => scrollToSection("about")}
               >
                 <span className="flex items-center justify-center gap-3">
-                  Explore My Work
+                  Discover My Story
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </Button>
 
               <button
-                onClick={() => setActiveSection("contact")}
+                onClick={() => scrollToSection("projects")}
                 className="text-gray-400 hover:text-lime-400 transition-colors text-base font-medium"
               >
-                Get in touch →
+                See my work →
               </button>
             </div>
           </div>
 
-          {/* Right Column - Image + Quote */}
+          {/* Right Column - Image + Intriguing Quote */}
           <div className="relative flex flex-col items-center justify-center space-y-6 lg:space-y-10 lg:pl-10">
-            {/* Image Container - Mobile Optimized */}
+
+            {/* Image Container */}
             <div className="relative group w-64 h-80 sm:w-80 sm:h-[28rem] lg:w-[22rem] lg:h-[30rem] xl:w-96 xl:h-[32rem]">
               <div className="relative w-full h-full overflow-hidden rounded-sm">
                 <img
@@ -155,18 +155,13 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               </div>
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-lime-400 transition-all duration-500 -m-2"></div>
-              <div className="absolute -bottom-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 border-b-2 border-r-2 border-lime-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
 
-            {/* Highlighted Quote Box - Mobile Optimized */}
+            {/* Mysterious Quote - Makes Them Curious */}
             <div className="relative bg-gray-900/40 border border-gray-800 rounded-lg sm:rounded-xl p-5 sm:p-8 max-w-md mx-auto shadow-lg backdrop-blur-sm hover:border-lime-400 transition-colors duration-500">
               <div className="absolute -top-3 left-3 sm:-top-4 sm:left-4 text-lime-400 text-4xl sm:text-5xl font-serif leading-none">"</div>
               <p className="text-white font-medium italic text-sm sm:text-base lg:text-lg leading-relaxed text-center">
-                I bring genuine collaboration, curiosity, and a
-                human-first approach to everything I build. Because at the end
-                of the day, we're not just writing code, we're creating
-                experiences that matter.
+                I'm not here to be the smartest person in the room. I'm here to make the room smarter.
               </p>
               <div className="absolute -bottom-3 right-3 sm:-bottom-4 sm:right-4 text-lime-400 text-4xl sm:text-5xl font-serif leading-none">"</div>
             </div>
@@ -174,88 +169,71 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
 
         </div>
 
-        {/* Mobile Only: Description, Stats, CTA Below Image & Quote */}
+        {/* Mobile Only: Content Below Image & Quote */}
         <div className="lg:hidden mt-10 space-y-10 text-center">
-          {/* Narrative Story - Mobile */}
-          <div className="space-y-6 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
-            <p className="text-gray-300">
-              A Sri Lankan soul
-              surviving and thriving in Singapore. When I'm not
-              deep in code or designing systems, you'll find me lost in anime
-              or writing on Baeldung and Medium, because great
-              engineering deserves great storytelling.
-            </p>
 
+          {/* Hook - Mobile */}
+          <div className="space-y-5 text-base sm:text-lg leading-relaxed max-w-xl mx-auto">
             <p className="text-gray-300">
-              I'm a simple-minded individual who stumbled upon programming and
-              found it fascinating. That fascination evolved into a deep tech enthusiasm where I
-              thrive on learning, sharing, and lifting others along the way.
+              A Sri Lankan in Singapore who codes by day, writes by night, and believes the best
+              engineering happens when curiosity meets collaboration.
             </p>
           </div>
 
-          {/* Stats Grid - Mobile */}
+          {/* Identity Hints - Mobile */}
           <div className="grid grid-cols-3 gap-4 sm:gap-6 max-w-2xl mx-auto pt-4">
-            <div
-              className="space-y-2 border-l-2 border-lime-400 pl-3 sm:pl-4 cursor-pointer group"
-              onClick={() => setActiveSection("about")}
-            >
-              <div className="text-2xl sm:text-3xl font-bold text-white group-hover:text-lime-400 transition-colors">
-                6+
-              </div>
-              <div className="text-[10px] sm:text-xs text-gray-500 leading-tight">
-                Years
+            <div className="space-y-2 border-l-2 border-lime-400 pl-3 sm:pl-4">
+              <div className="text-2xl sm:text-3xl font-bold text-white">🇱🇰</div>
+              <div className="text-[10px] sm:text-xs text-gray-400 leading-tight">
+                Born
                 <br />
-                <span className="text-gray-400">Experience</span>
+                <span className="text-gray-400">Sri Lanka</span>
               </div>
             </div>
 
-            <div
-              className="space-y-2 border-l-2 border-gray-800 pl-3 sm:pl-4 cursor-pointer group"
-              onClick={() => setActiveSection("certifications")}
-            >
-              <div className="text-2xl sm:text-3xl font-bold text-white group-hover:text-lime-400 transition-colors">
-                AWS
-              </div>
-              <div className="text-[10px] sm:text-xs text-gray-500 leading-tight">
-                Certified
+            <div className="space-y-2 border-l-2 border-lime-400 pl-3 sm:pl-4">
+              <div className="text-2xl sm:text-3xl font-bold text-white">🇸🇬</div>
+              <div className="text-[10px] sm:text-xs text-gray-400 leading-tight">
+                Based
                 <br />
-                <span className="text-gray-600">Architect</span>
+                <span className="text-gray-400">Singapore</span>
               </div>
             </div>
 
-            <div
-              className="space-y-2 border-l-2 border-gray-800 pl-3 sm:pl-4 cursor-pointer group"
-              onClick={() => setActiveSection("contact")}
-            >
-              <div className="text-xl sm:text-2xl font-bold text-white group-hover:text-lime-400 transition-colors">
-                SG
+            <div className="space-y-2 border-l-2 border-lime-400 pl-3 sm:pl-4">
+              <div className="h-6 sm:h-8 flex items-center justify-center">
+                <img
+                  src={baeldung}
+                  alt="Baeldung"
+                  className="h-5 sm:h-6 w-auto"
+                />
               </div>
-              <div className="text-[10px] sm:text-xs text-gray-500 leading-tight">
-                Singapore
+              <div className="text-[10px] sm:text-xs text-gray-400 leading-tight">
+                Baeldung
                 <br />
-                <span className="text-gray-600">Based</span>
+                <span className="text-gray-400">Writer</span>
               </div>
             </div>
           </div>
 
           {/* CTA Section - Mobile */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-center gap-4 pt-6">
             <Button
               size="lg"
               className="bg-lime-400 hover:bg-lime-500 text-black px-6 py-4 sm:px-8 sm:py-6 text-sm sm:text-base font-semibold rounded-none transition-all duration-300 group shadow-none hover:shadow-none w-full sm:w-auto"
-              onClick={() => setActiveSection("projects")}
+              onClick={() => scrollToSection("about")}
             >
               <span className="flex items-center justify-center gap-2 sm:gap-3">
-                Explore My Work
+                Discover My Story
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </Button>
 
             <button
-              onClick={() => setActiveSection("contact")}
-              className="text-gray-500 hover:text-lime-400 transition-colors text-xs sm:text-sm font-medium"
+              onClick={() => scrollToSection("projects")}
+              className="text-gray-400 hover:text-lime-400 transition-colors text-s sm:text-sm font-medium"
             >
-              Get in touch →
+              See my work →
             </button>
           </div>
         </div>

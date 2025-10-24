@@ -118,7 +118,7 @@ export default function SkillsSection() {
   const selectedCategory = expertiseCategories.find(cat => cat.id === selectedMobileItem);
 
   return (
-    <section className="min-h-screen bg-black text-white py-20 sm:py-32 relative overflow-hidden">
+    <section id="skills" className="bg-black text-white py-10 sm:py-12 relative overflow-hidden">
 
       {/* Subtle diagonal pattern background */}
       <div className="absolute inset-0 opacity-[0.015]">
@@ -135,16 +135,17 @@ export default function SkillsSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
 
-        {/* Section Label */}
-        <div className="mb-12 sm:mb-20">
-          <span className="text-[10px] sm:text-xs lg:text-sm tracking-[0.2em] sm:tracking-[0.3em] text-gray-300 uppercase font-light">
-            02. WHAT I CAN DO
-          </span>
-          <div className="w-8 sm:w-12 h-[1px] bg-lime-400 mt-2"></div>
-        </div>
+
 
         {/* Large Section Title */}
-        <div className="mb-12 sm:mb-20">
+        <div className="mb-16 sm:mb-20">
+          <div className="flex items-center gap-4 mb-6 sm:mb-8">
+            <div className="w-12 sm:w-16 h-[3px] bg-lime-400"></div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight">
+              <span className="text-white">WHAT I CAN DO</span>
+            </h2>
+          </div>
+
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 sm:gap-0">
             <div className="flex-1">
               <blockquote className="text-sm sm:text-base lg:text-xl font-light text-gray-400 leading-relaxed">
@@ -165,7 +166,7 @@ export default function SkillsSection() {
         </div>
 
         {/* Mobile Only: Condensed Summary Cards */}
-        <div className="lg:hidden mb-20">
+        <div className="lg:hidden mb-5">
           <div className="space-y-3">
             {expertiseCategories.map((category) => (
               <button
@@ -280,7 +281,7 @@ export default function SkillsSection() {
         )}
 
         {/* Desktop: Full Accordion View (Always Visible) */}
-        <div className="hidden lg:block mb-32">
+        <div className="hidden lg:block mb-30">
           <div className="space-y-0">
             {expertiseCategories.map((category) => (
               <div
